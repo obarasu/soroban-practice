@@ -1,9 +1,43 @@
 // PDF File Mappings (relative to web server root)
+// フォルダの場合はfiles配列でファイル一覧を定義
 const pdfPaths = {
     abacus: {
-        f0: '/assets/soroban/アバカスサーキット/F0プリント/',
-        f1: '/assets/soroban/アバカスサーキット/F1プリント/',
-        f2: '/assets/soroban/アバカスサーキット/F2プリント/',
+        f0: {
+            isFolder: true,
+            basePath: '/assets/soroban/アバカスサーキット/F0プリント/',
+            files: [
+                { name: 'Catly版 本番形式001-072', file: 'Catly版 F0本番形式001-072.pdf' },
+                { name: 'Catly版 ミニ001-030', file: 'Catly版F0ミニ（Ａ４サイズ）001-030.pdf' },
+                { name: 'ザ春合宿2022版', file: 'F0(ザ春合宿2022版).pdf' },
+                { name: 'ピコ版 第1-24回', file: 'F0(ピコ版)【第1回～第24回】解答付.pdf' },
+                { name: 'ピコ版 第25-48回', file: 'F0(ピコ版)【第25回～第48回】解答付.pdf' },
+                { name: 'F0ミニ001-010', file: 'Ｆ０ミニ001-010.pdf' }
+            ]
+        },
+        f1: {
+            isFolder: true,
+            basePath: '/assets/soroban/アバカスサーキット/F1プリント/',
+            files: [
+                { name: 'Catly版 本番形式001-072', file: 'Catly版F1本番形式001-072.pdf' },
+                { name: 'Catly版 ミニ001-040', file: 'Catly版F1ミニ（Ａ４サイズ）001-040.pdf' },
+                { name: 'ザ春合宿2022版', file: 'F1(ザ春合宿2022版).pdf' },
+                { name: 'ピコ版 第1-24回', file: 'F1(ピコ版)【第1回～第24回】解答付.pdf' },
+                { name: 'ピコ版 第25-48回', file: 'F1(ピコ版)【第25回～第48回】解答付.pdf' },
+                { name: 'ピコ版 第49-72回', file: 'F1(ピコ版)【第49回～第72回】解答付.pdf' },
+                { name: 'ピコ版 第73-80回', file: 'F1(ピコ版)【第73回～第80回】解答付.pdf' },
+                { name: 'F1ミニ001-040', file: 'Ｆ１ミニ001-040.pdf' }
+            ]
+        },
+        f2: {
+            isFolder: true,
+            basePath: '/assets/soroban/アバカスサーキット/F2プリント/',
+            files: [
+                { name: 'Catly版 本番形式001-060', file: 'Catly版F2本番形式001-060.pdf' },
+                { name: 'ザ春合宿2022版', file: 'F2(ザ春合宿2022版).pdf' },
+                { name: 'ピコ版 第2集問題', file: 'F2(ピコ版) 第2集問題24回分.pdf' },
+                { name: 'ピコ版 第2集解答', file: 'F2(ピコ版) 第2集解答.pdf' }
+            ]
+        },
         past: '/assets/soroban/アバカスサーキット/本戦の過去問題・解答/',
         level: '/assets/soroban/アバカスサーキット/桁別練習プリント/',
         color: '/assets/soroban/アバカスサーキット/色別カラコン/'
@@ -27,8 +61,8 @@ const pdfPaths = {
         'half': '/assets/soroban/あんざんコンクール/プリント/あんコンハーフ2024.pdf'
     },
     answer: {
-        'sorocon': '/assets/sorocon-audio/解答用紙/そろコン種目別解答用紙2024.pdf',
-        'anzan': '/assets/soroban-audio/解答用紙/そろコン読上解答用紙.pdf'
+        'sorocon': '/assets/soroban/あんざんコンクール/プリント/あんコン種目別解答用紙.pdf',
+        'anzan': '/assets/soroban/あんざんコンクール/プリント/読上算検定解答用紙.pdf'
     }
 };
 
@@ -72,9 +106,9 @@ function getGDriveAudioUrl(filename) {
 
 // Open PDF Function
 function openPDF(category, type, name = '') {
-    const path = pdfPaths[category][type];
+    const pathData = pdfPaths[category][type];
     
-    if (!path) {
+    if (!pathData) {
         alert('PDFファイルが見つかりません');
         return;
     }
@@ -82,13 +116,22 @@ function openPDF(category, type, name = '') {
     // Show loading state
     if (event && event.target) event.target.classList.add('loading');
 
-    // Check if it's a directory (needs file listing)
-    if (path.endsWith('/')) {
-        // For directories, show alert (future: could show file browser)
-        alert(`フォルダ内のPDFを開きます:\n${path}\n\nブラウザで直接フォルダは開けません。\n個別のファイルリンクが必要です。`);
+    // フォルダの場合（ファイル一覧がある場合）
+    if (typeof pathData === 'object' && pathData.isFolder) {
+        showPdfSelector(category, type, pathData);
         if (event && event.target) event.target.classList.remove('loading');
         return;
     }
+
+    // 文字列でフォルダパスの場合（未対応）
+    if (typeof pathData === 'string' && pathData.endsWith('/')) {
+        alert(`このフォルダはまだファイル一覧が設定されていません。\n${pathData}`);
+        if (event && event.target) event.target.classList.remove('loading');
+        return;
+    }
+    
+    // 単一ファイルの場合
+    const path = typeof pathData === 'string' ? pathData : pathData.file;
     
     // 履歴に追加
     if (!name) name = `${category} - ${type}`;
@@ -98,7 +141,6 @@ function openPDF(category, type, name = '') {
     const newWindow = window.open(path, '_blank');
     
     if (!newWindow) {
-        // Fallback: show alert with path
         alert(`PDFを開きます:\n${path}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
     }
 
@@ -106,6 +148,67 @@ function openPDF(category, type, name = '') {
     setTimeout(() => {
         if (event && event.target) event.target.classList.remove('loading');
     }, 500);
+}
+
+// PDFファイル選択モーダルを表示
+function showPdfSelector(category, type, pathData) {
+    // 既存のモーダルがあれば削除
+    const existing = document.getElementById('pdf-selector-modal');
+    if (existing) existing.remove();
+    
+    const modal = document.createElement('div');
+    modal.id = 'pdf-selector-modal';
+    modal.className = 'modal';
+    
+    const typeLabel = {
+        'f0': 'F0プリント',
+        'f1': 'F1プリント',
+        'f2': 'F2プリント'
+    }[type] || type;
+    
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📄 ${typeLabel}</h3>
+                <button class="modal-close" onclick="closePdfSelector()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="pdf-file-list">
+                    ${pathData.files.map((f, i) => `
+                        <button class="action-btn pdf-file-btn" 
+                                onclick="openPdfFile('${pathData.basePath}', '${f.file}', '${f.name}')">
+                            📄 ${f.name}
+                        </button>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+}
+
+// PDFファイル選択モーダルを閉じる
+function closePdfSelector() {
+    const modal = document.getElementById('pdf-selector-modal');
+    if (modal) modal.remove();
+}
+
+// 選択したPDFファイルを開く
+function openPdfFile(basePath, fileName, displayName) {
+    const fullPath = basePath + encodeURIComponent(fileName);
+    
+    // 履歴に追加
+    addToHistory('pdf', fileName, displayName);
+    
+    // 開く
+    const newWindow = window.open(fullPath, '_blank');
+    
+    if (!newWindow) {
+        alert(`PDFを開きます:\n${displayName}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
+    }
+    
+    closePdfSelector();
 }
 
 // Play Audio Function
