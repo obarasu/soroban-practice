@@ -38,18 +38,126 @@ const pdfPaths = {
                 { name: 'ピコ版 第2集解答', file: 'F2(ピコ版) 第2集解答.pdf' }
             ]
         },
-        past: '/assets/soroban/アバカスサーキット/本戦の過去問題・解答/',
-        level: '/assets/soroban/アバカスサーキット/桁別練習プリント/',
-        color: '/assets/soroban/アバカスサーキット/色別カラコン/'
+        past: {
+            isFolder: true,
+            basePath: '/assets/soroban/アバカスサーキット/本戦の過去問題・解答/',
+            files: [
+                { name: '第283回（解答付）', file: '283（解答付).pdf' },
+                { name: '第284回（解答付）', file: '284（解答付）.pdf' },
+                { name: '第285回（解答付）', file: '285（解答付）.pdf' },
+                { name: '第286回（解答付）', file: 'PDF286（解答付）.pdf' },
+                { name: '第287回（解答付）', file: '287（解答付）.pdf' },
+                { name: '第288回（解答付）', file: '288（解答付）.pdf' },
+                { name: '第289回（解答付）', file: '289 （解答付）.pdf' },
+                { name: '第290回（解答付）', file: '290（解答付）.pdf' },
+                { name: '第291回', file: '291.pdf' },
+                { name: '第292回', file: '292.pdf' },
+                { name: '第293回', file: '293.pdf' },
+                { name: '第294回', file: '294.pdf' },
+                { name: '第295回', file: '295.pdf' },
+                { name: '第300回', file: '300.pdf' },
+                { name: '第305回', file: '305.pdf' },
+                { name: '第310回', file: '310.pdf' },
+                { name: '第315回', file: '315.pdf' },
+                { name: '第320回', file: '320.pdf' },
+                { name: '第322回', file: '322.pdf' }
+            ]
+        },
+        level: {
+            isFolder: true,
+            basePath: '/assets/soroban/アバカスサーキット/桁別練習プリント/',
+            files: [
+                { name: 'かけ算桁別', file: 'かけ算桁別プリント' },
+                { name: 'わり算桁別', file: 'わり算桁別プリント' },
+                { name: '見取り暗算桁別', file: '見取り暗算桁別プリント' },
+                { name: '見取り算（分割練習）', file: '見取り算（分割練習）' },
+                { name: '見取り算（珠算級準拠）', file: '見取り算（珠算級準拠）' }
+            ]
+        },
+        color: {
+            isFolder: true,
+            basePath: '/assets/soroban/アバカスサーキット/色別カラコン/',
+            files: [
+                { name: '①F2カラコン 001-060', file: '①F2カラコン001-060.pdf' },
+                { name: '②黄カラコン 001-060', file: '②黄カラコン001-060.pdf' },
+                { name: '③緑カラコン 001-060', file: '③緑カラコン001-060.pdf' },
+                { name: '④赤カラコン 001-060', file: '④赤カラコン001-060.pdf' },
+                { name: '⑤青カラコン 001-060', file: '⑤青カラコン001-060.pdf' },
+                { name: '⑥黒カラコン 001-060', file: '⑥黒カラコン001-060.pdf' },
+                { name: '⑦金カラコン 001-060', file: '⑦金カラコン001-060.pdf' },
+                { name: '⑧難カラコン 001-060', file: '⑧難カラコン001-060.pdf' },
+                { name: 'Lv.1 F2 001-020', file: 'カラコン（Lv.1_F2）001-020.pdf' },
+                { name: 'Lv.2 黄 001-020', file: 'カラコン（Lv.2_黄）001-020.pdf' },
+                { name: 'Lv.3 緑 001-020', file: 'カラコン（Lv.3_緑）001-020.pdf' },
+                { name: 'Lv.4 赤 001-020', file: 'カラコン（Lv.4_赤）001-020.pdf' },
+                { name: 'Lv.5 青 001-020', file: 'カラコン（Lv.5_青）001-020.pdf' },
+                { name: 'Lv.6 黒 001-020', file: 'カラコン（Lv.6_黒）001-020.pdf' },
+                { name: 'Lv.7 金 001-020', file: 'カラコン（Lv.7_金）001-020.pdf' },
+                { name: 'Lv.8 難 001-020', file: 'カラコン（Lv.8_難）001-020.pdf' },
+                { name: 'Lv.9 激 001-020', file: 'カラコン（Lv.9_激）001-020.pdf' },
+                { name: 'Lv.10 変 001-020', file: 'カラコン（Lv.10_変）001-020.pdf' },
+                { name: 'Lv.11 狂 001-020', file: 'カラコン（Lv.11_狂）001-020.pdf' },
+                { name: 'Lv.12 神 001-020', file: 'カラコン（Lv.12_神）001-020.pdf' }
+            ]
+        }
     },
     sorocon: {
         '2024': '/assets/sorocon-practice/そろコン過去問/そろコン2024本番問題.pdf',
         '2022-2023': '/assets/sorocon-practice/そろコン過去問/そろコン2022-2023本番問題.pdf',
         '2018-2021': '/assets/sorocon-practice/そろコン過去問/そろコン過去問2021-2018.pdf',
         '2015-2017': '/assets/sorocon-practice/そろコン過去問/そろコン過去問2017-2015.pdf',
-        'mitori': '/assets/sorocon-practice/見取り桁別/',
-        'kake': '/assets/sorocon-practice/かけ桁別/',
-        'wari': '/assets/sorocon-practice/わり桁別/'
+        'mitori': {
+            isFolder: true,
+            basePath: '/assets/sorocon-practice/見取り桁別/',
+            files: [
+                { name: '5桁10口', file: 'mitori_5keta_10kuchi.pdf' },
+                { name: '6桁10口', file: 'mitori_6keta_10kuchi.pdf' },
+                { name: '9桁10口', file: 'mitori_9keta_10kuchi.pdf' },
+                { name: '10桁10口', file: 'mitori_10keta_10kuchi.pdf' }
+            ]
+        },
+        'kake': {
+            isFolder: true,
+            basePath: '/assets/sorocon-practice/かけ桁別/',
+            files: [
+                { name: '3桁×2桁 (1)', file: '3-2_1.pdf' },
+                { name: '3桁×2桁 (2)', file: '3-2_2.pdf' },
+                { name: '3桁×3桁 (1)', file: '3-3_1.pdf' },
+                { name: '3桁×3桁 (2)', file: '3-3_2.pdf' },
+                { name: '4桁×3桁 (1)', file: '4-3_1.pdf' },
+                { name: '4桁×3桁 (2)', file: '4-3_2.pdf' },
+                { name: '4桁×4桁 (1)', file: '4-4_1.pdf' },
+                { name: '4桁×4桁 (2)', file: '4-4_2.pdf' },
+                { name: '5桁×4桁 (1)', file: '5-4_1.pdf' },
+                { name: '5桁×4桁 (2)', file: '5-4_2.pdf' },
+                { name: '5桁×5桁 (1)', file: '5-5_1.pdf' },
+                { name: '5桁×5桁 (2)', file: '5-5_2.pdf' },
+                { name: '6桁×5桁 (1)', file: '6-5_1.pdf' },
+                { name: '6桁×5桁 (2)', file: '6-5_2.pdf' }
+            ]
+        },
+        'wari': {
+            isFolder: true,
+            basePath: '/assets/sorocon-practice/わり桁別/',
+            files: [
+                { name: '2桁÷2桁 (1)', file: 'wari_2-2_1.pdf' },
+                { name: '2桁÷2桁 (2)', file: 'wari_2-2_2.pdf' },
+                { name: '3桁÷2桁 (1)', file: 'wari_2-3_1.pdf' },
+                { name: '3桁÷2桁 (2)', file: 'wari_2-3_2.pdf' },
+                { name: '3桁÷3桁 (1)', file: 'wari_3-3_1.pdf' },
+                { name: '3桁÷3桁 (2)', file: 'wari_3-3_2.pdf' },
+                { name: '4桁÷3桁 (1)', file: 'wari_3-4_1.pdf' },
+                { name: '4桁÷3桁 (2)', file: 'wari_3-4_2.pdf' },
+                { name: '4桁÷4桁 (1)', file: 'wari_4-4_1.pdf' },
+                { name: '4桁÷4桁 (2)', file: 'wari_4-4_2.pdf' },
+                { name: '4桁÷4桁 (3)', file: 'wari_4-4_3.pdf' },
+                { name: '5桁÷4桁', file: 'wari_4-5.pdf' },
+                { name: '5桁÷5桁 (1)', file: 'wari_5-5_1.pdf' },
+                { name: '5桁÷5桁 (2)', file: 'wari_5-5_2.pdf' },
+                { name: '6桁÷5桁 (1)', file: 'wari_5-6_1.pdf' },
+                { name: '6桁÷5桁 (2)', file: 'wari_5-6_2.pdf' }
+            ]
+        }
     },
     anzan: {
         '2024': '/assets/soroban/あんざんコンクール/過去問/全国あんざんコンクール2024本番問題.pdf',
@@ -163,7 +271,13 @@ function showPdfSelector(category, type, pathData) {
     const typeLabel = {
         'f0': 'F0プリント',
         'f1': 'F1プリント',
-        'f2': 'F2プリント'
+        'f2': 'F2プリント',
+        'past': '過去問題',
+        'level': '桁別練習',
+        'color': '色別カラコン',
+        'mitori': '見取り桁別',
+        'kake': 'かけ算桁別',
+        'wari': 'わり算桁別'
     }[type] || type;
     
     modal.innerHTML = `
