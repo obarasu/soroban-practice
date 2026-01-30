@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>そろばん練習サービス</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧮 そろばん練習</h1>
+            <p class="subtitle">スマホでワンタッチ練習</p>
+        </header>
+
+        <main>
+            <!-- アバカスサーキット -->
+            <section class="category">
+                <h2 class="category-title">🏁 アバカスサーキット</h2>
+                <div class="button-grid">
+                    <button class="action-btn pdf-btn" onclick="openPDF('abacus', 'f0')">
+                        📄 F0プリント
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('abacus', 'f1')">
+                        📄 F1プリント
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('abacus', 'f2')">
+                        📄 F2プリント
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('abacus', 'past')">
+                        📄 過去問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('abacus', 'level')">
+                        📄 桁別練習
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('abacus', 'color')">
+                        📄 色別カラコン
+                    </button>
+                </div>
+            </section>
+
+            <!-- そろばんコンクール -->
+            <section class="category">
+                <h2 class="category-title">🏆 そろばんコンクール</h2>
+                <div class="button-grid">
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', '2024')">
+                        📄 2024本番問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', '2022-2023')">
+                        📄 2022-2023問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', '2018-2021')">
+                        📄 2018-2021問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', '2015-2017')">
+                        📄 2015-2017問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', 'mitori')">
+                        📄 見取り桁別
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', 'kake')">
+                        📄 かけ算桁別
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('sorocon', 'wari')">
+                        📄 わり算桁別
+                    </button>
+                </div>
+            </section>
+
+            <!-- あんざんコンクール -->
+            <section class="category">
+                <h2 class="category-title">💡 あんざんコンクール</h2>
+                <div class="button-grid">
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', '2024')">
+                        📄 2024本番問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', '2023')">
+                        📄 2023本番問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', '2022')">
+                        📄 2022本番問題
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', 'collection1')">
+                        📄 第1集
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', 'collection2')">
+                        📄 第2集
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', 'past')">
+                        📄 過去問2014-2021
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('anzan', 'half')">
+                        📄 ハーフ2024
+                    </button>
+                </div>
+            </section>
+
+            <!-- 読み上げ算・よみあん -->
+            <section class="category">
+                <h2 class="category-title">🔊 読み上げ算・よみあん</h2>
+                <div class="button-grid">
+                    <button class="action-btn audio-btn" onclick="playAudio('30sec', 1)">
+                        🎵 30秒問題-1
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('30sec', 2)">
+                        🎵 30秒問題-2
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('30sec', 3)">
+                        🎵 30秒問題-3
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('35sec', 1)">
+                        🎵 35秒問題-1
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('35sec', 2)">
+                        🎵 35秒問題-2
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('40sec', 1)">
+                        🎵 40秒問題-1
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('40sec', 2)">
+                        🎵 40秒問題-2
+                    </button>
+                    <button class="action-btn audio-btn" onclick="playAudio('50sec', 1)">
+                        🎵 50秒問題-1
+                    </button>
+                </div>
+                
+                <!-- 音声プレイヤー -->
+                <div id="audio-player" class="audio-player hidden">
+                    <div class="player-info">
+                        <span id="current-track">トラック名</span>
+                    </div>
+                    <audio id="audio-element" controls></audio>
+                    <button class="close-player" onclick="closePlayer()">✕ 閉じる</button>
+                </div>
+            </section>
+
+            <!-- 解答用紙 -->
+            <section class="category">
+                <h2 class="category-title">📝 解答用紙</h2>
+                <div class="button-grid">
+                    <button class="action-btn pdf-btn" onclick="openPDF('answer', 'sorocon')">
+                        📄 そろコン解答用紙
+                    </button>
+                    <button class="action-btn pdf-btn" onclick="openPDF('answer', 'anzan')">
+                        📄 あんコン解答用紙
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 そろばん練習サービス</p>
+            <p class="version">v1.0.0</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
