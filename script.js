@@ -32,25 +32,43 @@ const pdfPaths = {
     }
 };
 
-// Audio File Mappings (relative to web server root)
-const audioPaths = {
+// Audio File Mappings - filename to Google Drive file ID
+// Full mapping is in audio-gdrive-mapping.js (loaded separately)
+// This is a simplified mapping for the main UI buttons
+const audioFilenames = {
     '30sec': {
-        1: '/assets/soroban/そろコン2025過去音声/【30】読上7-16桁-1.mp3',
-        2: '/assets/soroban/そろコン2025過去音声/【30】読上7-16桁-2.mp3',
-        3: '/assets/soroban/そろコン2025過去音声/【30】読上7-16桁-3.mp3'
+        1: '【30】読上7-16桁-1.mp3',
+        2: '【30】読上7-16桁-2.mp3',
+        3: '【30】読上7-16桁-3.mp3',
+        4: '【30】読上7-16桁-4.mp3',
+        5: '【30】読上7-16桁-5.mp3',
+        6: '【30】読上7-16桁-6.mp3'
     },
     '35sec': {
-        1: '/assets/soroban/そろコン2025過去音声/【35】読上7-16桁-1.mp3',
-        2: '/assets/soroban/そろコン2025過去音声/【35】読上7-16桁-2.mp3'
+        1: '【35】読上7-16桁-1.mp3',
+        2: '【35】読上7-16桁-2.mp3',
+        3: '【35】読上7-16桁-3.mp3',
+        4: '【35】読上7-16桁-4.mp3',
+        5: '【35】読上7-16桁-5.mp3'
     },
     '40sec': {
-        1: '/assets/soroban/そろコン2025過去音声/【40】読上7-16桁-1.mp3',
-        2: '/assets/soroban/そろコン2025過去音声/【40】読上7-16桁-2.mp3'
+        1: '【40】読上7-16桁-1.mp3',
+        2: '【40】読上7-16桁-2.mp3'
     },
     '50sec': {
-        1: '/assets/soroban/そろコン2025過去音声/【50】読上7-16桁-1【マイナス】.mp3'
+        1: '【50】読上7-16桁-1【マイナス】.mp3',
+        2: '【50】読上7-16桁-2【マイナス】.mp3'
     }
 };
+
+// Helper function to get Google Drive direct download URL
+function getGDriveAudioUrl(filename) {
+    if (typeof audioGDriveMapping !== 'undefined' && audioGDriveMapping[filename]) {
+        const fileId = audioGDriveMapping[filename];
+        return `https://drive.google.com/uc?export=download&id=${fileId}`;
+    }
+    return null;
+}
 
 // Open PDF Function
 function openPDF(category, type, name = '') {
@@ -92,10 +110,17 @@ function openPDF(category, type, name = '') {
 
 // Play Audio Function
 function playAudio(duration, number) {
-    const path = audioPaths[duration][number];
+    const filename = audioFilenames[duration] && audioFilenames[duration][number];
     
-    if (!path) {
+    if (!filename) {
         alert('音声ファイルが見つかりません');
+        return;
+    }
+
+    const audioUrl = getGDriveAudioUrl(filename);
+    
+    if (!audioUrl) {
+        alert(`音声ファイルのマッピングが見つかりません:\n${filename}`);
         return;
     }
 
@@ -110,15 +135,15 @@ function playAudio(duration, number) {
     // 履歴に追加
     addToHistory('audio', `${duration}-${number}`, name);
 
-    // Set audio source (relative path from web server)
-    audioElement.src = path;
+    // Set audio source from Google Drive
+    audioElement.src = audioUrl;
 
     // Show player
     player.classList.remove('hidden');
 
     // Play audio
     audioElement.play().catch(err => {
-        alert(`音声の再生に失敗しました:\n${path}\n\nファイルが存在するか確認してください。`);
+        alert(`音声の再生に失敗しました:\n${filename}\n\nGoogle Driveの共有設定を確認してください。`);
         console.error('Audio playback error:', err);
     });
 
