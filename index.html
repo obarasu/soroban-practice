@@ -34,6 +34,84 @@
                 <button class="clear-history-btn" onclick="clearHistory()">履歴をクリア</button>
             </section>
 
+            <!-- アバカスサーキット記録 -->
+            <section class="category records-section">
+                <h2 class="category-title">📊 アバカスサーキット記録</h2>
+                <button class="action-btn record-btn" onclick="openRecordModal()">
+                    ⏱️ 新しい記録を追加
+                </button>
+                
+                <!-- 統計 -->
+                <div id="records-stats" class="records-stats"></div>
+                
+                <!-- 記録一覧 -->
+                <div id="records-list" class="records-list">
+                    <p class="empty-state">記録はまだありません</p>
+                </div>
+                <button class="clear-history-btn" onclick="clearRecords()">記録をクリア</button>
+            </section>
+
+            <!-- 記録入力モーダル -->
+            <div id="record-modal" class="modal hidden">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>📊 記録を入力</h3>
+                        <button class="modal-close" onclick="closeRecordModal()">✕</button>
+                    </div>
+                    
+                    <div class="modal-body">
+                        <!-- タイマー -->
+                        <div class="timer-section">
+                            <div id="timer-display" class="timer-display">00:00</div>
+                            <div id="timer-remaining" class="timer-remaining">残り 5:00</div>
+                            <div class="timer-buttons">
+                                <button id="timer-start" class="timer-btn start" onclick="startTimer()">▶ スタート</button>
+                                <button id="timer-stop" class="timer-btn stop hidden" onclick="stopTimer()">⏸ ストップ</button>
+                                <button class="timer-btn reset" onclick="resetTimer()">↺ リセット</button>
+                            </div>
+                        </div>
+                        
+                        <!-- 入力フォーム -->
+                        <div class="record-form">
+                            <div class="form-group">
+                                <label>種目</label>
+                                <select id="record-type" class="form-select">
+                                    <option value="multiplication">かけ算</option>
+                                    <option value="division">わり算</option>
+                                    <option value="mitori">見取り算</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>解答数</label>
+                                <input type="number" id="record-answered" class="form-input" 
+                                       placeholder="解いた問題数" min="0" max="100"
+                                       oninput="calculateScore()">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>間違い数</label>
+                                <input type="number" id="record-wrong" class="form-input" 
+                                       placeholder="間違えた数" min="0" max="100"
+                                       oninput="calculateScore()">
+                            </div>
+                            
+                            <div class="score-display">
+                                <span class="score-label">点数:</span>
+                                <span id="record-score" class="score-value">-</span>
+                                <span class="score-unit">点</span>
+                            </div>
+                            <p class="score-formula">※ 点数 = 解答数 - (間違い数 × 2)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button class="action-btn cancel-btn" onclick="closeRecordModal()">キャンセル</button>
+                        <button class="action-btn save-btn" onclick="saveRecord()">💾 保存</button>
+                    </div>
+                </div>
+            </div>
+
             <!-- アバカスサーキット -->
             <section class="category">
                 <h2 class="category-title">🏁 アバカスサーキット</h2>

@@ -405,3 +405,340 @@ footer {
 .fav-icon.active {
     color: #FFD700;
 }
+
+/* ========================================
+   記録機能
+   ======================================== */
+
+.records-section {
+    background: rgba(76, 175, 80, 0.1);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.record-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50, #388E3C) !important;
+    font-size: 1.2rem !important;
+    padding: 20px !important;
+}
+
+.record-btn:hover {
+    background: linear-gradient(135deg, #388E3C, #2E7D32) !important;
+}
+
+/* 統計表示 */
+.records-stats {
+    margin: 20px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.stat-type {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.stat-best {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.stat-avg {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 5px 0;
+}
+
+.stat-count {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* 記録一覧 */
+.records-list {
+    margin-top: 20px;
+}
+
+.record-item {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+}
+
+.record-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.record-type {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.record-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.record-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.record-score {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+.record-detail {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* モーダル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.modal-close:hover {
+    color: var(--danger-color);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-footer .action-btn {
+    flex: 1;
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-secondary) !important;
+}
+
+.save-btn {
+    background: linear-gradient(135deg, #4CAF50, #388E3C) !important;
+}
+
+/* タイマー */
+.timer-section {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+}
+
+.timer-remaining {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.timer-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.timer-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.timer-btn.start {
+    background: #4CAF50;
+    color: white;
+}
+
+.timer-btn.stop {
+    background: #FF9800;
+    color: white;
+}
+
+.timer-btn.reset {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+.timer-btn:hover {
+    transform: scale(1.05);
+}
+
+/* フォーム */
+.record-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.form-input,
+.form-select {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.form-input:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+/* スコア表示 */
+.score-display {
+    text-align: center;
+    padding: 20px;
+    background: rgba(76, 175, 80, 0.2);
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+}
+
+.score-label {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.score-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #4CAF50;
+    margin: 0 10px;
+}
+
+.score-unit {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.score-formula {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+/* レスポンシブ調整 */
+@media (max-width: 480px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timer-display {
+        font-size: 2.5rem;
+    }
+    
+    .timer-buttons {
+        flex-direction: column;
+    }
+    
+    .score-value {
+        font-size: 2.5rem;
+    }
+}

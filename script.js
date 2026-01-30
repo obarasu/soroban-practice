@@ -319,3 +319,244 @@ document.addEventListener('touchend', (event) => {
     }
     lastTouchEnd = now;
 }, false);
+
+// ========================================
+// アバカスサーキット記録機能
+// ========================================
+const RECORDS_KEY = 'soroban-abacus-records';
+let abacusRecords = JSON.parse(localStorage.getItem(RECORDS_KEY) || '[]');
+
+// タイマー関連
+let timerInterval = null;
+let timerSeconds = 0;
+let timerRunning = false;
+const TIMER_DURATION = 5 * 60; // 5分
+
+// 記録モーダルを開く
+function openRecordModal() {
+    const modal = document.getElementById('record-modal');
+    if (modal) {
+        modal.classList.remove('hidden');
+        resetTimer();
+        document.getElementById('record-answered').value = '';
+        document.getElementById('record-wrong').value = '';
+        document.getElementById('record-score').textContent = '-';
+    }
+}
+
+// 記録モーダルを閉じる
+function closeRecordModal() {
+    const modal = document.getElementById('record-modal');
+    if (modal) {
+        modal.classList.add('hidden');
+        stopTimer();
+    }
+}
+
+// タイマー開始
+function startTimer() {
+    if (timerRunning) return;
+    
+    timerRunning = true;
+    document.getElementById('timer-start').classList.add('hidden');
+    document.getElementById('timer-stop').classList.remove('hidden');
+    
+    timerInterval = setInterval(() => {
+        timerSeconds++;
+        updateTimerDisplay();
+        
+        // 5分経過で自動停止
+        if (timerSeconds >= TIMER_DURATION) {
+            stopTimer();
+            alert('5分経過しました！');
+        }
+    }, 1000);
+}
+
+// タイマー停止
+function stopTimer() {
+    timerRunning = false;
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+    document.getElementById('timer-start').classList.remove('hidden');
+    document.getElementById('timer-stop').classList.add('hidden');
+}
+
+// タイマーリセット
+function resetTimer() {
+    stopTimer();
+    timerSeconds = 0;
+    updateTimerDisplay();
+}
+
+// タイマー表示更新
+function updateTimerDisplay() {
+    const mins = Math.floor(timerSeconds / 60);
+    const secs = timerSeconds % 60;
+    const display = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+    document.getElementById('timer-display').textContent = display;
+    
+    // 残り時間も表示
+    const remaining = TIMER_DURATION - timerSeconds;
+    const remMins = Math.floor(remaining / 60);
+    const remSecs = remaining % 60;
+    document.getElementById('timer-remaining').textContent = 
+        `残り ${remMins}:${String(remSecs).padStart(2, '0')}`;
+}
+
+// スコア計算
+function calculateScore() {
+    const answered = parseInt(document.getElementById('record-answered').value) || 0;
+    const wrong = parseInt(document.getElementById('record-wrong').value) || 0;
+    
+    // 点数計算: 解答数 - (間違い数 × 2)
+    const score = Math.max(0, answered - (wrong * 2));
+    document.getElementById('record-score').textContent = score;
+    return score;
+}
+
+// 記録を保存
+function saveRecord() {
+    const type = document.getElementById('record-type').value;
+    const answered = parseInt(document.getElementById('record-answered').value) || 0;
+    const wrong = parseInt(document.getElementById('record-wrong').value) || 0;
+    
+    if (answered === 0) {
+        alert('解答数を入力してください');
+        return;
+    }
+    
+    const score = calculateScore();
+    
+    const record = {
+        id: Date.now().toString(),
+        date: new Date().toISOString(),
+        type: type,
+        answered: answered,
+        wrong: wrong,
+        score: score,
+        timeSec: timerSeconds
+    };
+    
+    abacusRecords.unshift(record);
+    
+    // 最大100件まで保持
+    if (abacusRecords.length > 100) {
+        abacusRecords = abacusRecords.slice(0, 100);
+    }
+    
+    localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
+    
+    closeRecordModal();
+    renderRecords();
+    alert(`記録を保存しました！\n${getTypeLabel(type)}: ${score}点`);
+}
+
+// 種目ラベル取得
+function getTypeLabel(type) {
+    const labels = {
+        'multiplication': 'かけ算',
+        'division': 'わり算',
+        'mitori': '見取り算'
+    };
+    return labels[type] || type;
+}
+
+// 記録一覧を表示
+function renderRecords() {
+    const container = document.getElementById('records-list');
+    if (!container) return;
+    
+    if (abacusRecords.length === 0) {
+        container.innerHTML = '<p class="empty-state">記録はまだありません</p>';
+        return;
+    }
+    
+    // 最新10件を表示
+    const recentRecords = abacusRecords.slice(0, 10);
+    
+    container.innerHTML = recentRecords.map(record => {
+        const date = new Date(record.date);
+        const dateStr = `${date.getMonth()+1}/${date.getDate()}`;
+        const mins = Math.floor(record.timeSec / 60);
+        const secs = record.timeSec % 60;
+        const timeStr = `${mins}:${String(secs).padStart(2, '0')}`;
+        
+        return `
+            <div class="record-item">
+                <div class="record-header">
+                    <span class="record-type">${getTypeLabel(record.type)}</span>
+                    <span class="record-date">${dateStr}</span>
+                </div>
+                <div class="record-body">
+                    <span class="record-score">${record.score}点</span>
+                    <span class="record-detail">
+                        ${record.answered}問中${record.answered - record.wrong}問正解
+                        (${timeStr})
+                    </span>
+                </div>
+            </div>
+        `;
+    }).join('');
+    
+    // 統計も更新
+    renderStats();
+}
+
+// 統計表示
+function renderStats() {
+    const statsContainer = document.getElementById('records-stats');
+    if (!statsContainer) return;
+    
+    if (abacusRecords.length === 0) {
+        statsContainer.innerHTML = '';
+        return;
+    }
+    
+    // 種目別の統計
+    const types = ['multiplication', 'division', 'mitori'];
+    const stats = types.map(type => {
+        const typeRecords = abacusRecords.filter(r => r.type === type);
+        if (typeRecords.length === 0) return null;
+        
+        const scores = typeRecords.map(r => r.score);
+        const best = Math.max(...scores);
+        const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+        
+        return {
+            type: type,
+            count: typeRecords.length,
+            best: best,
+            avg: avg
+        };
+    }).filter(s => s !== null);
+    
+    statsContainer.innerHTML = `
+        <div class="stats-grid">
+            ${stats.map(s => `
+                <div class="stat-card">
+                    <div class="stat-type">${getTypeLabel(s.type)}</div>
+                    <div class="stat-best">最高: ${s.best}点</div>
+                    <div class="stat-avg">平均: ${s.avg}点</div>
+                    <div class="stat-count">${s.count}回</div>
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+// 記録をクリア
+function clearRecords() {
+    if (confirm('すべての記録を削除しますか？')) {
+        abacusRecords = [];
+        localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
+        renderRecords();
+    }
+}
+
+// 初期化時に記録を表示
+document.addEventListener('DOMContentLoaded', () => {
+    renderRecords();
+});
