@@ -303,3 +303,105 @@ footer {
         min-height: 56px; /* iOS/Android recommended touch target */
     }
 }
+
+/* ========================================
+   お気に入り・履歴機能
+   ======================================== */
+
+.favorites-section,
+.history-section {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.favorites-grid,
+.history-grid {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--text-secondary);
+    padding: 30px;
+    font-style: italic;
+}
+
+.favorite-item,
+.history-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.08);
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.favorite-item:hover,
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.remove-fav {
+    background: rgba(244, 67, 54, 0.8);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.remove-fav:hover {
+    background: rgba(244, 67, 54, 1);
+}
+
+.history-name {
+    flex: 1;
+    text-align: left;
+}
+
+.history-time {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin-left: 10px;
+}
+
+.clear-history-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: rgba(244, 67, 54, 0.2);
+    color: var(--danger-color);
+    border: 1px solid var(--danger-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9em;
+    width: 100%;
+}
+
+.clear-history-btn:hover {
+    background: rgba(244, 67, 54, 0.3);
+}
+
+.fav-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 10;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.fav-icon:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.2);
+}
+
+.fav-icon.active {
+    color: #FFD700;
+}

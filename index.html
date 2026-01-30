@@ -17,6 +17,23 @@
         </header>
 
         <main>
+            <!-- お気に入り -->
+            <section class="category favorites-section">
+                <h2 class="category-title">⭐ お気に入り</h2>
+                <div id="favorites-list" class="favorites-grid">
+                    <p class="empty-state">お気に入りはまだありません</p>
+                </div>
+            </section>
+
+            <!-- 履歴 -->
+            <section class="category history-section">
+                <h2 class="category-title">📜 最近使った問題</h2>
+                <div id="history-list" class="history-grid">
+                    <p class="empty-state">履歴はまだありません</p>
+                </div>
+                <button class="clear-history-btn" onclick="clearHistory()">履歴をクリア</button>
+            </section>
+
             <!-- アバカスサーキット -->
             <section class="category">
                 <h2 class="category-title">🏁 アバカスサーキット</h2>
@@ -154,7 +171,7 @@
 
         <footer>
             <p>© 2025 そろばん練習サービス</p>
-            <p class="version">v1.0.0</p>
+            <p class="version">v1.1.0 - お気に入り・履歴機能追加</p>
         </footer>
     </div>
 

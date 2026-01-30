@@ -53,7 +53,7 @@ const audioPaths = {
 };
 
 // Open PDF Function
-function openPDF(category, type) {
+function openPDF(category, type, name = '') {
     const path = pdfPaths[category][type];
     
     if (!path) {
@@ -62,15 +62,19 @@ function openPDF(category, type) {
     }
 
     // Show loading state
-    event.target.classList.add('loading');
+    if (event && event.target) event.target.classList.add('loading');
 
     // Check if it's a directory (needs file listing)
     if (path.endsWith('/')) {
         // For directories, show alert (future: could show file browser)
         alert(`フォルダ内のPDFを開きます:\n${path}\n\nブラウザで直接フォルダは開けません。\n個別のファイルリンクが必要です。`);
-        event.target.classList.remove('loading');
+        if (event && event.target) event.target.classList.remove('loading');
         return;
     }
+    
+    // 履歴に追加
+    if (!name) name = `${category} - ${type}`;
+    addToHistory(category, type, name);
     
     // Open PDF in new tab
     const newWindow = window.open(path, '_blank');
@@ -82,7 +86,7 @@ function openPDF(category, type) {
 
     // Remove loading state
     setTimeout(() => {
-        event.target.classList.remove('loading');
+        if (event && event.target) event.target.classList.remove('loading');
     }, 500);
 }
 
@@ -100,7 +104,11 @@ function playAudio(duration, number) {
     const trackName = document.getElementById('current-track');
 
     // Set track info
-    trackName.textContent = `🎵 ${duration} 問題-${number}`;
+    const name = `${duration} 問題-${number}`;
+    trackName.textContent = `🎵 ${name}`;
+
+    // 履歴に追加
+    addToHistory('audio', `${duration}-${number}`, name);
 
     // Set audio source (relative path from web server)
     audioElement.src = path;
@@ -131,6 +139,120 @@ function closePlayer() {
     player.classList.add('hidden');
 }
 
+// ========================================
+// お気に入り機能
+// ========================================
+let favorites = JSON.parse(localStorage.getItem('soroban-favorites') || '[]');
+
+function toggleFavorite(category, type, name) {
+    const key = `${category}-${type}`;
+    const index = favorites.findIndex(f => f.key === key);
+    
+    if (index > -1) {
+        // 削除
+        favorites.splice(index, 1);
+        updateFavoriteButton(key, false);
+    } else {
+        // 追加
+        favorites.push({ key, category, type, name, timestamp: Date.now() });
+        updateFavoriteButton(key, true);
+    }
+    
+    localStorage.setItem('soroban-favorites', JSON.stringify(favorites));
+    renderFavorites();
+}
+
+function updateFavoriteButton(key, isFavorite) {
+    const icon = document.querySelector(`[data-fav-key="${key}"]`);
+    if (icon) {
+        icon.textContent = isFavorite ? '⭐' : '☆';
+        icon.classList.toggle('active', isFavorite);
+    }
+}
+
+function renderFavorites() {
+    const container = document.getElementById('favorites-list');
+    if (!container) return;
+    
+    if (favorites.length === 0) {
+        container.innerHTML = '<p class="empty-state">お気に入りはまだありません</p>';
+        return;
+    }
+    
+    container.innerHTML = favorites.map(fav => `
+        <button class="action-btn favorite-item" onclick="openFromFavorite('${fav.category}', '${fav.type}')">
+            ${fav.name}
+            <span class="remove-fav" onclick="event.stopPropagation(); toggleFavorite('${fav.category}', '${fav.type}', '${fav.name}')">✕</span>
+        </button>
+    `).join('');
+}
+
+function openFromFavorite(category, type) {
+    if (category === 'audio') {
+        const [duration, number] = type.split('-');
+        playAudio(duration, number);
+    } else {
+        openPDF(category, type);
+    }
+}
+
+// ========================================
+// 履歴機能
+// ========================================
+let history = JSON.parse(localStorage.getItem('soroban-history') || '[]');
+
+function addToHistory(category, type, name) {
+    const key = `${category}-${type}`;
+    
+    // 重複を削除
+    history = history.filter(h => h.key !== key);
+    
+    // 先頭に追加
+    history.unshift({ key, category, type, name, timestamp: Date.now() });
+    
+    // 最大10件まで保持
+    if (history.length > 10) {
+        history = history.slice(0, 10);
+    }
+    
+    localStorage.setItem('soroban-history', JSON.stringify(history));
+    renderHistory();
+}
+
+function renderHistory() {
+    const container = document.getElementById('history-list');
+    if (!container) return;
+    
+    if (history.length === 0) {
+        container.innerHTML = '<p class="empty-state">履歴はまだありません</p>';
+        return;
+    }
+    
+    container.innerHTML = history.map(item => {
+        const date = new Date(item.timestamp);
+        const timeStr = `${date.getMonth()+1}/${date.getDate()} ${date.getHours()}:${String(date.getMinutes()).padStart(2,'0')}`;
+        
+        return `
+            <button class="action-btn history-item" onclick="openFromHistory('${item.category}', '${item.type}')">
+                <span class="history-name">${item.name}</span>
+                <span class="history-time">${timeStr}</span>
+            </button>
+        `;
+    }).join('');
+}
+
+function openFromHistory(category, type) {
+    openFromFavorite(category, type); // 同じロジック
+}
+
+function clearHistory() {
+    if (confirm('履歴をすべて削除しますか？')) {
+        history = [];
+        localStorage.setItem('soroban-history', JSON.stringify(history));
+        renderHistory();
+    }
+}
+
 // Service Worker Registration (PWA support)
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
@@ -151,6 +273,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 window.navigator.vibrate(10);
             }
         });
+    });
+    
+    // お気に入りと履歴を初期表示
+    renderFavorites();
+    renderHistory();
+    
+    // お気に入りアイコンの初期状態を設定
+    favorites.forEach(fav => {
+        updateFavoriteButton(fav.key, true);
     });
 });
 
