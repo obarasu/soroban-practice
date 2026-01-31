@@ -4,7 +4,7 @@ const pdfPaths = {
     abacus: {
         f0: {
             isFolder: true,
-            basePath: '/assets/soroban/アバカスサーキット/F0プリント/',
+            basePath: '/assets/soroban/abacus-circuit/f0/',
             files: [
                 { name: 'Catly版 本番形式001-072', file: 'Catly版-F0本番形式001-072.pdf' },
                 { name: 'Catly版 ミニ001-030', file: 'Catly版F0ミニ-Ａ４サイズ-001-030.pdf' },
@@ -16,7 +16,7 @@ const pdfPaths = {
         },
         f1: {
             isFolder: true,
-            basePath: '/assets/soroban/アバカスサーキット/F1プリント/',
+            basePath: '/assets/soroban/abacus-circuit/f1/',
             files: [
                 { name: 'Catly版 本番形式001-072', file: 'Catly版F1本番形式001-072.pdf' },
                 { name: 'Catly版 ミニ001-040', file: 'Catly版F1ミニ-Ａ４サイズ-001-040.pdf' },
@@ -30,7 +30,7 @@ const pdfPaths = {
         },
         f2: {
             isFolder: true,
-            basePath: '/assets/soroban/アバカスサーキット/F2プリント/',
+            basePath: '/assets/soroban/abacus-circuit/f2/',
             files: [
                 { name: 'Catly版 本番形式001-060', file: 'Catly版F2本番形式001-060.pdf' },
                 { name: 'ザ春合宿2022版', file: 'F2-ザ春合宿2022版.pdf' },
@@ -40,7 +40,7 @@ const pdfPaths = {
         },
         past: {
             isFolder: true,
-            basePath: '/assets/soroban/アバカスサーキット/本戦の過去問題・解答/',
+            basePath: '/assets/soroban/abacus-circuit/past-exams/',
             files: [
                 { name: '第283回（解答付）', file: '283-解答付.pdf' },
                 { name: '第284回（解答付）', file: '284-解答付.pdf' },
@@ -65,7 +65,7 @@ const pdfPaths = {
         },
         level: {
             isFolder: true,
-            basePath: '/assets/soroban/アバカスサーキット/桁別練習プリント/',
+            basePath: '/assets/soroban/abacus-circuit/level-practice/',
             files: [
                 { name: 'かけ算桁別', file: 'かけ算桁別プリント' },
                 { name: 'わり算桁別', file: 'わり算桁別プリント' },
@@ -76,7 +76,7 @@ const pdfPaths = {
         },
         color: {
             isFolder: true,
-            basePath: '/assets/soroban/アバカスサーキット/色別カラコン/',
+            basePath: '/assets/soroban/abacus-circuit/color-contest/',
             files: [
                 { name: '①F2カラコン 001-060', file: '①F2カラコン001-060.pdf' },
                 { name: '②黄カラコン 001-060', file: '②黄カラコン001-060.pdf' },
@@ -160,17 +160,17 @@ const pdfPaths = {
         }
     },
     anzan: {
-        '2024': '/assets/soroban/あんざんコンクール/過去問/全国あんざんコンクール2024本番問題.pdf',
-        '2023': '/assets/soroban/あんざんコンクール/過去問/全国あんざんコンクール2023本番問題.pdf',
-        '2022': '/assets/soroban/あんざんコンクール/過去問/全国あんざんコンクール2022本番問題.pdf',
-        'collection1': '/assets/soroban/あんざんコンクール/プリント/全国あんざんコンクール第1集.pdf',
-        'collection2': '/assets/soroban/あんざんコンクール/プリント/全国あんざんコンクール第2集.pdf',
-        'past': '/assets/soroban/あんざんコンクール/過去問/過去問2016-2021（解答あり）.pdf',
-        'half': '/assets/soroban/あんざんコンクール/プリント/あんコンハーフ2024.pdf'
+        '2024': '/assets/soroban/anzan-contest/past/全国あんざんコンクール2024本番問題.pdf',
+        '2023': '/assets/soroban/anzan-contest/past/全国あんざんコンクール2023本番問題.pdf',
+        '2022': '/assets/soroban/anzan-contest/past/全国あんざんコンクール2022本番問題.pdf',
+        'collection1': '/assets/soroban/anzan-contest/prints/全国あんざんコンクール第1集.pdf',
+        'collection2': '/assets/soroban/anzan-contest/prints/全国あんざんコンクール第2集.pdf',
+        'past': '/assets/soroban/anzan-contest/past/過去問2016-2021（解答あり）.pdf',
+        'half': '/assets/soroban/anzan-contest/prints/あんコンハーフ2024.pdf'
     },
     answer: {
-        'sorocon': '/assets/soroban/あんざんコンクール/プリント/あんコン種目別解答用紙.pdf',
-        'anzan': '/assets/soroban/あんざんコンクール/プリント/読上算検定解答用紙.pdf'
+        'sorocon': '/assets/soroban/anzan-contest/prints/あんコン種目別解答用紙.pdf',
+        'anzan': '/assets/soroban/anzan-contest/prints/読上算検定解答用紙.pdf'
     }
 };
 
