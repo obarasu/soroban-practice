@@ -67,11 +67,11 @@ const pdfPaths = {
             isFolder: true,
             basePath: '/assets/soroban/abacus-circuit/level-practice/',
             files: [
-                { name: 'かけ算桁別', file: 'かけ算桁別プリント' },
-                { name: 'わり算桁別', file: 'わり算桁別プリント' },
-                { name: '見取り暗算桁別', file: '見取り暗算桁別プリント' },
-                { name: '見取り算（分割練習）', file: '見取り算（分割練習）' },
-                { name: '見取り算（珠算級準拠）', file: '見取り算（珠算級準拠）' }
+                { name: 'かけ算桁別', file: 'kakezan-digit-practice' },
+                { name: 'わり算桁別', file: 'warizan-digit-practice' },
+                { name: '見取り暗算桁別', file: 'mitori-anzan-digit-practice' },
+                { name: '見取り算（分割練習）', file: 'mitori-split-practice' },
+                { name: '見取り算（珠算級準拠）', file: 'mitori-shuzan-level' }
             ]
         },
         color: {
@@ -102,13 +102,13 @@ const pdfPaths = {
         }
     },
     sorocon: {
-        '2024': '/assets/sorocon-practice/そろコン過去問/sorocon2024mainproblems.pdf',
-        '2022-2023': '/assets/sorocon-practice/そろコン過去問/sorocon2022-2023mainproblems.pdf',
-        '2018-2021': '/assets/sorocon-practice/そろコン過去問/soroconpast2021-2018.pdf',
-        '2015-2017': '/assets/sorocon-practice/そろコン過去問/soroconpast2017-2015.pdf',
+        '2024': '/assets/sorocon-practice/sorocon-past/sorocon2024mainproblems.pdf',
+        '2022-2023': '/assets/sorocon-practice/sorocon-past/sorocon2022-2023mainproblems.pdf',
+        '2018-2021': '/assets/sorocon-practice/sorocon-past/soroconpast2021-2018.pdf',
+        '2015-2017': '/assets/sorocon-practice/sorocon-past/soroconpast2017-2015.pdf',
         'mitori': {
             isFolder: true,
-            basePath: '/assets/sorocon-practice/見取り桁別/',
+            basePath: '/assets/sorocon-practice/mitori-digit/',
             files: [
                 { name: '5桁10口', file: 'mitori_5keta_10kuchi.pdf' },
                 { name: '6桁10口', file: 'mitori_6keta_10kuchi.pdf' },
@@ -118,7 +118,7 @@ const pdfPaths = {
         },
         'kake': {
             isFolder: true,
-            basePath: '/assets/sorocon-practice/かけ桁別/',
+            basePath: '/assets/sorocon-practice/kake-digit/',
             files: [
                 { name: '3桁×2桁 (1)', file: '3-2_1.pdf' },
                 { name: '3桁×2桁 (2)', file: '3-2_2.pdf' },
@@ -138,7 +138,7 @@ const pdfPaths = {
         },
         'wari': {
             isFolder: true,
-            basePath: '/assets/sorocon-practice/わり桁別/',
+            basePath: '/assets/sorocon-practice/wari-digit/',
             files: [
                 { name: '2桁÷2桁 (1)', file: 'wari_2-2_1.pdf' },
                 { name: '2桁÷2桁 (2)', file: 'wari_2-2_2.pdf' },
@@ -160,17 +160,17 @@ const pdfPaths = {
         }
     },
     anzan: {
-        '2024': '/assets/soroban/anzan-contest/past/全国あんざんコンクール2024本番問題.pdf',
-        '2023': '/assets/soroban/anzan-contest/past/全国あんざんコンクール2023本番問題.pdf',
-        '2022': '/assets/soroban/anzan-contest/past/全国あんざんコンクール2022本番問題.pdf',
-        'collection1': '/assets/soroban/anzan-contest/prints/全国あんざんコンクール第1集.pdf',
-        'collection2': '/assets/soroban/anzan-contest/prints/全国あんざんコンクール第2集.pdf',
-        'past': '/assets/soroban/anzan-contest/past/過去問2016-2021（解答あり）.pdf',
-        'half': '/assets/soroban/anzan-contest/prints/あんコンハーフ2024.pdf'
+        '2024': '/assets/soroban/anzan-contest/past/national-anzancontest2024mainproblems.pdf',
+        '2023': '/assets/soroban/anzan-contest/past/national-anzancontest2023mainproblems.pdf',
+        '2022': '/assets/soroban/anzan-contest/past/national-anzancontest2022mainproblems.pdf',
+        'collection1': '/assets/soroban/anzan-contest/prints/national-anzancontest1vol.pdf',
+        'collection2': '/assets/soroban/anzan-contest/prints/national-anzancontest2vol.pdf',
+        'past': '/assets/soroban/anzan-contest/past/past2016-2021-answers.pdf',
+        'half': '/assets/soroban/anzan-contest/prints/anconhalf2024.pdf'
     },
     answer: {
-        'sorocon': '/assets/soroban/anzan-contest/prints/あんコン種目別解答用紙.pdf',
-        'anzan': '/assets/soroban/anzan-contest/prints/読上算検定解答用紙.pdf'
+        'sorocon': '/assets/soroban/anzan-contest/prints/anconevent-answerssheet.pdf',
+        'anzan': '/assets/soroban/anzan-contest/prints/yomiagetestanswerssheet.pdf'
     }
 };
 
