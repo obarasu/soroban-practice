@@ -29,6 +29,20 @@
                     </button>
                 </div>
                 
+                <!-- 点数グラフ -->
+                <div id="chart-container" class="chart-container">
+                    <div class="chart-header">
+                        <span class="chart-title">📈 点数の推移</span>
+                        <select id="chart-type-filter" class="chart-filter" onchange="updateChart()">
+                            <option value="all">全種目</option>
+                            <option value="multiplication">かけ算</option>
+                            <option value="division">わり算</option>
+                            <option value="mitori">見取り算</option>
+                        </select>
+                    </div>
+                    <canvas id="score-chart"></canvas>
+                </div>
+                
                 <!-- 統計 -->
                 <div id="records-stats" class="records-stats"></div>
                 
@@ -260,6 +274,9 @@
         </footer>
     </div>
 
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>

@@ -1147,6 +1147,128 @@ function getTypeLabel(type) {
     return labels[type] || type;
 }
 
+// 種目の色
+function getTypeColor(type) {
+    const colors = {
+        'multiplication': '#FF6384',
+        'division': '#36A2EB',
+        'mitori': '#4BC0C0'
+    };
+    return colors[type] || '#9966FF';
+}
+
+// グラフインスタンス
+let scoreChart = null;
+
+// グラフを更新
+function updateChart() {
+    const canvas = document.getElementById('score-chart');
+    if (!canvas) return;
+    
+    const filter = document.getElementById('chart-type-filter')?.value || 'all';
+    
+    // フィルタリング
+    let filteredRecords = abacusRecords;
+    if (filter !== 'all') {
+        filteredRecords = abacusRecords.filter(r => r.type === filter);
+    }
+    
+    // 日付でソート（古い順）
+    const sortedRecords = [...filteredRecords].sort((a, b) => 
+        new Date(a.date) - new Date(b.date)
+    ).slice(-20); // 直近20件
+    
+    if (sortedRecords.length === 0) {
+        if (scoreChart) {
+            scoreChart.destroy();
+            scoreChart = null;
+        }
+        return;
+    }
+    
+    // データ準備
+    const labels = sortedRecords.map(r => {
+        const d = new Date(r.date);
+        return `${d.getMonth()+1}/${d.getDate()}`;
+    });
+    
+    let datasets;
+    
+    if (filter === 'all') {
+        // 種目別に分ける
+        const types = ['multiplication', 'division', 'mitori'];
+        datasets = types.map(type => {
+            const typeRecords = sortedRecords.filter(r => r.type === type);
+            if (typeRecords.length === 0) return null;
+            
+            return {
+                label: getTypeLabel(type),
+                data: sortedRecords.map(r => r.type === type ? r.score : null),
+                borderColor: getTypeColor(type),
+                backgroundColor: getTypeColor(type) + '40',
+                tension: 0.3,
+                spanGaps: true,
+                pointRadius: 4,
+                pointHoverRadius: 6
+            };
+        }).filter(d => d !== null);
+    } else {
+        datasets = [{
+            label: getTypeLabel(filter),
+            data: sortedRecords.map(r => r.score),
+            borderColor: getTypeColor(filter),
+            backgroundColor: getTypeColor(filter) + '40',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 4,
+            pointHoverRadius: 6
+        }];
+    }
+    
+    // 既存のチャートを破棄
+    if (scoreChart) {
+        scoreChart.destroy();
+    }
+    
+    // 新しいチャートを作成
+    scoreChart = new Chart(canvas, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: filter === 'all',
+                    position: 'top',
+                    labels: { 
+                        color: '#fff',
+                        boxWidth: 12,
+                        padding: 8,
+                        font: { size: 11 }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: (ctx) => `${ctx.dataset.label}: ${ctx.raw}点`
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { color: '#aaa', font: { size: 10 } },
+                    grid: { color: 'rgba(255,255,255,0.1)' }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: '#aaa', font: { size: 10 } },
+                    grid: { color: 'rgba(255,255,255,0.1)' }
+                }
+            }
+        }
+    });
+}
+
 // 記録一覧を表示
 function renderRecords() {
     const container = document.getElementById('records-list');
@@ -1186,6 +1308,9 @@ function renderRecords() {
     
     // 統計も更新
     renderStats();
+    
+    // グラフも更新
+    updateChart();
 }
 
 // 統計表示

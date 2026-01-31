@@ -873,3 +873,43 @@ footer {
     background: rgba(255, 255, 255, 0.1);
     color: white;
 }
+
+/* グラフコンテナ */
+.chart-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.chart-title {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.chart-filter {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.chart-filter option {
+    background: #1a1a2e;
+    color: white;
+}
+
+#score-chart {
+    width: 100%;
+    height: 180px;
+}
