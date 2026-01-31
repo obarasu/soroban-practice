@@ -812,20 +812,24 @@ footer {
     margin: 0;
 }
 
-.fav-icon {
+.pdf-file-row .fav-icon {
+    position: static;
+    background: none;
     font-size: 1.5em;
     cursor: pointer;
     opacity: 0.5;
     transition: all 0.2s;
     padding: 4px;
+    flex-shrink: 0;
 }
 
-.fav-icon:hover {
+.pdf-file-row .fav-icon:hover {
     opacity: 1;
     transform: scale(1.2);
+    background: none;
 }
 
-.fav-icon.active {
+.pdf-file-row .fav-icon.active {
     opacity: 1;
     color: gold;
 }
