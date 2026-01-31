@@ -38,7 +38,6 @@
                 </div>
                 <div class="records-footer">
                     <button class="clear-history-btn" onclick="clearRecords()">記録をクリア</button>
-                    <button class="settings-btn" onclick="showGasUrlModal()">⚙️ 設定</button>
                 </div>
             </section>
 
@@ -257,11 +256,17 @@
 
         <footer>
             <p>© 2025 そろばん練習サービス</p>
-            <p class="version">v1.1.0 - お気に入り・履歴機能追加</p>
+            <p class="version">v1.2.0 - Firebase同期対応</p>
         </footer>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
     <script src="audio-gdrive-mapping.js"></script>
+    <script src="firebase-config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

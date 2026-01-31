@@ -957,88 +957,53 @@ document.addEventListener('touchend', (event) => {
 }, false);
 
 // ========================================
-// アバカスサーキット記録機能（Google Sheets連携）
+// アバカスサーキット記録機能（Firebase連携）
 // ========================================
-
-// Google Apps Script Web App URL（デプロイ後に設定）
-const GAS_URL = localStorage.getItem('soroban-gas-url') || '';
-
-// ユーザーID（ブラウザごとに固有、初回アクセス時に生成）
-const USER_ID = (() => {
-    let id = localStorage.getItem('soroban-user-id');
-    if (!id) {
-        id = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-        localStorage.setItem('soroban-user-id', id);
-    }
-    return id;
-})();
 
 // ローカルキャッシュ用
 const RECORDS_KEY = 'soroban-abacus-records';
 let abacusRecords = JSON.parse(localStorage.getItem(RECORDS_KEY) || '[]');
 
-// Google Sheetsから記録を取得
-async function loadRecordsFromSheets() {
-    if (!GAS_URL) {
-        console.log('GAS_URL not set, using localStorage only');
-        return;
-    }
-    
+// Firebaseから記録を読み込んで表示
+async function loadRecordsAndRender() {
     try {
-        const response = await fetch(`${GAS_URL}?userId=${USER_ID}`);
-        const data = await response.json();
-        
-        if (data.success && data.records) {
-            abacusRecords = data.records;
-            // ローカルキャッシュも更新
+        const records = await loadRecordsFromFirestore();
+        if (records && records.length > 0) {
+            abacusRecords = records;
             localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
-            renderRecords();
-            console.log('Loaded records from Google Sheets:', abacusRecords.length);
+            console.log('Loaded from Firebase:', records.length);
         }
     } catch (error) {
-        console.error('Failed to load from Google Sheets:', error);
-        // フォールバック: localStorageを使用
+        console.error('Firebase load error:', error);
     }
+    renderRecords();
 }
 
-// Google Sheetsに記録を保存
-async function saveRecordToSheets(record) {
-    if (!GAS_URL) {
-        console.log('GAS_URL not set, saving to localStorage only');
-        return false;
-    }
+// 同期ボタン用
+async function syncFromSheets() {
+    const btn = event.target;
+    btn.textContent = '🔄 同期中...';
+    btn.disabled = true;
     
     try {
-        const response = await fetch(GAS_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ ...record, userId: USER_ID })
-        });
-        const data = await response.json();
-        
-        if (data.success) {
-            console.log('Saved to Google Sheets:', data.id);
-            return true;
-        }
+        await loadRecordsAndRender();
+        btn.textContent = '✅ 完了';
+        setTimeout(() => {
+            btn.textContent = '🔄 同期';
+            btn.disabled = false;
+        }, 1500);
     } catch (error) {
-        console.error('Failed to save to Google Sheets:', error);
+        btn.textContent = '❌ エラー';
+        setTimeout(() => {
+            btn.textContent = '🔄 同期';
+            btn.disabled = false;
+        }, 1500);
     }
-    return false;
 }
 
-// GAS URL設定モーダル
+// 設定モーダル（Firebase版は不要だが互換性のため残す）
 function showGasUrlModal() {
-    const currentUrl = localStorage.getItem('soroban-gas-url') || '';
-    const newUrl = prompt(
-        'Google Apps ScriptのWeb App URLを入力してください:\n\n' +
-        '（設定方法はdocs/gas-setup.mdを参照）',
-        currentUrl
-    );
-    
-    if (newUrl !== null) {
-        localStorage.setItem('soroban-gas-url', newUrl);
-        location.reload();
-    }
+    alert('Firebase同期が有効です。\n設定は不要です！');
 }
 
 // タイマー関連
@@ -1162,8 +1127,10 @@ async function saveRecord() {
     }
     localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
     
-    // Google Sheetsにも保存（バックグラウンド）
-    saveRecordToSheets(record);
+    // Firebaseにも保存（バックグラウンド）
+    if (typeof saveRecordToFirestore === 'function') {
+        saveRecordToFirestore(record);
+    }
     
     closeRecordModal();
     renderRecords();
@@ -1285,8 +1252,5 @@ function syncFromSheets() {
 // 初期化時に記録を表示
 document.addEventListener('DOMContentLoaded', () => {
     renderRecords();
-    // Google Sheetsから読み込み（設定済みの場合）
-    if (GAS_URL) {
-        loadRecordsFromSheets();
-    }
+    // Firebaseが初期化されたら自動で読み込む（firebase-config.jsで処理）
 });
