@@ -344,7 +344,8 @@ function renderFileList(files, basePath) {
         }
         // 通常のPDFファイル
         else {
-            const favKey = `pdf-${f.file}`;
+            const fullPath = basePath + f.file;
+            const favKey = `pdf-${fullPath}`;
             const isFav = favorites.some(fav => fav.key === favKey);
             return `
                 <div class="pdf-file-row">
@@ -354,7 +355,7 @@ function renderFileList(files, basePath) {
                     </button>
                     <span class="fav-icon ${isFav ? 'active' : ''}" 
                           data-fav-key="${favKey}"
-                          onclick="toggleFavorite('pdf', '${f.file}', '${f.name}')">
+                          onclick="toggleFavorite('pdf', '${fullPath}', '${f.name}')">
                         ${isFav ? '⭐' : '☆'}
                     </span>
                 </div>
