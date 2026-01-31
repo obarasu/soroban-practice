@@ -67,11 +67,18 @@ const pdfPaths = {
             isFolder: true,
             basePath: '/assets/soroban/abacus-circuit/level-practice/',
             files: [
-                { name: 'かけ算桁別', file: 'kakezan-digit-practice' },
-                { name: 'わり算桁別', file: 'warizan-digit-practice' },
-                { name: '見取り暗算桁別', file: 'mitori-anzan-digit-practice' },
-                { name: '見取り算（分割練習）', file: 'mitori-split-practice' },
-                { name: '見取り算（珠算級準拠）', file: 'mitori-shuzan-level' }
+                { name: 'かけ算桁別', file: 'kakezan-digit-practice', isSubfolder: true },
+                { name: 'わり算桁別', file: 'warizan-digit-practice', isSubfolder: true },
+                { name: '見取り暗算桁別', file: 'mitori-anzan-digit-practice', isSubfolder: true },
+                { 
+                    name: '見取り算（分割練習）', 
+                    isSubfolder: true,
+                    subfolders: [
+                        { name: '縦4段', file: 'mitori-split-practice/vertical-4col', isSubfolder: true },
+                        { name: '縦3段', file: 'mitori-split-practice/vertical-3col', isSubfolder: true }
+                    ]
+                },
+                { name: '見取り算（珠算級準拠）', file: 'mitori-shuzan-level', isSubfolder: true }
             ]
         },
         color: {
@@ -262,13 +269,14 @@ function openPDF(category, type, name = '') {
 let currentPdfSelectorData = null;
 
 // PDFファイル選択モーダルを表示
-function showPdfSelector(category, type, pathData) {
+function showPdfSelector(category, type, pathData, parentPath = '') {
     // 既存のモーダルがあれば削除
     const existing = document.getElementById('pdf-selector-modal');
     if (existing) existing.remove();
     
     // データを保持
     currentPdfSelectorData = pathData;
+    currentPdfSelectorData.parentPath = parentPath;
     
     const modal = document.createElement('div');
     modal.id = 'pdf-selector-modal';
@@ -294,18 +302,388 @@ function showPdfSelector(category, type, pathData) {
             </div>
             <div class="modal-body">
                 <div class="pdf-file-list">
-                    ${pathData.files.map((f, i) => `
-                        <button class="action-btn pdf-file-btn" 
-                                onclick="openPdfFileByIndex(${i})">
-                            📄 ${f.name}
-                        </button>
-                    `).join('')}
+                    ${renderFileList(pathData.files, pathData.basePath)}
                 </div>
             </div>
         </div>
     `;
     
     document.body.appendChild(modal);
+}
+
+// ファイル一覧をレンダリング（サブフォルダ対応）
+function renderFileList(files, basePath) {
+    return files.map((f, i) => {
+        // サブフォルダ（子フォルダあり）の場合
+        if (f.subfolders) {
+            return `
+                <div class="subfolder-group">
+                    <button class="action-btn subfolder-btn" onclick="toggleSubfolder(this)">
+                        📁 ${f.name}
+                        <span class="expand-icon">▶</span>
+                    </button>
+                    <div class="subfolder-content" style="display: none;">
+                        ${f.subfolders.map((sub, j) => `
+                            <button class="action-btn pdf-file-btn subfolder-item" 
+                                    onclick="openSubfolderPdfs('${basePath}', '${sub.file}', '${sub.name}')">
+                                📂 ${sub.name}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        // サブフォルダへのリンク（PDFリストを持つフォルダ）
+        else if (f.isSubfolder) {
+            return `
+                <button class="action-btn pdf-file-btn" 
+                        onclick="openSubfolderPdfs('${basePath}', '${f.file}', '${f.name}')">
+                    📂 ${f.name}
+                </button>
+            `;
+        }
+        // 通常のPDFファイル
+        else {
+            return `
+                <button class="action-btn pdf-file-btn" 
+                        onclick="openPdfFileByIndex(${i})">
+                    📄 ${f.name}
+                </button>
+            `;
+        }
+    }).join('');
+}
+
+// サブフォルダの展開/折りたたみ
+function toggleSubfolder(btn) {
+    const content = btn.nextElementSibling;
+    const icon = btn.querySelector('.expand-icon');
+    
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.textContent = '▼';
+        btn.classList.add('expanded');
+    } else {
+        content.style.display = 'none';
+        icon.textContent = '▶';
+        btn.classList.remove('expanded');
+    }
+}
+
+// サブフォルダ内のPDFリストを取得して表示
+function openSubfolderPdfs(basePath, subPath, folderName) {
+    const fullPath = basePath + subPath + '/';
+    
+    // サブフォルダ内のPDFを動的に取得（実際はサーバーからフェッチが必要だが、今は静的に定義）
+    // 今回はフォルダをそのまま開く
+    closePdfSelector();
+    
+    // フォルダ内のPDFを表示する新しいモーダル
+    showSubfolderContents(fullPath, folderName);
+}
+
+// サブフォルダの内容を表示
+async function showSubfolderContents(folderPath, folderName) {
+    // 既存のモーダルがあれば削除
+    const existing = document.getElementById('pdf-selector-modal');
+    if (existing) existing.remove();
+    
+    const modal = document.createElement('div');
+    modal.id = 'pdf-selector-modal';
+    modal.className = 'modal';
+    
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>📂 ${folderName}</h3>
+                <button class="modal-close" onclick="closePdfSelector()">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="pdf-file-list" id="subfolder-file-list">
+                    <p>読み込み中...</p>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // フォルダ内のPDFを取得（index.htmlから取得を試みる）
+    try {
+        const response = await fetch(folderPath);
+        if (response.ok) {
+            const html = await response.text();
+            // Vercelはディレクトリリスティングしないので、ファイル名パターンで推測
+            // 実際は事前定義が必要
+        }
+    } catch (e) {
+        // フェッチ失敗時
+    }
+    
+    // 静的に定義されたファイルリストを使用
+    const fileList = getSubfolderFiles(folderPath);
+    const container = document.getElementById('subfolder-file-list');
+    
+    if (fileList.length === 0) {
+        container.innerHTML = '<p>ファイルが見つかりません</p>';
+    } else {
+        container.innerHTML = fileList.map(file => `
+            <button class="action-btn pdf-file-btn" 
+                    onclick="openDirectPdf('${folderPath}${file.file}', '${file.name}')">
+                📄 ${file.name}
+            </button>
+        `).join('');
+    }
+}
+
+// サブフォルダのファイルリストを取得（静的定義）
+function getSubfolderFiles(folderPath) {
+    // level-practiceのサブフォルダ用ファイルリスト
+    const subfolderMappings = {
+        '/assets/soroban/abacus-circuit/level-practice/kakezan-digit-practice/': [
+            { name: '1×1 均等', file: '1-1even.pdf' },
+            { name: '1×1 均等2', file: '1-1even2.pdf' },
+            { name: '1×1 均等3', file: '1-1even3.pdf' },
+            { name: '2×1 均等', file: '2-1even.pdf' },
+            { name: '2×1 均等2', file: '2-1even2.pdf' },
+            { name: '2×1 均等3', file: '2-1even3.pdf' },
+            { name: '2×2 均等', file: '2-2even.pdf' },
+            { name: '2×2 均等2', file: '2-2even2.pdf' },
+            { name: '2×2 均等3', file: '2-2even3.pdf' },
+            { name: '3×1 均等', file: '3-1even.pdf' },
+            { name: '3×1 均等2', file: '3-1even2.pdf' },
+            { name: '3×1 均等3', file: '3-1even3.pdf' },
+            { name: '3×2 均等', file: '3-2even.pdf' },
+            { name: '3×2 均等 (桁反転)', file: '3-2even-dflip.pdf' },
+            { name: '3×2 均等2', file: '3-2even2.pdf' },
+            { name: '3×2 均等3', file: '3-2even3.pdf' },
+            { name: '3×3 均等', file: '3-3even.pdf' },
+            { name: '3×3 均等 (2列)', file: '3-3even-2col.pdf' },
+            { name: '3×3 均等2', file: '3-3even2.pdf' },
+            { name: '3×3 均等2 (2列)', file: '3-3even2-2col.pdf' },
+            { name: '3×3 均等3', file: '3-3even3.pdf' },
+            { name: '3×3 均等3 (2列)', file: '3-3even3-2col.pdf' },
+            { name: '4×3 均等 (2列)', file: '4-3even-2col.pdf' },
+            { name: '4×3 均等 (2列・桁反転)', file: '4-3even-2coldflip.pdf' },
+            { name: '4×3 均等2 (2列)', file: '4-3even2-2col.pdf' },
+            { name: '4×3 均等3 (2列)', file: '4-3even3-2col.pdf' },
+            { name: '4×4 均等 (2列)', file: '4-4even-2col.pdf' },
+            { name: '4×4 均等2 (2列)', file: '4-4even2-2col.pdf' },
+            { name: '4×4 均等3 (2列)', file: '4-4even3-2col.pdf' },
+            { name: '4×4 同数字 (2列)', file: '4-4same-digit-2col.pdf' },
+            { name: '5×4 均等 (2列)', file: '5-4even-2col.pdf' },
+            { name: '5×4 均等 (2列・桁反転)', file: '5-4even-2coldflip.pdf' },
+            { name: '5×4 均等2 (2列)', file: '5-4even2-2col.pdf' },
+            { name: '5×4 均等3 (2列)', file: '5-4even3-2col.pdf' },
+            { name: '5×4 同数字 (2列)', file: '5-4same-digit-2col.pdf' },
+            { name: '5×5 均等 (2列)', file: '5-5even-2col.pdf' },
+            { name: '5×5 均等2 (2列)', file: '5-5even2-2col.pdf' },
+            { name: '5×5 均等3 (2列)', file: '5-5even3-2col.pdf' },
+            { name: '5×5 同数字 (2列)', file: '5-5same-digit-2col.pdf' },
+            { name: '6×5 均等 (2列)', file: '6-5even-2col.pdf' },
+            { name: '6×5 均等2 (2列)', file: '6-5even2-2col.pdf' },
+            { name: '6×5 均等3 (2列)', file: '6-5even3-2col.pdf' },
+            { name: '6×5 同数字 (2列)', file: '6-5same-digit-2col.pdf' },
+            { name: '6×6 均等 (2列)', file: '6-6even-2col.pdf' },
+            { name: '6×6 均等2 (2列)', file: '6-6even2-2col.pdf' },
+            { name: '6×6 均等3 (2列)', file: '6-6even3-2col.pdf' },
+            { name: '6×6 同数字 (2列)', file: '6-6same-digit-2col.pdf' },
+            { name: '7×6 均等 (2列)', file: '7-6even-2col.pdf' },
+            { name: '7×6 均等2 (2列)', file: '7-6even2-2col.pdf' },
+            { name: '7×6 均等3 (2列)', file: '7-6even3-2col.pdf' },
+            { name: '7×6 同数字 (2列)', file: '7-6same-digit-2col.pdf' }
+        ],
+        '/assets/soroban/abacus-circuit/level-practice/warizan-digit-practice/': [
+            { name: '1×1 均等', file: '1-1even.pdf' },
+            { name: '1×1 均等2', file: '1-1even2.pdf' },
+            { name: '1×1 均等3', file: '1-1even3.pdf' },
+            { name: '1×2 均等', file: '1-2even.pdf' },
+            { name: '1×2 均等2', file: '1-2even2.pdf' },
+            { name: '1×2 均等3', file: '1-2even3.pdf' },
+            { name: '1×3 均等', file: '1-3even.pdf' },
+            { name: '1×3 均等2', file: '1-3even2.pdf' },
+            { name: '1×3 均等3', file: '1-3even3.pdf' },
+            { name: '2×2 均等', file: '2-2even.pdf' },
+            { name: '2×2 均等2', file: '2-2even2.pdf' },
+            { name: '2×2 均等3', file: '2-2even3.pdf' },
+            { name: '2×3 均等', file: '2-3even.pdf' },
+            { name: '2×3 均等2', file: '2-3even2.pdf' },
+            { name: '2×3 均等3', file: '2-3even3.pdf' },
+            { name: '2×3 同数字', file: '2-3same-digit.pdf' },
+            { name: '3×2 均等', file: '3-2even.pdf' },
+            { name: '3×2 均等2', file: '3-2even2.pdf' },
+            { name: '3×2 均等3', file: '3-2even3.pdf' },
+            { name: '3×3 均等', file: '3-3even.pdf' },
+            { name: '3×3 均等 (2列)', file: '3-3even-2col.pdf' },
+            { name: '3×3 均等2', file: '3-3even2.pdf' },
+            { name: '3×3 均等2 (2列)', file: '3-3even2-2col.pdf' },
+            { name: '3×3 均等3', file: '3-3even3.pdf' },
+            { name: '3×3 均等3 (2列)', file: '3-3even3-2col.pdf' },
+            { name: '3×3 同数字', file: '3-3same-digit.pdf' },
+            { name: '3×3 同数字 (2列)', file: '3-3same-digit-2col.pdf' },
+            { name: '3×4 均等', file: '3-4even.pdf' },
+            { name: '3×4 均等 (2列)', file: '3-4even-2col.pdf' },
+            { name: '3×4 均等2', file: '3-4even2.pdf' },
+            { name: '3×4 均等2 (2列)', file: '3-4even2-2col.pdf' },
+            { name: '3×4 均等3', file: '3-4even3.pdf' },
+            { name: '3×4 均等3 (2列)', file: '3-4even3-2col.pdf' },
+            { name: '3×4 同数字', file: '3-4same-digit.pdf' },
+            { name: '3×4 同数字 (2列)', file: '3-4same-digit-2col.pdf' },
+            { name: '4×4 均等 (2列)', file: '4-4even-2col.pdf' },
+            { name: '4×4 均等2 (2列)', file: '4-4even2-2col.pdf' },
+            { name: '4×4 均等3 (2列)', file: '4-4even3-2col.pdf' },
+            { name: '4×4 同数字 (2列)', file: '4-4same-digit-2col.pdf' },
+            { name: '4×5 均等 (2列)', file: '4-5even-2col.pdf' },
+            { name: '4×5 均等2 (2列)', file: '4-5even2-2col.pdf' },
+            { name: '4×5 均等3 (2列)', file: '4-5even3-2col.pdf' },
+            { name: '4×5 同数字 (2列)', file: '4-5same-digit-2col.pdf' },
+            { name: '5×5 均等 (2列)', file: '5-5even-2col.pdf' },
+            { name: '5×5 均等2 (2列)', file: '5-5even2-2col.pdf' },
+            { name: '5×5 均等3 (2列)', file: '5-5even3-2col.pdf' },
+            { name: '5×5 同数字 (2列)', file: '5-5same-digit-2col.pdf' },
+            { name: '5×6 均等 (2列)', file: '5-6even-2col.pdf' },
+            { name: '5×6 均等2 (2列)', file: '5-6even2-2col.pdf' },
+            { name: '5×6 均等3 (2列)', file: '5-6even3-2col.pdf' },
+            { name: '5×6 同数字 (2列)', file: '5-6same-digit-2col.pdf' },
+            { name: '6×6 均等 (2列)', file: '6-6even-2col.pdf' },
+            { name: '6×6 均等2 (2列)', file: '6-6even2-2col.pdf' },
+            { name: '6×6 均等3 (2列)', file: '6-6even3-2col.pdf' },
+            { name: '6×6 同数字 (2列)', file: '6-6same-digit-2col.pdf' }
+        ],
+        '/assets/soroban/abacus-circuit/level-practice/mitori-anzan-digit-practice/': [
+            { name: '2桁5口 ミックス1', file: '2d5r-mixeven1.pdf' },
+            { name: '2桁5口 ミックス2', file: '2d5r-mixeven2.pdf' },
+            { name: '2桁5口 ミックス3', file: '2d5r-mixeven3.pdf' },
+            { name: '2桁7口 ミックス1', file: '2d7r-mixeven1.pdf' },
+            { name: '2桁7口 ミックス2', file: '2d7r-mixeven2.pdf' },
+            { name: '2桁7口 ミックス3', file: '2d7r-mixeven3.pdf' },
+            { name: '2桁10口 ミックス1', file: '2d10r-mixeven1.pdf' },
+            { name: '2桁10口 ミックス2', file: '2d10r-mixeven2.pdf' },
+            { name: '2桁10口 ミックス3', file: '2d10r-mixeven3.pdf' },
+            { name: '2桁12口 ミックス1', file: '2d12r-mixeven1.pdf' },
+            { name: '2桁12口 ミックス2', file: '2d12r-mixeven2.pdf' },
+            { name: '2桁12口 ミックス3', file: '2d12r-mixeven3.pdf' },
+            { name: '2桁15口 ミックス1', file: '2d15r-mixeven1.pdf' },
+            { name: '2桁15口 ミックス2', file: '2d15r-mixeven2.pdf' },
+            { name: '2桁15口 ミックス3', file: '2d15r-mixeven3.pdf' },
+            { name: '3桁5口 ミックス1', file: '3d5r-mixeven1.pdf' },
+            { name: '3桁5口 ミックス2', file: '3d5r-mixeven2.pdf' },
+            { name: '3桁5口 ミックス3', file: '3d5r-mixeven3.pdf' },
+            { name: '3桁7口 ミックス1', file: '3d7r-mixeven1.pdf' },
+            { name: '3桁7口 ミックス2', file: '3d7r-mixeven2.pdf' },
+            { name: '3桁7口 ミックス3', file: '3d7r-mixeven3.pdf' },
+            { name: '3桁10口 ミックス1', file: '3d10r-mixeven1.pdf' },
+            { name: '3桁10口 ミックス2', file: '3d10r-mixeven2.pdf' },
+            { name: '3桁10口 ミックス3', file: '3d10r-mixeven3.pdf' },
+            { name: '3桁15口 ミックス1', file: '3d15r-mixeven1.pdf' },
+            { name: '3桁15口 ミックス2', file: '3d15r-mixeven2.pdf' },
+            { name: '3桁15口 ミックス3', file: '3d15r-mixeven3.pdf' },
+            { name: '3桁20口 ミックス1', file: '3d20r-mixeven1.pdf' },
+            { name: '3桁20口 ミックス2', file: '3d20r-mixeven2.pdf' },
+            { name: '3桁20口 ミックス3', file: '3d20r-mixeven3.pdf' },
+            { name: '4桁5口 ミックス1', file: '4d5r-mixeven1.pdf' },
+            { name: '4桁5口 ミックス2', file: '4d5r-mixeven2.pdf' },
+            { name: '4桁5口 ミックス3', file: '4d5r-mixeven3.pdf' },
+            { name: '4桁7口 ミックス1', file: '4d7r-mixeven1.pdf' },
+            { name: '4桁7口 ミックス2', file: '4d7r-mixeven2.pdf' },
+            { name: '4桁7口 ミックス3', file: '4d7r-mixeven3.pdf' },
+            { name: '4桁10口 ミックス1', file: '4d10r-mixeven1.pdf' },
+            { name: '4桁10口 ミックス2', file: '4d10r-mixeven2.pdf' },
+            { name: '4桁10口 ミックス3', file: '4d10r-mixeven3.pdf' },
+            { name: '4桁15口 ミックス1', file: '4d15r-mixeven1.pdf' },
+            { name: '4桁15口 ミックス2', file: '4d15r-mixeven2.pdf' },
+            { name: '4桁15口 ミックス3', file: '4d15r-mixeven3.pdf' },
+            { name: '4桁20口 ミックス1', file: '4d20r-mixeven1.pdf' },
+            { name: '4桁20口 ミックス2', file: '4d20r-mixeven2.pdf' },
+            { name: '4桁20口 ミックス3', file: '4d20r-mixeven3.pdf' }
+        ],
+        '/assets/soroban/abacus-circuit/level-practice/mitori-shuzan-level/': [
+            { name: '9級 (1)', file: 'mitorizzan-9kyu1.pdf' },
+            { name: '9級 (2)', file: 'mitorizzan-9kyu2.pdf' },
+            { name: '9級 (3)', file: 'mitorizzan-9kyu3.pdf' },
+            { name: '8&7級 (1)', file: 'mitorizzan-8and7kyu1.pdf' },
+            { name: '8&7級 (2)', file: 'mitorizzan-8and7kyu2.pdf' },
+            { name: '8&7級 (3)', file: 'mitorizzan-8and7kyu3.pdf' },
+            { name: '6級 (1)', file: 'mitorizzan-6kyu1.pdf' },
+            { name: '6級 (2)', file: 'mitorizzan-6kyu2.pdf' },
+            { name: '6級 (3)', file: 'mitorizzan-6kyu3.pdf' },
+            { name: '5級 (1)', file: 'mitorizzan-5kyu1.pdf' },
+            { name: '5級 (2)', file: 'mitorizzan-5kyu2.pdf' },
+            { name: '5級 (3)', file: 'mitorizzan-5kyu3.pdf' },
+            { name: '4級 (1)', file: 'mitorizzan-4kyu1.pdf' },
+            { name: '4級 (2)', file: 'mitorizzan-4kyu2.pdf' },
+            { name: '4級 (3)', file: 'mitorizzan-4kyu3.pdf' },
+            { name: '3級 (1)', file: 'mitorizzan-3kyu1.pdf' },
+            { name: '3級 (2)', file: 'mitorizzan-3kyu2.pdf' },
+            { name: '3級 (3)', file: 'mitorizzan-3kyu3.pdf' },
+            { name: '2級 (1)', file: 'mitorizzan-2kyu1.pdf' },
+            { name: '2級 (2)', file: 'mitorizzan-2kyu2.pdf' },
+            { name: '2級 (3)', file: 'mitorizzan-2kyu3.pdf' },
+            { name: '1級 (1)', file: 'mitorizzan-1kyu1.pdf' },
+            { name: '1級 (2)', file: 'mitorizzan-1kyu2.pdf' },
+            { name: '1級 (3)', file: 'mitorizzan-1kyu3.pdf' },
+            { name: '段位3-6 (1)', file: 'mitorizzan-coli3-61.pdf' },
+            { name: '段位4-6 (1)', file: 'mitorizzan-coli4-61.pdf' },
+            { name: '段位4-7 (1)', file: 'mitorizzan-coli4-71.pdf' },
+            { name: '段位5-8 (1)', file: 'mitorizzan-coli5-81.pdf' },
+            { name: '段位6-9 (1)', file: 'mitorizzan-coli6-91.pdf' }
+        ],
+        '/assets/soroban/abacus-circuit/level-practice/mitori-split-practice/vertical-4col/': [
+            { name: '6桁10口 (1)', file: '6d10r-1.pdf' },
+            { name: '6桁10口 (2)', file: '6d10r-2.pdf' },
+            { name: '6桁10口 (3)', file: '6d10r-3.pdf' },
+            { name: '8桁10口 (1)', file: '8d10r-1.pdf' },
+            { name: '8桁10口 (2)', file: '8d10r-2.pdf' },
+            { name: '8桁10口 (3)', file: '8d10r-3.pdf' },
+            { name: '9桁10口 (1)', file: '9d10r-1.pdf' },
+            { name: '9桁10口 (2)', file: '9d10r-2.pdf' },
+            { name: '9桁10口 (3)', file: '9d10r-3.pdf' },
+            { name: '10桁10口 (1)', file: '10d10r-1.pdf' },
+            { name: '10桁10口 (2)', file: '10d10r-2.pdf' },
+            { name: '10桁10口 (3)', file: '10d10r-3.pdf' }
+        ],
+        '/assets/soroban/abacus-circuit/level-practice/mitori-split-practice/vertical-3col/': [
+            { name: '4桁10口 3段', file: '4d10r-mixed3col.pdf' },
+            { name: '4桁10口 3段 (2)', file: '4d10r-mixed3col-2.pdf' },
+            { name: '4桁10口 3段 (3)', file: '4d10r-mixed3col-3.pdf' },
+            { name: '4桁10口 3段 (4)', file: '4d10r-mixed3col-4.pdf' },
+            { name: '4桁10口 3段 (5)', file: '4d10r-mixed3col-5.pdf' },
+            { name: '4桁10口 3段 (6)', file: '4d10r-mixed3col-6.pdf' },
+            { name: '4桁10口 3段 (7)', file: '4d10r-mixed3col-7.pdf' },
+            { name: '4桁10口 3段 (8)', file: '4d10r-mixed3col-8.pdf' },
+            { name: '4桁10口 3段 (9)', file: '4d10r-mixed3col-9.pdf' },
+            { name: '5桁10口 3段', file: '5d10r-mixed3col.pdf' },
+            { name: '5桁10口 3段 (2)', file: '5d10r-mixed3col-2.pdf' },
+            { name: '5桁10口 3段 (3)', file: '5d10r-mixed3col-3.pdf' },
+            { name: '6桁10口 3段', file: '6d10r-mixed3col.pdf' },
+            { name: '6桁10口 3段 (2)', file: '6d10r-mixed3col-2.pdf' },
+            { name: '6桁10口 3段 (3)', file: '6d10r-mixed3col-3.pdf' },
+            { name: '7桁10口 3段', file: '7d10r-mixed3col.pdf' },
+            { name: '7桁10口 3段 (2)', file: '7d10r-mixed3col-2.pdf' },
+            { name: '7桁10口 3段 (3)', file: '7d10r-mixed3col-3.pdf' },
+            { name: '8桁10口 3段', file: '8d10r-mixed3col.pdf' },
+            { name: '8桁10口 3段 (2)', file: '8d10r-mixed3col-2.pdf' },
+            { name: '8桁10口 3段 (3)', file: '8d10r-mixed3col-3.pdf' },
+            { name: '9桁10口 3段', file: '9d10r-mixed3col.pdf' },
+            { name: '9桁10口 3段 (2)', file: '9d10r-mixed3col-2.pdf' },
+            { name: '9桁10口 3段 (3)', file: '9d10r-mixed3col-3.pdf' },
+            { name: '10桁10口 3段', file: '10d10r-mixed3col.pdf' },
+            { name: '10桁10口 3段 (2)', file: '10d10r-mixed3col-2.pdf' },
+            { name: '10桁10口 3段 (3)', file: '10d10r-mixed3col-3.pdf' }
+        ]
+    };
+    
+    return subfolderMappings[folderPath] || [];
+}
+
+// 直接PDFを開く
+function openDirectPdf(path, name) {
+    addToHistory('pdf', path, name);
+    const newWindow = window.open(path, '_blank');
+    if (!newWindow) {
+        alert(`PDFを開きます:\n${name}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
+    }
+    closePdfSelector();
 }
 
 // PDFファイル選択モーダルを閉じる

@@ -760,3 +760,41 @@ footer {
 .pdf-file-btn:hover {
     background: rgba(33, 150, 243, 0.4) !important;
 }
+
+/* サブフォルダ展開スタイル */
+.subfolder-group {
+    margin-bottom: 8px;
+}
+
+.subfolder-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.subfolder-btn.expanded {
+    border-radius: 8px 8px 0 0;
+}
+
+.expand-icon {
+    font-size: 0.8em;
+    transition: transform 0.2s;
+}
+
+.subfolder-content {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 0 8px 8px;
+    padding: 8px;
+    margin-top: -4px;
+}
+
+.subfolder-item {
+    margin: 4px 0;
+    margin-left: 16px;
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.subfolder-item:hover {
+    transform: translateX(4px);
+}
