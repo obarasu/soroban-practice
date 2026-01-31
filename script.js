@@ -344,11 +344,20 @@ function renderFileList(files, basePath) {
         }
         // 通常のPDFファイル
         else {
+            const favKey = `pdf-${f.file}`;
+            const isFav = favorites.some(fav => fav.key === favKey);
             return `
-                <button class="action-btn pdf-file-btn" 
-                        onclick="openPdfFileByIndex(${i})">
-                    📄 ${f.name}
-                </button>
+                <div class="pdf-file-row">
+                    <button class="action-btn pdf-file-btn" 
+                            onclick="openPdfFileByIndex(${i})">
+                        📄 ${f.name}
+                    </button>
+                    <span class="fav-icon ${isFav ? 'active' : ''}" 
+                          data-fav-key="${favKey}"
+                          onclick="toggleFavorite('pdf', '${f.file}', '${f.name}')">
+                        ${isFav ? '⭐' : '☆'}
+                    </span>
+                </div>
             `;
         }
     }).join('');
@@ -427,12 +436,24 @@ async function showSubfolderContents(folderPath, folderName) {
     if (fileList.length === 0) {
         container.innerHTML = '<p>ファイルが見つかりません</p>';
     } else {
-        container.innerHTML = fileList.map(file => `
-            <button class="action-btn pdf-file-btn" 
-                    onclick="openDirectPdf('${folderPath}${file.file}', '${file.name}')">
-                📄 ${file.name}
-            </button>
-        `).join('');
+        container.innerHTML = fileList.map(file => {
+            const fullPath = folderPath + file.file;
+            const favKey = `pdf-${fullPath}`;
+            const isFav = favorites.some(fav => fav.key === favKey);
+            return `
+                <div class="pdf-file-row">
+                    <button class="action-btn pdf-file-btn" 
+                            onclick="openDirectPdf('${fullPath}', '${file.name}')">
+                        📄 ${file.name}
+                    </button>
+                    <span class="fav-icon ${isFav ? 'active' : ''}" 
+                          data-fav-key="${favKey}"
+                          onclick="toggleFavorite('pdf', '${fullPath}', '${file.name}')">
+                        ${isFav ? '⭐' : '☆'}
+                    </span>
+                </div>
+            `;
+        }).join('');
     }
 }
 

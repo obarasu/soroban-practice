@@ -798,3 +798,34 @@ footer {
 .subfolder-item:hover {
     transform: translateX(4px);
 }
+
+/* お気に入りボタンスタイル */
+.pdf-file-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pdf-file-row .pdf-file-btn {
+    flex: 1;
+    margin: 0;
+}
+
+.fav-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.2s;
+    padding: 4px;
+}
+
+.fav-icon:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.fav-icon.active {
+    opacity: 1;
+    color: gold;
+}
