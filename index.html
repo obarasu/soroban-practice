@@ -20,9 +20,14 @@
             <!-- アバカスサーキット記録 -->
             <section class="category records-section">
                 <h2 class="category-title">📊 アバカスサーキット記録</h2>
-                <button class="action-btn record-btn" onclick="openRecordModal()">
-                    ⏱️ 新しい記録を追加
-                </button>
+                <div class="records-buttons">
+                    <button class="action-btn record-btn" onclick="openRecordModal()">
+                        ⏱️ 新しい記録を追加
+                    </button>
+                    <button class="action-btn sync-btn" onclick="syncFromSheets()">
+                        🔄 同期
+                    </button>
+                </div>
                 
                 <!-- 統計 -->
                 <div id="records-stats" class="records-stats"></div>
@@ -31,7 +36,10 @@
                 <div id="records-list" class="records-list">
                     <p class="empty-state">記録はまだありません</p>
                 </div>
-                <button class="clear-history-btn" onclick="clearRecords()">記録をクリア</button>
+                <div class="records-footer">
+                    <button class="clear-history-btn" onclick="clearRecords()">記録をクリア</button>
+                    <button class="settings-btn" onclick="showGasUrlModal()">⚙️ 設定</button>
+                </div>
             </section>
 
             <!-- お気に入り -->

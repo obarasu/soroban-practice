@@ -957,10 +957,89 @@ document.addEventListener('touchend', (event) => {
 }, false);
 
 // ========================================
-// アバカスサーキット記録機能
+// アバカスサーキット記録機能（Google Sheets連携）
 // ========================================
+
+// Google Apps Script Web App URL（デプロイ後に設定）
+const GAS_URL = localStorage.getItem('soroban-gas-url') || '';
+
+// ユーザーID（ブラウザごとに固有、初回アクセス時に生成）
+const USER_ID = (() => {
+    let id = localStorage.getItem('soroban-user-id');
+    if (!id) {
+        id = 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('soroban-user-id', id);
+    }
+    return id;
+})();
+
+// ローカルキャッシュ用
 const RECORDS_KEY = 'soroban-abacus-records';
 let abacusRecords = JSON.parse(localStorage.getItem(RECORDS_KEY) || '[]');
+
+// Google Sheetsから記録を取得
+async function loadRecordsFromSheets() {
+    if (!GAS_URL) {
+        console.log('GAS_URL not set, using localStorage only');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${GAS_URL}?userId=${USER_ID}`);
+        const data = await response.json();
+        
+        if (data.success && data.records) {
+            abacusRecords = data.records;
+            // ローカルキャッシュも更新
+            localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
+            renderRecords();
+            console.log('Loaded records from Google Sheets:', abacusRecords.length);
+        }
+    } catch (error) {
+        console.error('Failed to load from Google Sheets:', error);
+        // フォールバック: localStorageを使用
+    }
+}
+
+// Google Sheetsに記録を保存
+async function saveRecordToSheets(record) {
+    if (!GAS_URL) {
+        console.log('GAS_URL not set, saving to localStorage only');
+        return false;
+    }
+    
+    try {
+        const response = await fetch(GAS_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...record, userId: USER_ID })
+        });
+        const data = await response.json();
+        
+        if (data.success) {
+            console.log('Saved to Google Sheets:', data.id);
+            return true;
+        }
+    } catch (error) {
+        console.error('Failed to save to Google Sheets:', error);
+    }
+    return false;
+}
+
+// GAS URL設定モーダル
+function showGasUrlModal() {
+    const currentUrl = localStorage.getItem('soroban-gas-url') || '';
+    const newUrl = prompt(
+        'Google Apps ScriptのWeb App URLを入力してください:\n\n' +
+        '（設定方法はdocs/gas-setup.mdを参照）',
+        currentUrl
+    );
+    
+    if (newUrl !== null) {
+        localStorage.setItem('soroban-gas-url', newUrl);
+        location.reload();
+    }
+}
 
 // タイマー関連
 let timerInterval = null;
@@ -1054,7 +1133,7 @@ function calculateScore() {
 }
 
 // 記録を保存
-function saveRecord() {
+async function saveRecord() {
     const type = document.getElementById('record-type').value;
     const answered = parseInt(document.getElementById('record-answered').value) || 0;
     const wrong = parseInt(document.getElementById('record-wrong').value) || 0;
@@ -1076,14 +1155,15 @@ function saveRecord() {
         timeSec: timerSeconds
     };
     
+    // ローカルに保存
     abacusRecords.unshift(record);
-    
-    // 最大100件まで保持
     if (abacusRecords.length > 100) {
         abacusRecords = abacusRecords.slice(0, 100);
     }
-    
     localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
+    
+    // Google Sheetsにも保存（バックグラウンド）
+    saveRecordToSheets(record);
     
     closeRecordModal();
     renderRecords();
@@ -1183,16 +1263,30 @@ function renderStats() {
     `;
 }
 
-// 記録をクリア
+// 記録をクリア（ローカルのみ、Sheetsは残る）
 function clearRecords() {
-    if (confirm('すべての記録を削除しますか？')) {
+    if (confirm('ローカルの記録を削除しますか？\n（Google Sheetsのデータは残ります）')) {
         abacusRecords = [];
         localStorage.setItem(RECORDS_KEY, JSON.stringify(abacusRecords));
         renderRecords();
     }
 }
 
+// Google Sheets同期ボタン
+function syncFromSheets() {
+    if (!GAS_URL) {
+        showGasUrlModal();
+        return;
+    }
+    loadRecordsFromSheets();
+    alert('Google Sheetsから同期しました');
+}
+
 // 初期化時に記録を表示
 document.addEventListener('DOMContentLoaded', () => {
     renderRecords();
+    // Google Sheetsから読み込み（設定済みの場合）
+    if (GAS_URL) {
+        loadRecordsFromSheets();
+    }
 });

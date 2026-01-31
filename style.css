@@ -833,3 +833,43 @@ footer {
     opacity: 1;
     color: gold;
 }
+
+/* 記録セクションのボタン配置 */
+.records-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.records-buttons .record-btn {
+    flex: 1;
+}
+
+.records-buttons .sync-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 12px 16px;
+    min-width: auto;
+}
+
+.records-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.settings-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.settings-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
