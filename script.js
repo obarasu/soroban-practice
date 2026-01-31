@@ -798,11 +798,27 @@ function closePlayer() {
 }
 
 // ========================================
-// お気に入り機能
+// お気に入り機能（Firebase対応）
 // ========================================
 let favorites = JSON.parse(localStorage.getItem('soroban-favorites') || '[]');
 
-function toggleFavorite(category, type, name) {
+// Firestoreからお気に入りを読み込み
+async function loadFavoritesAndRender() {
+    if (typeof loadFavoritesFromFirestore === 'function') {
+        const loaded = await loadFavoritesFromFirestore();
+        if (loaded && loaded.length > 0) {
+            favorites = loaded;
+            localStorage.setItem('soroban-favorites', JSON.stringify(favorites));
+        }
+    }
+    renderFavorites();
+    // お気に入りアイコンの状態を更新
+    favorites.forEach(fav => {
+        updateFavoriteButton(fav.key, true);
+    });
+}
+
+async function toggleFavorite(category, type, name) {
     const key = `${category}-${type}`;
     const index = favorites.findIndex(f => f.key === key);
     
@@ -810,10 +826,19 @@ function toggleFavorite(category, type, name) {
         // 削除
         favorites.splice(index, 1);
         updateFavoriteButton(key, false);
+        // Firestoreからも削除
+        if (typeof removeFavoriteFromFirestore === 'function') {
+            removeFavoriteFromFirestore(key);
+        }
     } else {
         // 追加
-        favorites.push({ key, category, type, name, timestamp: Date.now() });
+        const newFav = { key, category, type, name, timestamp: Date.now() };
+        favorites.push(newFav);
         updateFavoriteButton(key, true);
+        // Firestoreにも保存
+        if (typeof addFavoriteToFirestore === 'function') {
+            addFavoriteToFirestore(newFav);
+        }
     }
     
     localStorage.setItem('soroban-favorites', JSON.stringify(favorites));
@@ -858,18 +883,31 @@ function openFromFavorite(category, type) {
 }
 
 // ========================================
-// 履歴機能
+// 履歴機能（Firebase対応）
 // ========================================
 let history = JSON.parse(localStorage.getItem('soroban-history') || '[]');
 
-function addToHistory(category, type, name) {
+// Firestoreから履歴を読み込み
+async function loadHistoryAndRender() {
+    if (typeof loadHistoryFromFirestore === 'function') {
+        const loaded = await loadHistoryFromFirestore();
+        if (loaded && loaded.length > 0) {
+            history = loaded;
+            localStorage.setItem('soroban-history', JSON.stringify(history));
+        }
+    }
+    renderHistory();
+}
+
+async function addToHistory(category, type, name) {
     const key = `${category}-${type}`;
     
     // 重複を削除
     history = history.filter(h => h.key !== key);
     
     // 先頭に追加
-    history.unshift({ key, category, type, name, timestamp: Date.now() });
+    const newItem = { key, category, type, name, timestamp: Date.now() };
+    history.unshift(newItem);
     
     // 最大10件まで保持
     if (history.length > 10) {
@@ -878,6 +916,11 @@ function addToHistory(category, type, name) {
     
     localStorage.setItem('soroban-history', JSON.stringify(history));
     renderHistory();
+    
+    // Firestoreにも保存
+    if (typeof addHistoryToFirestore === 'function') {
+        addHistoryToFirestore(newItem);
+    }
 }
 
 function renderHistory() {
