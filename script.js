@@ -848,6 +848,9 @@ function openFromFavorite(category, type) {
     if (category === 'audio') {
         const [duration, number] = type.split('-');
         playAudio(duration, number);
+    } else if (category === 'pdf') {
+        // 直接PDFパスを開く（お気に入りから）
+        window.open(type, '_blank');
     } else {
         openPDF(category, type);
     }
