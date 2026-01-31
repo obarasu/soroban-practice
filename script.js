@@ -241,17 +241,12 @@ function openPDF(category, type, name = '') {
     // 単一ファイルの場合
     const path = typeof pathData === 'string' ? pathData : pathData.file;
     
-    // パスをエンコード（各セグメントを個別にエンコード）
-    const encodedPath = path.split('/').map(segment => 
-        segment ? encodeURIComponent(segment) : ''
-    ).join('/');
-    
     // 履歴に追加
     if (!name) name = `${category} - ${type}`;
     addToHistory(category, type, name);
     
-    // Open PDF in new tab
-    const newWindow = window.open(encodedPath, '_blank');
+    // Open PDF in new tab（Vercelでは日本語URLをそのまま使用）
+    const newWindow = window.open(path, '_blank');
     
     if (!newWindow) {
         alert(`PDFを開きます:\n${path}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
@@ -330,12 +325,8 @@ function openPdfFileByIndex(index) {
     const fileInfo = currentPdfSelectorData.files[index];
     const basePath = currentPdfSelectorData.basePath;
     
-    // パス全体を正しくエンコード（各セグメントを個別にエンコード）
-    const encodedBasePath = basePath.split('/').map(segment => 
-        segment ? encodeURIComponent(segment) : ''
-    ).join('/');
-    const encodedFileName = encodeURIComponent(fileInfo.file);
-    const fullPath = encodedBasePath + encodedFileName;
+    // Vercelでは日本語URLをエンコードせずにそのまま使用
+    const fullPath = basePath + fileInfo.file;
     
     // 履歴に追加
     addToHistory('pdf', fileInfo.file, fileInfo.name);
