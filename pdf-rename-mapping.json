@@ -1,0 +1,1807 @@
+{
+  "soroban/○△のともだち１～３.pdf": {
+    "old": "○△のともだち１～３.pdf",
+    "new": "maru-sankakuのともだち1-3.pdf",
+    "title": "○△のともだち１～３"
+  },
+  "soroban/Ｆ２.pdf": {
+    "old": "Ｆ２.pdf",
+    "new": "F2.pdf",
+    "title": "Ｆ２"
+  },
+  "soroban/見取算特訓問題1-100.pdf": {
+    "old": "見取算特訓問題1-100.pdf",
+    "new": "見取算training1-100.pdf",
+    "title": "見取算特訓問題1-100"
+  },
+  "sorocon-practice/そろコン練習問題.pdf": {
+    "old": "そろコン練習問題.pdf",
+    "new": "そろコンpracticeproblems.pdf",
+    "title": "そろコン練習問題"
+  },
+  "sorocon-practice/塾別対抗問題/【模擬】そろばんコンクール川崎大会 塾別対抗 練習問題.pdf": {
+    "old": "【模擬】そろばんコンクール川崎大会 塾別対抗 練習問題.pdf",
+    "new": "模擬-soroban-contest川崎大会-塾別対抗-practiceproblems.pdf",
+    "title": "【模擬】そろばんコンクール川崎大会 塾別対抗 練習問題"
+  },
+  "sorocon-practice/そろコン過去問/そろコン過去問2021-2018.pdf": {
+    "old": "そろコン過去問2021-2018.pdf",
+    "new": "そろコン過去問2021-2018.pdf",
+    "title": "そろコン過去問2021-2018"
+  },
+  "sorocon-practice/そろコン過去問/そろコン2024本番問題.pdf": {
+    "old": "そろコン2024本番問題.pdf",
+    "new": "そろコン2024本番problems.pdf",
+    "title": "そろコン2024本番問題"
+  },
+  "sorocon-practice/そろコン過去問/そろコン過去問2017-2015.pdf": {
+    "old": "そろコン過去問2017-2015.pdf",
+    "new": "そろコン過去問2017-2015.pdf",
+    "title": "そろコン過去問2017-2015"
+  },
+  "sorocon-practice/そろコン過去問/そろコン決勝解答2017-2015.pdf": {
+    "old": "そろコン決勝解答2017-2015.pdf",
+    "new": "そろコン決勝answers2017-2015.pdf",
+    "title": "そろコン決勝解答2017-2015"
+  },
+  "sorocon-practice/そろコン過去問/そろコン2022-2023本番問題.pdf": {
+    "old": "そろコン2022-2023本番問題.pdf",
+    "new": "そろコン2022-2023本番problems.pdf",
+    "title": "そろコン2022-2023本番問題"
+  },
+  "sorocon-practice/そろコン過去問/そろコン決勝問題2017-2015.pdf": {
+    "old": "そろコン決勝問題2017-2015.pdf",
+    "new": "そろコン決勝problems2017-2015.pdf",
+    "title": "そろコン決勝問題2017-2015"
+  },
+  "soroban/anzan-contest/past/あんコン決勝過去問解答2014-2017.pdf": {
+    "old": "あんコン決勝過去問解答2014-2017.pdf",
+    "new": "あんコン決勝過去問answers2014-2017.pdf",
+    "title": "あんコン決勝過去問解答2014-2017"
+  },
+  "soroban/anzan-contest/past/全国あんざんコンクール2022本番問題.pdf": {
+    "old": "全国あんざんコンクール2022本番問題.pdf",
+    "new": "全国anzanコンクール2022本番problems.pdf",
+    "title": "全国あんざんコンクール2022本番問題"
+  },
+  "soroban/anzan-contest/past/全国あんざんコンクール2023本番問題.pdf": {
+    "old": "全国あんざんコンクール2023本番問題.pdf",
+    "new": "全国anzanコンクール2023本番problems.pdf",
+    "title": "全国あんざんコンクール2023本番問題"
+  },
+  "soroban/anzan-contest/past/2023あんざんコンクール本番決勝問題.pdf": {
+    "old": "2023あんざんコンクール本番決勝問題.pdf",
+    "new": "2023anzanコンクール本番決勝problems.pdf",
+    "title": "2023あんざんコンクール本番決勝問題"
+  },
+  "soroban/anzan-contest/past/過去問2016-2021（解答あり）.pdf": {
+    "old": "過去問2016-2021（解答あり）.pdf",
+    "new": "過去問2016-2021-answersあり.pdf",
+    "title": "過去問2016-2021（解答あり）"
+  },
+  "soroban/anzan-contest/past/あんコン決勝過去問2014-2017.pdf": {
+    "old": "あんコン決勝過去問2014-2017.pdf",
+    "new": "あんコン決勝過去問2014-2017.pdf",
+    "title": "あんコン決勝過去問2014-2017"
+  },
+  "soroban/anzan-contest/past/全国あんざんコンクール2024本番問題.pdf": {
+    "old": "全国あんざんコンクール2024本番問題.pdf",
+    "new": "全国anzanコンクール2024本番problems.pdf",
+    "title": "全国あんざんコンクール2024本番問題"
+  },
+  "soroban/anzan-contest/prints/全国あんざんコンクール第2集.pdf": {
+    "old": "全国あんざんコンクール第2集.pdf",
+    "new": "全国anzanコンクール2vol.pdf",
+    "title": "全国あんざんコンクール第2集"
+  },
+  "soroban/anzan-contest/prints/あんコン種目別解答用紙.pdf": {
+    "old": "あんコン種目別解答用紙.pdf",
+    "new": "あんコン種目別answers用紙.pdf",
+    "title": "あんコン種目別解答用紙"
+  },
+  "soroban/anzan-contest/prints/全国あんざんコンクール（佐藤出版）.pdf": {
+    "old": "全国あんざんコンクール（佐藤出版）.pdf",
+    "new": "全国anzanコンクール-佐藤出.pdf",
+    "title": "全国あんざんコンクール（佐藤出版）"
+  },
+  "soroban/anzan-contest/prints/川崎一決定戦.pdf": {
+    "old": "川崎一決定戦.pdf",
+    "new": "川崎一決定戦.pdf",
+    "title": "川崎一決定戦"
+  },
+  "soroban/anzan-contest/prints/あんコンハーフ2024.pdf": {
+    "old": "あんコンハーフ2024.pdf",
+    "new": "あんコンハーフ2024.pdf",
+    "title": "あんコンハーフ2024"
+  },
+  "soroban/anzan-contest/prints/全国あんざんコンクール第1集.pdf": {
+    "old": "全国あんざんコンクール第1集.pdf",
+    "new": "全国anzanコンクール1vol.pdf",
+    "title": "全国あんざんコンクール第1集"
+  },
+  "soroban/anzan-contest/prints/読上算検定解答用紙.pdf": {
+    "old": "読上算検定解答用紙.pdf",
+    "new": "読上算testanswers用紙.pdf",
+    "title": "読上算検定解答用紙"
+  },
+  "soroban/anzan-contest/prints/【種目別競技2024年版】全国あんざんコンクール川崎大会種目別競技程度について2024.pdf": {
+    "old": "【種目別競技2024年版】全国あんざんコンクール川崎大会種目別競技程度について2024.pdf",
+    "new": "種目別競技2024年-全国anzanコンクール川崎大会種目別競技程度について2024.pdf",
+    "title": "【種目別競技2024年版】全国あんざんコンクール川崎大会種目別競技程度について2024"
+  },
+  "soroban/anzan-contest/prints/得点一覧表.pdf": {
+    "old": "得点一覧表.pdf",
+    "new": "得点一覧表.pdf",
+    "title": "得点一覧表"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 3×4桁.pdf": {
+    "old": "新トモロスの麓 3×4桁.pdf",
+    "new": "新tomorosの麓-3×4d.pdf",
+    "title": "新トモロスの麓 3×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 6×5桁.pdf": {
+    "old": "新トモロス 6×5桁.pdf",
+    "new": "新tomoros-6×5d.pdf",
+    "title": "新トモロス 6×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 4×4桁.pdf": {
+    "old": "新トモロス 4×4桁.pdf",
+    "new": "新tomoros-4×4d.pdf",
+    "title": "新トモロス 4×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 4×5桁.pdf": {
+    "old": "新トモロス 4×5桁.pdf",
+    "new": "新tomoros-4×5d.pdf",
+    "title": "新トモロス 4×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 6×6桁.pdf": {
+    "old": "新トモロスの麓 6×6桁.pdf",
+    "new": "新tomorosの麓-6×6d.pdf",
+    "title": "新トモロスの麓 6×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 5×6桁.pdf": {
+    "old": "新トモロス 5×6桁.pdf",
+    "new": "新tomoros-5×6d.pdf",
+    "title": "新トモロス 5×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 5×4桁.pdf": {
+    "old": "新トモロスの麓 5×4桁.pdf",
+    "new": "新tomorosの麓-5×4d.pdf",
+    "title": "新トモロスの麓 5×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 5×5桁.pdf": {
+    "old": "新トモロスの麓 5×5桁.pdf",
+    "new": "新tomorosの麓-5×5d.pdf",
+    "title": "新トモロスの麓 5×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 3×3桁.pdf": {
+    "old": "新トモロスの麓 3×3桁.pdf",
+    "new": "新tomorosの麓-3×3d.pdf",
+    "title": "新トモロスの麓 3×3桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 4×3桁.pdf": {
+    "old": "新トモロス 4×3桁.pdf",
+    "new": "新tomoros-4×3d.pdf",
+    "title": "新トモロス 4×3桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 7×6桁.pdf": {
+    "old": "新トモロス 7×6桁.pdf",
+    "new": "新tomoros-7×6d.pdf",
+    "title": "新トモロス 7×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 5×4桁.pdf": {
+    "old": "新トモロス 5×4桁.pdf",
+    "new": "新tomoros-5×4d.pdf",
+    "title": "新トモロス 5×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 5×6桁.pdf": {
+    "old": "新トモロスの麓 5×6桁.pdf",
+    "new": "新tomorosの麓-5×6d.pdf",
+    "title": "新トモロスの麓 5×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/かけ暗算トモロス4-4.pdf": {
+    "old": "かけ暗算トモロス4-4.pdf",
+    "new": "かけanzantomoros4-4.pdf",
+    "title": "かけ暗算トモロス4-4"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 7×6桁.pdf": {
+    "old": "新トモロスの麓 7×6桁.pdf",
+    "new": "新tomorosの麓-7×6d.pdf",
+    "title": "新トモロスの麓 7×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 4×3桁.pdf": {
+    "old": "新トモロスの麓 4×3桁.pdf",
+    "new": "新tomorosの麓-4×3d.pdf",
+    "title": "新トモロスの麓 4×3桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 3×3桁.pdf": {
+    "old": "新トモロス 3×3桁.pdf",
+    "new": "新tomoros-3×3d.pdf",
+    "title": "新トモロス 3×3桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 5×5桁.pdf": {
+    "old": "新トモロス 5×5桁.pdf",
+    "new": "新tomoros-5×5d.pdf",
+    "title": "新トモロス 5×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 4×4桁.pdf": {
+    "old": "新トモロスの麓 4×4桁.pdf",
+    "new": "新tomorosの麓-4×4d.pdf",
+    "title": "新トモロスの麓 4×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 6×5桁.pdf": {
+    "old": "新トモロスの麓 6×5桁.pdf",
+    "new": "新tomorosの麓-6×5d.pdf",
+    "title": "新トモロスの麓 6×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 3×4桁.pdf": {
+    "old": "新トモロス 3×4桁.pdf",
+    "new": "新tomoros-3×4d.pdf",
+    "title": "新トモロス 3×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロス 6×6桁.pdf": {
+    "old": "新トモロス 6×6桁.pdf",
+    "new": "新tomoros-6×6d.pdf",
+    "title": "新トモロス 6×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/新トモロスの麓 4×5桁.pdf": {
+    "old": "新トモロスの麓 4×5桁.pdf",
+    "new": "新tomorosの麓-4×5d.pdf",
+    "title": "新トモロスの麓 4×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/かけ暗算トモロス3-3.pdf": {
+    "old": "かけ暗算トモロス3-3.pdf",
+    "new": "かけanzantomoros3-3.pdf",
+    "title": "かけ暗算トモロス3-3"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（トモロス）左→右/かけ暗算トモロス5-5.pdf": {
+    "old": "かけ暗算トモロス5-5.pdf",
+    "new": "かけanzantomoros5-5.pdf",
+    "title": "かけ暗算トモロス5-5"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷3桁＝2桁あまり.pdf": {
+    "old": "÷3桁＝2桁あまり.pdf",
+    "new": "÷3d＝2dあまり.pdf",
+    "title": "÷3桁＝2桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷1桁＝1桁あまり.pdf": {
+    "old": "÷1桁＝1桁あまり.pdf",
+    "new": "÷1d＝1dあまり.pdf",
+    "title": "÷1桁＝1桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷4桁＝1桁あまり.pdf": {
+    "old": "÷4桁＝1桁あまり.pdf",
+    "new": "÷4d＝1dあまり.pdf",
+    "title": "÷4桁＝1桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷3桁＝1桁あまり.pdf": {
+    "old": "÷3桁＝1桁あまり.pdf",
+    "new": "÷3d＝1dあまり.pdf",
+    "title": "÷3桁＝1桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷4桁＝2桁あまり.pdf": {
+    "old": "÷4桁＝2桁あまり.pdf",
+    "new": "÷4d＝2dあまり.pdf",
+    "title": "÷4桁＝2桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷5桁＝1桁あまり.pdf": {
+    "old": "÷5桁＝1桁あまり.pdf",
+    "new": "÷5d＝1dあまり.pdf",
+    "title": "÷5桁＝1桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷2桁＝2桁あまり.pdf": {
+    "old": "÷2桁＝2桁あまり.pdf",
+    "new": "÷2d＝2dあまり.pdf",
+    "title": "÷2桁＝2桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷5桁＝2桁あまり.pdf": {
+    "old": "÷5桁＝2桁あまり.pdf",
+    "new": "÷5d＝2dあまり.pdf",
+    "title": "÷5桁＝2桁あまり"
+  },
+  "soroban/abacus-circuit/あまりのわり/÷2桁＝1桁あまり.pdf": {
+    "old": "÷2桁＝1桁あまり.pdf",
+    "new": "÷2d＝1dあまり.pdf",
+    "title": "÷2桁＝1桁あまり"
+  },
+  "soroban/abacus-circuit/f2/F2-ザ春合宿2022版.pdf": {
+    "old": "F2-ザ春合宿2022版.pdf",
+    "new": "F2-spring-camp2022.pdf",
+    "title": "F2-ザ春合宿2022版"
+  },
+  "soroban/abacus-circuit/f2/F2-ピコ版-第2集問題24回分.pdf": {
+    "old": "F2-ピコ版-第2集問題24回分.pdf",
+    "new": "F2-ピコ-2problems24分.pdf",
+    "title": "F2-ピコ版-第2集問題24回分"
+  },
+  "soroban/abacus-circuit/f2/Catly版F2本番形式001-060.pdf": {
+    "old": "Catly版F2本番形式001-060.pdf",
+    "new": "CatlyF2full001-060.pdf",
+    "title": "Catly版F2本番形式001-060"
+  },
+  "soroban/abacus-circuit/f2/F2-ピコ版-第2集解答.pdf": {
+    "old": "F2-ピコ版-第2集解答.pdf",
+    "new": "F2-pico-2volanswers.pdf",
+    "title": "F2-ピコ版-第2集解答"
+  },
+  "soroban/abacus-circuit/答え探し/答え探し（÷4桁あまりあり）.pdf": {
+    "old": "答え探し（÷4桁あまりあり）.pdf",
+    "new": "answer-search-÷4dあまりあり.pdf",
+    "title": "答え探し（÷4桁あまりあり）"
+  },
+  "soroban/abacus-circuit/答え探し/答え探し（÷3桁あまりあり）.pdf": {
+    "old": "答え探し（÷3桁あまりあり）.pdf",
+    "new": "answer-search-÷3dあまりあり.pdf",
+    "title": "答え探し（÷3桁あまりあり）"
+  },
+  "soroban/abacus-circuit/答え探し/答え探し（÷2桁あまりあり）.pdf": {
+    "old": "答え探し（÷2桁あまりあり）.pdf",
+    "new": "answer-search-÷2dあまりあり.pdf",
+    "title": "答え探し（÷2桁あまりあり）"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 4×5桁.pdf": {
+    "old": "逆トモロスの麓 4×5桁.pdf",
+    "new": "reverse-tomorosの麓-4×5d.pdf",
+    "title": "逆トモロスの麓 4×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 5×6桁.pdf": {
+    "old": "逆トモロス 5×6桁.pdf",
+    "new": "reverse-tomoros-5×6d.pdf",
+    "title": "逆トモロス 5×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 6×5桁.pdf": {
+    "old": "逆トモロスの麓 6×5桁.pdf",
+    "new": "reverse-tomorosの麓-6×5d.pdf",
+    "title": "逆トモロスの麓 6×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 4×4桁.pdf": {
+    "old": "逆トモロスの麓 4×4桁.pdf",
+    "new": "reverse-tomorosの麓-4×4d.pdf",
+    "title": "逆トモロスの麓 4×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 4×4桁.pdf": {
+    "old": "逆トモロス 4×4桁.pdf",
+    "new": "reverse-tomoros-4×4d.pdf",
+    "title": "逆トモロス 4×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 6×5桁.pdf": {
+    "old": "逆トモロス 6×5桁.pdf",
+    "new": "reverse-tomoros-6×5d.pdf",
+    "title": "逆トモロス 6×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 5×6桁.pdf": {
+    "old": "逆トモロスの麓 5×6桁.pdf",
+    "new": "reverse-tomorosの麓-5×6d.pdf",
+    "title": "逆トモロスの麓 5×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 4×5桁.pdf": {
+    "old": "逆トモロス 4×5桁.pdf",
+    "new": "reverse-tomoros-4×5d.pdf",
+    "title": "逆トモロス 4×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 6×7桁.pdf": {
+    "old": "逆トモロス 6×7桁.pdf",
+    "new": "reverse-tomoros-6×7d.pdf",
+    "title": "逆トモロス 6×7桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 3×4桁.pdf": {
+    "old": "逆トモロス 3×4桁.pdf",
+    "new": "reverse-tomoros-3×4d.pdf",
+    "title": "逆トモロス 3×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 3×3桁.pdf": {
+    "old": "逆トモロスの麓 3×3桁.pdf",
+    "new": "reverse-tomorosの麓-3×3d.pdf",
+    "title": "逆トモロスの麓 3×3桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 5×5桁.pdf": {
+    "old": "逆トモロスの麓 5×5桁.pdf",
+    "new": "reverse-tomorosの麓-5×5d.pdf",
+    "title": "逆トモロスの麓 5×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 5×4桁.pdf": {
+    "old": "逆トモロスの麓 5×4桁.pdf",
+    "new": "reverse-tomorosの麓-5×4d.pdf",
+    "title": "逆トモロスの麓 5×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 6×6桁.pdf": {
+    "old": "逆トモロス 6×6桁.pdf",
+    "new": "reverse-tomoros-6×6d.pdf",
+    "title": "逆トモロス 6×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 6×6桁.pdf": {
+    "old": "逆トモロスの麓 6×6桁.pdf",
+    "new": "reverse-tomorosの麓-6×6d.pdf",
+    "title": "逆トモロスの麓 6×6桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 5×4桁.pdf": {
+    "old": "逆トモロス 5×4桁.pdf",
+    "new": "reverse-tomoros-5×4d.pdf",
+    "title": "逆トモロス 5×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 5×5桁.pdf": {
+    "old": "逆トモロス 5×5桁.pdf",
+    "new": "reverse-tomoros-5×5d.pdf",
+    "title": "逆トモロス 5×5桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロス 3×3桁.pdf": {
+    "old": "逆トモロス 3×3桁.pdf",
+    "new": "reverse-tomoros-3×3d.pdf",
+    "title": "逆トモロス 3×3桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 3×4桁.pdf": {
+    "old": "逆トモロスの麓 3×4桁.pdf",
+    "new": "reverse-tomorosの麓-3×4d.pdf",
+    "title": "逆トモロスの麓 3×4桁"
+  },
+  "soroban/abacus-circuit/かけ算6桁以上導入（逆トモロス）右←左/逆トモロスの麓 6×7桁.pdf": {
+    "old": "逆トモロスの麓 6×7桁.pdf",
+    "new": "reverse-tomorosの麓-6×7d.pdf",
+    "title": "逆トモロスの麓 6×7桁"
+  },
+  "soroban/abacus-circuit/color-contest/④赤カラコン001-060.pdf": {
+    "old": "④赤カラコン001-060.pdf",
+    "new": "④redcolorcon001-060.pdf",
+    "title": "④赤カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.1-F2-001-020.pdf": {
+    "old": "カラコン-Lv.1-F2-001-020.pdf",
+    "new": "colorcon-Lv.1-F2-001-020.pdf",
+    "title": "カラコン-Lv.1-F2-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.11-狂-001-020.pdf": {
+    "old": "カラコン-Lv.11-狂-001-020.pdf",
+    "new": "colorcon-Lv.11-insane-001-020.pdf",
+    "title": "カラコン-Lv.11-狂-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/⑦金カラコン001-060.pdf": {
+    "old": "⑦金カラコン001-060.pdf",
+    "new": "⑦goldcolorcon001-060.pdf",
+    "title": "⑦金カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/③緑カラコン001-060.pdf": {
+    "old": "③緑カラコン001-060.pdf",
+    "new": "③greencolorcon001-060.pdf",
+    "title": "③緑カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/⑤青カラコン001-060.pdf": {
+    "old": "⑤青カラコン001-060.pdf",
+    "new": "⑤bluecolorcon001-060.pdf",
+    "title": "⑤青カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.8-難-001-020.pdf": {
+    "old": "カラコン-Lv.8-難-001-020.pdf",
+    "new": "colorcon-Lv.8-hard-001-020.pdf",
+    "title": "カラコン-Lv.8-難-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.12-神-001-020.pdf": {
+    "old": "カラコン-Lv.12-神-001-020.pdf",
+    "new": "colorcon-Lv.12-god-001-020.pdf",
+    "title": "カラコン-Lv.12-神-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.5-青-001-020.pdf": {
+    "old": "カラコン-Lv.5-青-001-020.pdf",
+    "new": "colorcon-Lv.5-blue-001-020.pdf",
+    "title": "カラコン-Lv.5-青-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/⑥黒カラコン001-060.pdf": {
+    "old": "⑥黒カラコン001-060.pdf",
+    "new": "⑥blackcolorcon001-060.pdf",
+    "title": "⑥黒カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.3-緑-001-020.pdf": {
+    "old": "カラコン-Lv.3-緑-001-020.pdf",
+    "new": "colorcon-Lv.3-green-001-020.pdf",
+    "title": "カラコン-Lv.3-緑-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.7-金-001-020.pdf": {
+    "old": "カラコン-Lv.7-金-001-020.pdf",
+    "new": "colorcon-Lv.7-gold-001-020.pdf",
+    "title": "カラコン-Lv.7-金-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.9-激-001-020.pdf": {
+    "old": "カラコン-Lv.9-激-001-020.pdf",
+    "new": "colorcon-Lv.9-extreme-001-020.pdf",
+    "title": "カラコン-Lv.9-激-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/⑧難カラコン001-060.pdf": {
+    "old": "⑧難カラコン001-060.pdf",
+    "new": "⑧hardcolorcon001-060.pdf",
+    "title": "⑧難カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/①F2カラコン001-060.pdf": {
+    "old": "①F2カラコン001-060.pdf",
+    "new": "①F2colorcon001-060.pdf",
+    "title": "①F2カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/②黄カラコン001-060.pdf": {
+    "old": "②黄カラコン001-060.pdf",
+    "new": "②yellowcolorcon001-060.pdf",
+    "title": "②黄カラコン001-060"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.6-黒-001-020.pdf": {
+    "old": "カラコン-Lv.6-黒-001-020.pdf",
+    "new": "colorcon-Lv.6-black-001-020.pdf",
+    "title": "カラコン-Lv.6-黒-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.4-赤-001-020.pdf": {
+    "old": "カラコン-Lv.4-赤-001-020.pdf",
+    "new": "colorcon-Lv.4-red-001-020.pdf",
+    "title": "カラコン-Lv.4-赤-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.2-黄-001-020.pdf": {
+    "old": "カラコン-Lv.2-黄-001-020.pdf",
+    "new": "colorcon-Lv.2-yellow-001-020.pdf",
+    "title": "カラコン-Lv.2-黄-001-020"
+  },
+  "soroban/abacus-circuit/color-contest/カラコン-Lv.10-変-001-020.pdf": {
+    "old": "カラコン-Lv.10-変-001-020.pdf",
+    "new": "colorcon-Lv.10-special-001-020.pdf",
+    "title": "カラコン-Lv.10-変-001-020"
+  },
+  "soroban/abacus-circuit/わり算6桁以上の導入（ウルル）/わり暗算ウルル4-4.pdf": {
+    "old": "わり暗算ウルル4-4.pdf",
+    "new": "わりanzanuluru4-4.pdf",
+    "title": "わり暗算ウルル4-4"
+  },
+  "soroban/abacus-circuit/わり算6桁以上の導入（ウルル）/わり暗算ウルル3-3.pdf": {
+    "old": "わり暗算ウルル3-3.pdf",
+    "new": "わりanzanuluru3-3.pdf",
+    "title": "わり暗算ウルル3-3"
+  },
+  "soroban/abacus-circuit/わり算6桁以上の導入（ウルル）/わり暗算ウルル5-5.pdf": {
+    "old": "わり暗算ウルル5-5.pdf",
+    "new": "わりanzanuluru5-5.pdf",
+    "title": "わり暗算ウルル5-5"
+  },
+  "soroban/abacus-circuit/f0/F0-ピコ版-第1回-第24回-解答付.pdf": {
+    "old": "F0-ピコ版-第1回-第24回-解答付.pdf",
+    "new": "F0-ピコ-1-24-with-answers.pdf",
+    "title": "F0-ピコ版-第1回-第24回-解答付"
+  },
+  "soroban/abacus-circuit/f0/F0-ザ春合宿2022版.pdf": {
+    "old": "F0-ザ春合宿2022版.pdf",
+    "new": "F0-ザ春合宿2022.pdf",
+    "title": "F0-ザ春合宿2022版"
+  },
+  "soroban/abacus-circuit/f0/F0-ピコ版-第25回-第48回-解答付.pdf": {
+    "old": "F0-ピコ版-第25回-第48回-解答付.pdf",
+    "new": "F0-ピコ-25-48-with-answers.pdf",
+    "title": "F0-ピコ版-第25回-第48回-解答付"
+  },
+  "soroban/abacus-circuit/f0/Catly版-F0本番形式001-072.pdf": {
+    "old": "Catly版-F0本番形式001-072.pdf",
+    "new": "Catly-F0full001-072.pdf",
+    "title": "Catly版-F0本番形式001-072"
+  },
+  "soroban/abacus-circuit/f0/Ｆ０ミニ001-010.pdf": {
+    "old": "Ｆ０ミニ001-010.pdf",
+    "new": "F0mini001-010.pdf",
+    "title": "Ｆ０ミニ001-010"
+  },
+  "soroban/abacus-circuit/f0/Catly版F0ミニ-Ａ４サイズ-001-030.pdf": {
+    "old": "Catly版F0ミニ-Ａ４サイズ-001-030.pdf",
+    "new": "CatlyF0mini-A4サイズ-001-030.pdf",
+    "title": "Catly版F0ミニ-Ａ４サイズ-001-030"
+  },
+  "soroban/abacus-circuit/past-exams/PDF286-解答付.pdf": {
+    "old": "PDF286-解答付.pdf",
+    "new": "PDF286-with-answers.pdf",
+    "title": "PDF286-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/287-解答付.pdf": {
+    "old": "287-解答付.pdf",
+    "new": "287-with-answers.pdf",
+    "title": "287-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/285-解答付.pdf": {
+    "old": "285-解答付.pdf",
+    "new": "285-with-answers.pdf",
+    "title": "285-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/284-解答付.pdf": {
+    "old": "284-解答付.pdf",
+    "new": "284-with-answers.pdf",
+    "title": "284-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/288-解答付.pdf": {
+    "old": "288-解答付.pdf",
+    "new": "288-with-answers.pdf",
+    "title": "288-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/289-解答付.pdf": {
+    "old": "289-解答付.pdf",
+    "new": "289-with-answers.pdf",
+    "title": "289-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/290-解答付.pdf": {
+    "old": "290-解答付.pdf",
+    "new": "290-with-answers.pdf",
+    "title": "290-解答付"
+  },
+  "soroban/abacus-circuit/past-exams/283-解答付.pdf": {
+    "old": "283-解答付.pdf",
+    "new": "283-with-answers.pdf",
+    "title": "283-解答付"
+  },
+  "soroban/abacus-circuit/f1/Catly版F1本番形式001-072.pdf": {
+    "old": "Catly版F1本番形式001-072.pdf",
+    "new": "CatlyF1full001-072.pdf",
+    "title": "Catly版F1本番形式001-072"
+  },
+  "soroban/abacus-circuit/f1/Ｆ１ミニ001-040.pdf": {
+    "old": "Ｆ１ミニ001-040.pdf",
+    "new": "F1mini001-040.pdf",
+    "title": "Ｆ１ミニ001-040"
+  },
+  "soroban/abacus-circuit/f1/F1-ザ春合宿2022版.pdf": {
+    "old": "F1-ザ春合宿2022版.pdf",
+    "new": "F1-ザ春合宿2022.pdf",
+    "title": "F1-ザ春合宿2022版"
+  },
+  "soroban/abacus-circuit/f1/F1-ピコ版-第73回-第80回-解答付.pdf": {
+    "old": "F1-ピコ版-第73回-第80回-解答付.pdf",
+    "new": "F1-ピコ-73-80-with-answers.pdf",
+    "title": "F1-ピコ版-第73回-第80回-解答付"
+  },
+  "soroban/abacus-circuit/f1/F1-ピコ版-第1回-第24回-解答付.pdf": {
+    "old": "F1-ピコ版-第1回-第24回-解答付.pdf",
+    "new": "F1-ピコ-1-24-with-answers.pdf",
+    "title": "F1-ピコ版-第1回-第24回-解答付"
+  },
+  "soroban/abacus-circuit/f1/F1-ピコ版-第49回-第72回-解答付.pdf": {
+    "old": "F1-ピコ版-第49回-第72回-解答付.pdf",
+    "new": "F1-ピコ-49-72-with-answers.pdf",
+    "title": "F1-ピコ版-第49回-第72回-解答付"
+  },
+  "soroban/abacus-circuit/f1/Catly版F1ミニ-Ａ４サイズ-001-040.pdf": {
+    "old": "Catly版F1ミニ-Ａ４サイズ-001-040.pdf",
+    "new": "CatlyF1mini-A4サイズ-001-040.pdf",
+    "title": "Catly版F1ミニ-Ａ４サイズ-001-040"
+  },
+  "soroban/abacus-circuit/f1/F1-ピコ版-第25回-第48回-解答付.pdf": {
+    "old": "F1-ピコ版-第25回-第48回-解答付.pdf",
+    "new": "F1-ピコ-25-48-with-answers.pdf",
+    "title": "F1-ピコ版-第25回-第48回-解答付"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-6均等3（2列）.pdf": {
+    "old": "6-6均等3（2列）.pdf",
+    "new": "6-6均等3-2列.pdf",
+    "title": "6-6均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-3均等（2列）.pdf": {
+    "old": "4-3均等（2列）.pdf",
+    "new": "4-3均等-2列.pdf",
+    "title": "4-3均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-5均等2（2列）.pdf": {
+    "old": "5-5均等2（2列）.pdf",
+    "new": "5-5均等2-2列.pdf",
+    "title": "5-5均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-2均等.pdf": {
+    "old": "3-2均等.pdf",
+    "new": "3-2均等.pdf",
+    "title": "3-2均等"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/7-6均等2（2列）.pdf": {
+    "old": "7-6均等2（2列）.pdf",
+    "new": "7-6均等2-2列.pdf",
+    "title": "7-6均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/2-2均等.pdf": {
+    "old": "2-2均等.pdf",
+    "new": "2-2均等.pdf",
+    "title": "2-2均等"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-5均等3（2列）.pdf": {
+    "old": "5-5均等3（2列）.pdf",
+    "new": "5-5均等3-2列.pdf",
+    "title": "5-5均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/7-6均等3（2列）.pdf": {
+    "old": "7-6均等3（2列）.pdf",
+    "new": "7-6均等3-2列.pdf",
+    "title": "7-6均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-6均等（2列）.pdf": {
+    "old": "6-6均等（2列）.pdf",
+    "new": "6-6均等-2列.pdf",
+    "title": "6-6均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-6均等2（2列）.pdf": {
+    "old": "6-6均等2（2列）.pdf",
+    "new": "6-6均等2-2列.pdf",
+    "title": "6-6均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/1-1均等.pdf": {
+    "old": "1-1均等.pdf",
+    "new": "1-1均等.pdf",
+    "title": "1-1均等"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-3均等.pdf": {
+    "old": "3-3均等.pdf",
+    "new": "3-3均等.pdf",
+    "title": "3-3均等"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-6同数字（2列）.pdf": {
+    "old": "6-6同数字（2列）.pdf",
+    "new": "6-6同数字-2列.pdf",
+    "title": "6-6同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/2-1均等2.pdf": {
+    "old": "2-1均等2.pdf",
+    "new": "2-1均等2.pdf",
+    "title": "2-1均等2"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-1均等2.pdf": {
+    "old": "3-1均等2.pdf",
+    "new": "3-1均等2.pdf",
+    "title": "3-1均等2"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-1均等.pdf": {
+    "old": "3-1均等.pdf",
+    "new": "3-1均等.pdf",
+    "title": "3-1均等"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-1均等3.pdf": {
+    "old": "3-1均等3.pdf",
+    "new": "3-1均等3.pdf",
+    "title": "3-1均等3"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/2-1均等3.pdf": {
+    "old": "2-1均等3.pdf",
+    "new": "2-1均等3.pdf",
+    "title": "2-1均等3"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/7-6同数字（2列）.pdf": {
+    "old": "7-6同数字（2列）.pdf",
+    "new": "7-6同数字-2列.pdf",
+    "title": "7-6同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-3均等2.pdf": {
+    "old": "3-3均等2.pdf",
+    "new": "3-3均等2.pdf",
+    "title": "3-3均等2"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-3均等3.pdf": {
+    "old": "3-3均等3.pdf",
+    "new": "3-3均等3.pdf",
+    "title": "3-3均等3"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-5同数字（2列）.pdf": {
+    "old": "5-5同数字（2列）.pdf",
+    "new": "5-5同数字-2列.pdf",
+    "title": "5-5同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/2-1均等.pdf": {
+    "old": "2-1均等.pdf",
+    "new": "2-1均等.pdf",
+    "title": "2-1均等"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-4均等（2列）.pdf": {
+    "old": "4-4均等（2列）.pdf",
+    "new": "4-4均等-2列.pdf",
+    "title": "4-4均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-5均等（2列）.pdf": {
+    "old": "5-5均等（2列）.pdf",
+    "new": "5-5均等-2列.pdf",
+    "title": "5-5均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-4均等3（2列）.pdf": {
+    "old": "5-4均等3（2列）.pdf",
+    "new": "5-4均等3-2列.pdf",
+    "title": "5-4均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/7-6均等（2列）.pdf": {
+    "old": "7-6均等（2列）.pdf",
+    "new": "7-6均等-2列.pdf",
+    "title": "7-6均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-4均等2（2列）.pdf": {
+    "old": "4-4均等2（2列）.pdf",
+    "new": "4-4均等2-2列.pdf",
+    "title": "4-4均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-5同数字（2列）.pdf": {
+    "old": "6-5同数字（2列）.pdf",
+    "new": "6-5同数字-2列.pdf",
+    "title": "6-5同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-4均等3（2列）.pdf": {
+    "old": "4-4均等3（2列）.pdf",
+    "new": "4-4均等3-2列.pdf",
+    "title": "4-4均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-4均等2（2列）.pdf": {
+    "old": "5-4均等2（2列）.pdf",
+    "new": "5-4均等2-2列.pdf",
+    "title": "5-4均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-2均等（桁反転）.pdf": {
+    "old": "3-2均等（桁反転）.pdf",
+    "new": "3-2均等-d反転.pdf",
+    "title": "3-2均等（桁反転）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-4均等（2列）.pdf": {
+    "old": "5-4均等（2列）.pdf",
+    "new": "5-4均等-2列.pdf",
+    "title": "5-4均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-4均等（2列）桁反転.pdf": {
+    "old": "5-4均等（2列）桁反転.pdf",
+    "new": "5-4均等-2列d反転.pdf",
+    "title": "5-4均等（2列）桁反転"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/5-4同数字（2列）.pdf": {
+    "old": "5-4同数字（2列）.pdf",
+    "new": "5-4同数字-2列.pdf",
+    "title": "5-4同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-3均等3（2列）.pdf": {
+    "old": "4-3均等3（2列）.pdf",
+    "new": "4-3均等3-2列.pdf",
+    "title": "4-3均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-3均等3（2列）.pdf": {
+    "old": "3-3均等3（2列）.pdf",
+    "new": "3-3均等3-2列.pdf",
+    "title": "3-3均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-5均等2（2列）.pdf": {
+    "old": "6-5均等2（2列）.pdf",
+    "new": "6-5均等2-2列.pdf",
+    "title": "6-5均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-3均等2（2列）.pdf": {
+    "old": "3-3均等2（2列）.pdf",
+    "new": "3-3均等2-2列.pdf",
+    "title": "3-3均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-3均等（2列）.pdf": {
+    "old": "3-3均等（2列）.pdf",
+    "new": "3-3均等-2列.pdf",
+    "title": "3-3均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/1-1均等2.pdf": {
+    "old": "1-1均等2.pdf",
+    "new": "1-1均等2.pdf",
+    "title": "1-1均等2"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-3均等2（2列）.pdf": {
+    "old": "4-3均等2（2列）.pdf",
+    "new": "4-3均等2-2列.pdf",
+    "title": "4-3均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-4同数字（2列）.pdf": {
+    "old": "4-4同数字（2列）.pdf",
+    "new": "4-4同数字-2列.pdf",
+    "title": "4-4同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/1-1均等3.pdf": {
+    "old": "1-1均等3.pdf",
+    "new": "1-1均等3.pdf",
+    "title": "1-1均等3"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-5均等3（2列）.pdf": {
+    "old": "6-5均等3（2列）.pdf",
+    "new": "6-5均等3-2列.pdf",
+    "title": "6-5均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/4-3均等（2列）桁反転.pdf": {
+    "old": "4-3均等（2列）桁反転.pdf",
+    "new": "4-3均等-2列d反転.pdf",
+    "title": "4-3均等（2列）桁反転"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/2-2均等3.pdf": {
+    "old": "2-2均等3.pdf",
+    "new": "2-2均等3.pdf",
+    "title": "2-2均等3"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-2均等3.pdf": {
+    "old": "3-2均等3.pdf",
+    "new": "3-2均等3.pdf",
+    "title": "3-2均等3"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/6-5均等（2列）.pdf": {
+    "old": "6-5均等（2列）.pdf",
+    "new": "6-5均等-2列.pdf",
+    "title": "6-5均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/3-2均等2.pdf": {
+    "old": "3-2均等2.pdf",
+    "new": "3-2均等2.pdf",
+    "title": "3-2均等2"
+  },
+  "soroban/abacus-circuit/level-practice/かけ算桁別プリント/2-2均等2.pdf": {
+    "old": "2-2均等2.pdf",
+    "new": "2-2均等2.pdf",
+    "title": "2-2均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/6-6均等3（2列）.pdf": {
+    "old": "6-6均等3（2列）.pdf",
+    "new": "6-6均等3-2列.pdf",
+    "title": "6-6均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-5均等3（2列）.pdf": {
+    "old": "4-5均等3（2列）.pdf",
+    "new": "4-5均等3-2列.pdf",
+    "title": "4-5均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-5均等2（2列）.pdf": {
+    "old": "5-5均等2（2列）.pdf",
+    "new": "5-5均等2-2列.pdf",
+    "title": "5-5均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-2均等.pdf": {
+    "old": "3-2均等.pdf",
+    "new": "3-2均等.pdf",
+    "title": "3-2均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-3均等.pdf": {
+    "old": "1-3均等.pdf",
+    "new": "1-3均等.pdf",
+    "title": "1-3均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-2均等.pdf": {
+    "old": "2-2均等.pdf",
+    "new": "2-2均等.pdf",
+    "title": "2-2均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-5均等3（2列）.pdf": {
+    "old": "5-5均等3（2列）.pdf",
+    "new": "5-5均等3-2列.pdf",
+    "title": "5-5均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/6-6均等（2列）.pdf": {
+    "old": "6-6均等（2列）.pdf",
+    "new": "6-6均等-2列.pdf",
+    "title": "6-6均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/6-6均等2（2列）.pdf": {
+    "old": "6-6均等2（2列）.pdf",
+    "new": "6-6均等2-2列.pdf",
+    "title": "6-6均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4均等.pdf": {
+    "old": "3-4均等.pdf",
+    "new": "3-4均等.pdf",
+    "title": "3-4均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-5均等2（2列）.pdf": {
+    "old": "4-5均等2（2列）.pdf",
+    "new": "4-5均等2-2列.pdf",
+    "title": "4-5均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-5均等（2列）.pdf": {
+    "old": "4-5均等（2列）.pdf",
+    "new": "4-5均等-2列.pdf",
+    "title": "4-5均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-1均等.pdf": {
+    "old": "1-1均等.pdf",
+    "new": "1-1均等.pdf",
+    "title": "1-1均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-5同数字（2列）.pdf": {
+    "old": "4-5同数字（2列）.pdf",
+    "new": "4-5同数字-2列.pdf",
+    "title": "4-5同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-2均等3.pdf": {
+    "old": "1-2均等3.pdf",
+    "new": "1-2均等3.pdf",
+    "title": "1-2均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3均等.pdf": {
+    "old": "3-3均等.pdf",
+    "new": "3-3均等.pdf",
+    "title": "3-3均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/6-6同数字（2列）.pdf": {
+    "old": "6-6同数字（2列）.pdf",
+    "new": "6-6同数字-2列.pdf",
+    "title": "6-6同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-2均等2.pdf": {
+    "old": "1-2均等2.pdf",
+    "new": "1-2均等2.pdf",
+    "title": "1-2均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-6均等（2列）.pdf": {
+    "old": "5-6均等（2列）.pdf",
+    "new": "5-6均等-2列.pdf",
+    "title": "5-6均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3同数字.pdf": {
+    "old": "3-3同数字.pdf",
+    "new": "3-3同数字.pdf",
+    "title": "3-3同数字"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-3同数字.pdf": {
+    "old": "2-3同数字.pdf",
+    "new": "2-3同数字.pdf",
+    "title": "2-3同数字"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-3均等2.pdf": {
+    "old": "2-3均等2.pdf",
+    "new": "2-3均等2.pdf",
+    "title": "2-3均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3均等2.pdf": {
+    "old": "3-3均等2.pdf",
+    "new": "3-3均等2.pdf",
+    "title": "3-3均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3均等3.pdf": {
+    "old": "3-3均等3.pdf",
+    "new": "3-3均等3.pdf",
+    "title": "3-3均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-3均等3.pdf": {
+    "old": "2-3均等3.pdf",
+    "new": "2-3均等3.pdf",
+    "title": "2-3均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-5同数字（2列）.pdf": {
+    "old": "5-5同数字（2列）.pdf",
+    "new": "5-5同数字-2列.pdf",
+    "title": "5-5同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-2均等.pdf": {
+    "old": "1-2均等.pdf",
+    "new": "1-2均等.pdf",
+    "title": "1-2均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-3均等.pdf": {
+    "old": "2-3均等.pdf",
+    "new": "2-3均等.pdf",
+    "title": "2-3均等"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-4均等（2列）.pdf": {
+    "old": "4-4均等（2列）.pdf",
+    "new": "4-4均等-2列.pdf",
+    "title": "4-4均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-5均等（2列）.pdf": {
+    "old": "5-5均等（2列）.pdf",
+    "new": "5-5均等-2列.pdf",
+    "title": "5-5均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-6同数字（2列）.pdf": {
+    "old": "5-6同数字（2列）.pdf",
+    "new": "5-6同数字-2列.pdf",
+    "title": "5-6同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4均等（2列）.pdf": {
+    "old": "3-4均等（2列）.pdf",
+    "new": "3-4均等-2列.pdf",
+    "title": "3-4均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4同数字.pdf": {
+    "old": "3-4同数字.pdf",
+    "new": "3-4同数字.pdf",
+    "title": "3-4同数字"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3同数字（2列）.pdf": {
+    "old": "3-3同数字（2列）.pdf",
+    "new": "3-3同数字-2列.pdf",
+    "title": "3-3同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4均等2（2列）.pdf": {
+    "old": "3-4均等2（2列）.pdf",
+    "new": "3-4均等2-2列.pdf",
+    "title": "3-4均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-4均等2（2列）.pdf": {
+    "old": "4-4均等2（2列）.pdf",
+    "new": "4-4均等2-2列.pdf",
+    "title": "4-4均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4均等2.pdf": {
+    "old": "3-4均等2.pdf",
+    "new": "3-4均等2.pdf",
+    "title": "3-4均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4均等3.pdf": {
+    "old": "3-4均等3.pdf",
+    "new": "3-4均等3.pdf",
+    "title": "3-4均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-4均等3（2列）.pdf": {
+    "old": "4-4均等3（2列）.pdf",
+    "new": "4-4均等3-2列.pdf",
+    "title": "4-4均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4均等3（2列）.pdf": {
+    "old": "3-4均等3（2列）.pdf",
+    "new": "3-4均等3-2列.pdf",
+    "title": "3-4均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-6均等3（2列）.pdf": {
+    "old": "5-6均等3（2列）.pdf",
+    "new": "5-6均等3-2列.pdf",
+    "title": "5-6均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3均等3（2列）.pdf": {
+    "old": "3-3均等3（2列）.pdf",
+    "new": "3-3均等3-2列.pdf",
+    "title": "3-3均等3（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-3均等2.pdf": {
+    "old": "1-3均等2.pdf",
+    "new": "1-3均等2.pdf",
+    "title": "1-3均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-3均等3.pdf": {
+    "old": "1-3均等3.pdf",
+    "new": "1-3均等3.pdf",
+    "title": "1-3均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3均等2（2列）.pdf": {
+    "old": "3-3均等2（2列）.pdf",
+    "new": "3-3均等2-2列.pdf",
+    "title": "3-3均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-3均等（2列）.pdf": {
+    "old": "3-3均等（2列）.pdf",
+    "new": "3-3均等-2列.pdf",
+    "title": "3-3均等（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-1均等2.pdf": {
+    "old": "1-1均等2.pdf",
+    "new": "1-1均等2.pdf",
+    "title": "1-1均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/4-4同数字（2列）.pdf": {
+    "old": "4-4同数字（2列）.pdf",
+    "new": "4-4同数字-2列.pdf",
+    "title": "4-4同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-4同数字（2列）.pdf": {
+    "old": "3-4同数字（2列）.pdf",
+    "new": "3-4同数字-2列.pdf",
+    "title": "3-4同数字（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/1-1均等3.pdf": {
+    "old": "1-1均等3.pdf",
+    "new": "1-1均等3.pdf",
+    "title": "1-1均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-2均等3.pdf": {
+    "old": "2-2均等3.pdf",
+    "new": "2-2均等3.pdf",
+    "title": "2-2均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-2均等3.pdf": {
+    "old": "3-2均等3.pdf",
+    "new": "3-2均等3.pdf",
+    "title": "3-2均等3"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/3-2均等2.pdf": {
+    "old": "3-2均等2.pdf",
+    "new": "3-2均等2.pdf",
+    "title": "3-2均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/2-2均等2.pdf": {
+    "old": "2-2均等2.pdf",
+    "new": "2-2均等2.pdf",
+    "title": "2-2均等2"
+  },
+  "soroban/abacus-circuit/level-practice/わり算桁別プリント/5-6均等2（2列）.pdf": {
+    "old": "5-6均等2（2列）.pdf",
+    "new": "5-6均等2-2列.pdf",
+    "title": "5-6均等2（2列）"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（段位4-6）1.pdf": {
+    "old": "見取り算（段位4-6）1.pdf",
+    "new": "mitorizzan-col位4-61.pdf",
+    "title": "見取り算（段位4-6）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（8＆7級）3.pdf": {
+    "old": "見取り算（8＆7級）3.pdf",
+    "new": "mitorizzan-8＆7kyu3.pdf",
+    "title": "見取り算（8＆7級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（2級）1.pdf": {
+    "old": "見取り算（2級）1.pdf",
+    "new": "mitorizzan-2kyu1.pdf",
+    "title": "見取り算（2級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（8＆7級）2.pdf": {
+    "old": "見取り算（8＆7級）2.pdf",
+    "new": "mitorizzan-8＆7kyu2.pdf",
+    "title": "見取り算（8＆7級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（2級）2.pdf": {
+    "old": "見取り算（2級）2.pdf",
+    "new": "mitorizzan-2kyu2.pdf",
+    "title": "見取り算（2級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（2級）3.pdf": {
+    "old": "見取り算（2級）3.pdf",
+    "new": "mitorizzan-2kyu3.pdf",
+    "title": "見取り算（2級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（8＆7級）1.pdf": {
+    "old": "見取り算（8＆7級）1.pdf",
+    "new": "mitorizzan-8＆7kyu1.pdf",
+    "title": "見取り算（8＆7級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（段位4-7）1.pdf": {
+    "old": "見取り算（段位4-7）1.pdf",
+    "new": "mitorizzan-col位4-71.pdf",
+    "title": "見取り算（段位4-7）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（6級）1.pdf": {
+    "old": "見取り算（6級）1.pdf",
+    "new": "mitorizzan-6kyu1.pdf",
+    "title": "見取り算（6級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（6級）3.pdf": {
+    "old": "見取り算（6級）3.pdf",
+    "new": "mitorizzan-6kyu3.pdf",
+    "title": "見取り算（6級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（6級）2.pdf": {
+    "old": "見取り算（6級）2.pdf",
+    "new": "mitorizzan-6kyu2.pdf",
+    "title": "見取り算（6級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（4級）3.pdf": {
+    "old": "見取り算（4級）3.pdf",
+    "new": "mitorizzan-4kyu3.pdf",
+    "title": "見取り算（4級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（4級）2.pdf": {
+    "old": "見取り算（4級）2.pdf",
+    "new": "mitorizzan-4kyu2.pdf",
+    "title": "見取り算（4級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（4級）1.pdf": {
+    "old": "見取り算（4級）1.pdf",
+    "new": "mitorizzan-4kyu1.pdf",
+    "title": "見取り算（4級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（段位3-6）1.pdf": {
+    "old": "見取り算（段位3-6）1.pdf",
+    "new": "mitorizzan-col位3-61.pdf",
+    "title": "見取り算（段位3-6）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（1級）1.pdf": {
+    "old": "見取り算（1級）1.pdf",
+    "new": "mitorizzan-1kyu1.pdf",
+    "title": "見取り算（1級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（1級）3.pdf": {
+    "old": "見取り算（1級）3.pdf",
+    "new": "mitorizzan-1kyu3.pdf",
+    "title": "見取り算（1級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（1級）2.pdf": {
+    "old": "見取り算（1級）2.pdf",
+    "new": "mitorizzan-1kyu2.pdf",
+    "title": "見取り算（1級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（3級）3.pdf": {
+    "old": "見取り算（3級）3.pdf",
+    "new": "mitorizzan-3kyu3.pdf",
+    "title": "見取り算（3級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（3級）2.pdf": {
+    "old": "見取り算（3級）2.pdf",
+    "new": "mitorizzan-3kyu2.pdf",
+    "title": "見取り算（3級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（3級）1.pdf": {
+    "old": "見取り算（3級）1.pdf",
+    "new": "mitorizzan-3kyu1.pdf",
+    "title": "見取り算（3級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（段位6-9）1.pdf": {
+    "old": "見取り算（段位6-9）1.pdf",
+    "new": "mitorizzan-col位6-91.pdf",
+    "title": "見取り算（段位6-9）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（段位5-8）1.pdf": {
+    "old": "見取り算（段位5-8）1.pdf",
+    "new": "mitorizzan-col位5-81.pdf",
+    "title": "見取り算（段位5-8）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（5級）1.pdf": {
+    "old": "見取り算（5級）1.pdf",
+    "new": "mitorizzan-5kyu1.pdf",
+    "title": "見取り算（5級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（9級）1.pdf": {
+    "old": "見取り算（9級）1.pdf",
+    "new": "mitorizzan-9kyu1.pdf",
+    "title": "見取り算（9級）1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（5級）2.pdf": {
+    "old": "見取り算（5級）2.pdf",
+    "new": "mitorizzan-5kyu2.pdf",
+    "title": "見取り算（5級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（9級）2.pdf": {
+    "old": "見取り算（9級）2.pdf",
+    "new": "mitorizzan-9kyu2.pdf",
+    "title": "見取り算（9級）2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（9級）3.pdf": {
+    "old": "見取り算（9級）3.pdf",
+    "new": "mitorizzan-9kyu3.pdf",
+    "title": "見取り算（9級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（珠算級準拠）/見取り算（5級）3.pdf": {
+    "old": "見取り算（5級）3.pdf",
+    "new": "mitorizzan-5kyu3.pdf",
+    "title": "見取り算（5級）3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁10口（ミックス）均等3.pdf": {
+    "old": "2桁10口（ミックス）均等3.pdf",
+    "new": "2d10r-ミックス均等3.pdf",
+    "title": "2桁10口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁7口（ミックス）均等2.pdf": {
+    "old": "2桁7口（ミックス）均等2.pdf",
+    "new": "2d7r-ミックス均等2.pdf",
+    "title": "2桁7口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁20口（ミックス）均等3.pdf": {
+    "old": "3桁20口（ミックス）均等3.pdf",
+    "new": "3d20r-ミックス均等3.pdf",
+    "title": "3桁20口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁20口（ミックス）均等2.pdf": {
+    "old": "3桁20口（ミックス）均等2.pdf",
+    "new": "3d20r-ミックス均等2.pdf",
+    "title": "3桁20口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁7口（ミックス）均等3.pdf": {
+    "old": "2桁7口（ミックス）均等3.pdf",
+    "new": "2d7r-ミックス均等3.pdf",
+    "title": "2桁7口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁10口（ミックス）均等2.pdf": {
+    "old": "2桁10口（ミックス）均等2.pdf",
+    "new": "2d10r-ミックス均等2.pdf",
+    "title": "2桁10口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁7口（ミックス）均等1.pdf": {
+    "old": "2桁7口（ミックス）均等1.pdf",
+    "new": "2d7r-ミックス均等1.pdf",
+    "title": "2桁7口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁20口（ミックス）均等1.pdf": {
+    "old": "3桁20口（ミックス）均等1.pdf",
+    "new": "3d20r-ミックス均等1.pdf",
+    "title": "3桁20口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁10口（ミックス）均等1.pdf": {
+    "old": "2桁10口（ミックス）均等1.pdf",
+    "new": "2d10r-ミックス均等1.pdf",
+    "title": "2桁10口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁10口（ミックス）均等2.pdf": {
+    "old": "3桁10口（ミックス）均等2.pdf",
+    "new": "3d10r-ミックス均等2.pdf",
+    "title": "3桁10口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁15口（ミックス）均等3.pdf": {
+    "old": "4桁15口（ミックス）均等3.pdf",
+    "new": "4d15r-ミックス均等3.pdf",
+    "title": "4桁15口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁7口（ミックス）均等1.pdf": {
+    "old": "4桁7口（ミックス）均等1.pdf",
+    "new": "4d7r-ミックス均等1.pdf",
+    "title": "4桁7口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁15口（ミックス）均等2.pdf": {
+    "old": "4桁15口（ミックス）均等2.pdf",
+    "new": "4d15r-ミックス均等2.pdf",
+    "title": "4桁15口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁10口（ミックス）均等3.pdf": {
+    "old": "3桁10口（ミックス）均等3.pdf",
+    "new": "3d10r-ミックス均等3.pdf",
+    "title": "3桁10口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁10口（ミックス）均等1.pdf": {
+    "old": "3桁10口（ミックス）均等1.pdf",
+    "new": "3d10r-ミックス均等1.pdf",
+    "title": "3桁10口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁7口（ミックス）均等3.pdf": {
+    "old": "4桁7口（ミックス）均等3.pdf",
+    "new": "4d7r-ミックス均等3.pdf",
+    "title": "4桁7口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁7口（ミックス）均等2.pdf": {
+    "old": "4桁7口（ミックス）均等2.pdf",
+    "new": "4d7r-ミックス均等2.pdf",
+    "title": "4桁7口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁15口（ミックス）均等1.pdf": {
+    "old": "4桁15口（ミックス）均等1.pdf",
+    "new": "4d15r-ミックス均等1.pdf",
+    "title": "4桁15口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁7口（ミックス）均等2.pdf": {
+    "old": "3桁7口（ミックス）均等2.pdf",
+    "new": "3d7r-ミックス均等2.pdf",
+    "title": "3桁7口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁7口（ミックス）均等3.pdf": {
+    "old": "3桁7口（ミックス）均等3.pdf",
+    "new": "3d7r-ミックス均等3.pdf",
+    "title": "3桁7口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁7口（ミックス）均等1.pdf": {
+    "old": "3桁7口（ミックス）均等1.pdf",
+    "new": "3d7r-ミックス均等1.pdf",
+    "title": "3桁7口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁5口（ミックス）均等2.pdf": {
+    "old": "4桁5口（ミックス）均等2.pdf",
+    "new": "4d5r-ミックス均等2.pdf",
+    "title": "4桁5口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁5口（ミックス）均等3.pdf": {
+    "old": "4桁5口（ミックス）均等3.pdf",
+    "new": "4d5r-ミックス均等3.pdf",
+    "title": "4桁5口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁5口（ミックス）均等1.pdf": {
+    "old": "4桁5口（ミックス）均等1.pdf",
+    "new": "4d5r-ミックス均等1.pdf",
+    "title": "4桁5口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁15口（ミックス）均等2.pdf": {
+    "old": "3桁15口（ミックス）均等2.pdf",
+    "new": "3d15r-ミックス均等2.pdf",
+    "title": "3桁15口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁10口（ミックス）均等3.pdf": {
+    "old": "4桁10口（ミックス）均等3.pdf",
+    "new": "4d10r-ミックス均等3.pdf",
+    "title": "4桁10口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁10口（ミックス）均等2.pdf": {
+    "old": "4桁10口（ミックス）均等2.pdf",
+    "new": "4d10r-ミックス均等2.pdf",
+    "title": "4桁10口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁15口（ミックス）均等3.pdf": {
+    "old": "3桁15口（ミックス）均等3.pdf",
+    "new": "3d15r-ミックス均等3.pdf",
+    "title": "3桁15口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁5口（ミックス）均等1.pdf": {
+    "old": "3桁5口（ミックス）均等1.pdf",
+    "new": "3d5r-ミックス均等1.pdf",
+    "title": "3桁5口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁5口（ミックス）均等3.pdf": {
+    "old": "3桁5口（ミックス）均等3.pdf",
+    "new": "3d5r-ミックス均等3.pdf",
+    "title": "3桁5口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁15口（ミックス）均等1.pdf": {
+    "old": "3桁15口（ミックス）均等1.pdf",
+    "new": "3d15r-ミックス均等1.pdf",
+    "title": "3桁15口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁10口（ミックス）均等1.pdf": {
+    "old": "4桁10口（ミックス）均等1.pdf",
+    "new": "4d10r-ミックス均等1.pdf",
+    "title": "4桁10口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/3桁5口（ミックス）均等2.pdf": {
+    "old": "3桁5口（ミックス）均等2.pdf",
+    "new": "3d5r-ミックス均等2.pdf",
+    "title": "3桁5口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁12口（ミックス）均等1.pdf": {
+    "old": "2桁12口（ミックス）均等1.pdf",
+    "new": "2d12r-ミックス均等1.pdf",
+    "title": "2桁12口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁5口（ミックス）均等1.pdf": {
+    "old": "2桁5口（ミックス）均等1.pdf",
+    "new": "2d5r-ミックス均等1.pdf",
+    "title": "2桁5口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁5口（ミックス）均等3.pdf": {
+    "old": "2桁5口（ミックス）均等3.pdf",
+    "new": "2d5r-ミックス均等3.pdf",
+    "title": "2桁5口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁12口（ミックス）均等2.pdf": {
+    "old": "2桁12口（ミックス）均等2.pdf",
+    "new": "2d12r-ミックス均等2.pdf",
+    "title": "2桁12口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁12口（ミックス）均等3.pdf": {
+    "old": "2桁12口（ミックス）均等3.pdf",
+    "new": "2d12r-ミックス均等3.pdf",
+    "title": "2桁12口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁5口（ミックス）均等2.pdf": {
+    "old": "2桁5口（ミックス）均等2.pdf",
+    "new": "2d5r-ミックス均等2.pdf",
+    "title": "2桁5口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁20口（ミックス）均等2.pdf": {
+    "old": "4桁20口（ミックス）均等2.pdf",
+    "new": "4d20r-ミックス均等2.pdf",
+    "title": "4桁20口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁15口（ミックス）均等3.pdf": {
+    "old": "2桁15口（ミックス）均等3.pdf",
+    "new": "2d15r-ミックス均等3.pdf",
+    "title": "2桁15口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁15口（ミックス）均等2.pdf": {
+    "old": "2桁15口（ミックス）均等2.pdf",
+    "new": "2d15r-ミックス均等2.pdf",
+    "title": "2桁15口（ミックス）均等2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁20口（ミックス）均等3.pdf": {
+    "old": "4桁20口（ミックス）均等3.pdf",
+    "new": "4d20r-ミックス均等3.pdf",
+    "title": "4桁20口（ミックス）均等3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/4桁20口（ミックス）均等1.pdf": {
+    "old": "4桁20口（ミックス）均等1.pdf",
+    "new": "4d20r-ミックス均等1.pdf",
+    "title": "4桁20口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り暗算桁別プリント/2桁15口（ミックス）均等1.pdf": {
+    "old": "2桁15口（ミックス）均等1.pdf",
+    "new": "2d15r-ミックス均等1.pdf",
+    "title": "2桁15口（ミックス）均等1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/8桁10口-2.pdf": {
+    "old": "8桁10口-2.pdf",
+    "new": "8d10r-2.pdf",
+    "title": "8桁10口-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/8桁10口-3.pdf": {
+    "old": "8桁10口-3.pdf",
+    "new": "8d10r-3.pdf",
+    "title": "8桁10口-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/8桁10口-1.pdf": {
+    "old": "8桁10口-1.pdf",
+    "new": "8d10r-1.pdf",
+    "title": "8桁10口-1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/10桁10口-2.pdf": {
+    "old": "10桁10口-2.pdf",
+    "new": "10d10r-2.pdf",
+    "title": "10桁10口-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/10桁10口-3.pdf": {
+    "old": "10桁10口-3.pdf",
+    "new": "10d10r-3.pdf",
+    "title": "10桁10口-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/10桁10口-1.pdf": {
+    "old": "10桁10口-1.pdf",
+    "new": "10d10r-1.pdf",
+    "title": "10桁10口-1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/9桁10口-2.pdf": {
+    "old": "9桁10口-2.pdf",
+    "new": "9d10r-2.pdf",
+    "title": "9桁10口-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/9桁10口-3.pdf": {
+    "old": "9桁10口-3.pdf",
+    "new": "9d10r-3.pdf",
+    "title": "9桁10口-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/9桁10口-1.pdf": {
+    "old": "9桁10口-1.pdf",
+    "new": "9d10r-1.pdf",
+    "title": "9桁10口-1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/6桁10口-1.pdf": {
+    "old": "6桁10口-1.pdf",
+    "new": "6d10r-1.pdf",
+    "title": "6桁10口-1"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/6桁10口-3.pdf": {
+    "old": "6桁10口-3.pdf",
+    "new": "6d10r-3.pdf",
+    "title": "6桁10口-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦4段/6桁10口-2.pdf": {
+    "old": "6桁10口-2.pdf",
+    "new": "6d10r-2.pdf",
+    "title": "6桁10口-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/8桁10口（加減ミックス）3段-3.pdf": {
+    "old": "8桁10口（加減ミックス）3段-3.pdf",
+    "new": "8d10r-mixed3col-3.pdf",
+    "title": "8桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/9桁10口（加減ミックス）3段-2.pdf": {
+    "old": "9桁10口（加減ミックス）3段-2.pdf",
+    "new": "9d10r-mixed3col-2.pdf",
+    "title": "9桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/9桁10口（加減ミックス）3段-3.pdf": {
+    "old": "9桁10口（加減ミックス）3段-3.pdf",
+    "new": "9d10r-mixed3col-3.pdf",
+    "title": "9桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/8桁10口（加減ミックス）3段-2.pdf": {
+    "old": "8桁10口（加減ミックス）3段-2.pdf",
+    "new": "8d10r-mixed3col-2.pdf",
+    "title": "8桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/5桁10口（加減ミックス）3段-2.pdf": {
+    "old": "5桁10口（加減ミックス）3段-2.pdf",
+    "new": "5d10r-mixed3col-2.pdf",
+    "title": "5桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-3.pdf": {
+    "old": "4桁10口（加減ミックス）3段-3.pdf",
+    "new": "4d10r-mixed3col-3.pdf",
+    "title": "4桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-2.pdf": {
+    "old": "4桁10口（加減ミックス）3段-2.pdf",
+    "new": "4d10r-mixed3col-2.pdf",
+    "title": "4桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/5桁10口（加減ミックス）3段-3.pdf": {
+    "old": "5桁10口（加減ミックス）3段-3.pdf",
+    "new": "5d10r-mixed3col-3.pdf",
+    "title": "5桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/10桁10口（加減ミックス）3段-3.pdf": {
+    "old": "10桁10口（加減ミックス）3段-3.pdf",
+    "new": "10d10r-mixed3col-3.pdf",
+    "title": "10桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/6桁10口（加減ミックス）3段-3.pdf": {
+    "old": "6桁10口（加減ミックス）3段-3.pdf",
+    "new": "6d10r-mixed3col-3.pdf",
+    "title": "6桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/7桁10口（加減ミックス）3段-2.pdf": {
+    "old": "7桁10口（加減ミックス）3段-2.pdf",
+    "new": "7d10r-mixed3col-2.pdf",
+    "title": "7桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/7桁10口（加減ミックス）3段-3.pdf": {
+    "old": "7桁10口（加減ミックス）3段-3.pdf",
+    "new": "7d10r-mixed3col-3.pdf",
+    "title": "7桁10口（加減ミックス）3段-3"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/6桁10口（加減ミックス）3段-2.pdf": {
+    "old": "6桁10口（加減ミックス）3段-2.pdf",
+    "new": "6d10r-mixed3col-2.pdf",
+    "title": "6桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/8桁10口（加減ミックス）3段.pdf": {
+    "old": "8桁10口（加減ミックス）3段.pdf",
+    "new": "8d10r-mixed3col.pdf",
+    "title": "8桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/10桁10口（加減ミックス）3段-2.pdf": {
+    "old": "10桁10口（加減ミックス）3段-2.pdf",
+    "new": "10d10r-mixed3col-2.pdf",
+    "title": "10桁10口（加減ミックス）3段-2"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-5.pdf": {
+    "old": "4桁10口（加減ミックス）3段-5.pdf",
+    "new": "4d10r-mixed3col-5.pdf",
+    "title": "4桁10口（加減ミックス）3段-5"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-4.pdf": {
+    "old": "4桁10口（加減ミックス）3段-4.pdf",
+    "new": "4d10r-mixed3col-4.pdf",
+    "title": "4桁10口（加減ミックス）3段-4"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/10桁10口（加減ミックス）3段.pdf": {
+    "old": "10桁10口（加減ミックス）3段.pdf",
+    "new": "10d10r-mixed3col.pdf",
+    "title": "10桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-6.pdf": {
+    "old": "4桁10口（加減ミックス）3段-6.pdf",
+    "new": "4d10r-mixed3col-6.pdf",
+    "title": "4桁10口（加減ミックス）3段-6"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-7.pdf": {
+    "old": "4桁10口（加減ミックス）3段-7.pdf",
+    "new": "4d10r-mixed3col-7.pdf",
+    "title": "4桁10口（加減ミックス）3段-7"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/9桁10口（加減ミックス）3段.pdf": {
+    "old": "9桁10口（加減ミックス）3段.pdf",
+    "new": "9d10r-mixed3col.pdf",
+    "title": "9桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-9.pdf": {
+    "old": "4桁10口（加減ミックス）3段-9.pdf",
+    "new": "4d10r-mixed3col-9.pdf",
+    "title": "4桁10口（加減ミックス）3段-9"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/5桁10口（加減ミックス）3段.pdf": {
+    "old": "5桁10口（加減ミックス）3段.pdf",
+    "new": "5d10r-mixed3col.pdf",
+    "title": "5桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段-8.pdf": {
+    "old": "4桁10口（加減ミックス）3段-8.pdf",
+    "new": "4d10r-mixed3col-8.pdf",
+    "title": "4桁10口（加減ミックス）3段-8"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/4桁10口（加減ミックス）3段.pdf": {
+    "old": "4桁10口（加減ミックス）3段.pdf",
+    "new": "4d10r-mixed3col.pdf",
+    "title": "4桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/7桁10口（加減ミックス）3段.pdf": {
+    "old": "7桁10口（加減ミックス）3段.pdf",
+    "new": "7d10r-mixed3col.pdf",
+    "title": "7桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/level-practice/見取り算（分割練習）/縦3段/6桁10口（加減ミックス）3段.pdf": {
+    "old": "6桁10口（加減ミックス）3段.pdf",
+    "new": "6d10r-mixed3col.pdf",
+    "title": "6桁10口（加減ミックス）3段"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F0/クリカツ2022(F0).pdf": {
+    "old": "クリカツ2022(F0).pdf",
+    "new": "xmas2022(F0).pdf",
+    "title": "クリカツ2022(F0)"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F0/クリカツ2021(F0).pdf": {
+    "old": "クリカツ2021(F0).pdf",
+    "new": "xmas2021(F0).pdf",
+    "title": "クリカツ2021(F0)"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F0/クリスマスカップF0(2020) 1-16回.pdf": {
+    "old": "クリスマスカップF0(2020) 1-16回.pdf",
+    "new": "christmas-cupF0(2020)-1-16.pdf",
+    "title": "クリスマスカップF0(2020) 1-16回"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F0/【第２回】夏のクリスマスカップ【Ｆ０】並び替え.pdf": {
+    "old": "【第２回】夏のクリスマスカップ【Ｆ０】並び替え.pdf",
+    "new": "2-summer-christmas-cup-F0-sorted.pdf",
+    "title": "【第２回】夏のクリスマスカップ【Ｆ０】並び替え"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F0/クリスマスカップF0(2020) 解答.pdf": {
+    "old": "クリスマスカップF0(2020) 解答.pdf",
+    "new": "christmas-cupF0(2020)-answers.pdf",
+    "title": "クリスマスカップF0(2020) 解答"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F1/クリカツ2022(F1).pdf": {
+    "old": "クリカツ2022(F1).pdf",
+    "new": "xmas2022(F1).pdf",
+    "title": "クリカツ2022(F1)"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F1/クリスマスカップF1(2020)1-16回並び替え.pdf": {
+    "old": "クリスマスカップF1(2020)1-16回並び替え.pdf",
+    "new": "christmas-cupF1(2020)1-16sorted.pdf",
+    "title": "クリスマスカップF1(2020)1-16回並び替え"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F1/クリカツ2021(F1).pdf": {
+    "old": "クリカツ2021(F1).pdf",
+    "new": "xmas2021(F1).pdf",
+    "title": "クリカツ2021(F1)"
+  },
+  "soroban/abacus-circuit/クリスマスカップ版/F1/【第２回】夏のクリスマスカップ【Ｆ１】並び替え.pdf": {
+    "old": "【第２回】夏のクリスマスカップ【Ｆ１】並び替え.pdf",
+    "new": "2-summer-christmas-cup-F1-sorted.pdf",
+    "title": "【第２回】夏のクリスマスカップ【Ｆ１】並び替え"
+  }
+}
