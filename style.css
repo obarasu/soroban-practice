@@ -877,9 +877,9 @@ footer {
 /* グラフコンテナ */
 .chart-container {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 16px;
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 12px;
 }
 
 .chart-header {
@@ -911,5 +911,5 @@ footer {
 
 #score-chart {
     width: 100%;
-    height: 180px;
+    height: 128px;
 }
