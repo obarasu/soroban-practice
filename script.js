@@ -241,12 +241,17 @@ function openPDF(category, type, name = '') {
     // 単一ファイルの場合
     const path = typeof pathData === 'string' ? pathData : pathData.file;
     
+    // パスをエンコード（各セグメントを個別にエンコード）
+    const encodedPath = path.split('/').map(segment => 
+        segment ? encodeURIComponent(segment) : ''
+    ).join('/');
+    
     // 履歴に追加
     if (!name) name = `${category} - ${type}`;
     addToHistory(category, type, name);
     
     // Open PDF in new tab
-    const newWindow = window.open(path, '_blank');
+    const newWindow = window.open(encodedPath, '_blank');
     
     if (!newWindow) {
         alert(`PDFを開きます:\n${path}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
@@ -258,11 +263,17 @@ function openPDF(category, type, name = '') {
     }, 500);
 }
 
+// 現在表示中のPDFセレクターのデータを保持
+let currentPdfSelectorData = null;
+
 // PDFファイル選択モーダルを表示
 function showPdfSelector(category, type, pathData) {
     // 既存のモーダルがあれば削除
     const existing = document.getElementById('pdf-selector-modal');
     if (existing) existing.remove();
+    
+    // データを保持
+    currentPdfSelectorData = pathData;
     
     const modal = document.createElement('div');
     modal.id = 'pdf-selector-modal';
@@ -290,7 +301,7 @@ function showPdfSelector(category, type, pathData) {
                 <div class="pdf-file-list">
                     ${pathData.files.map((f, i) => `
                         <button class="action-btn pdf-file-btn" 
-                                onclick="openPdfFile('${pathData.basePath}', '${f.file}', '${f.name}')">
+                                onclick="openPdfFileByIndex(${i})">
                             📄 ${f.name}
                         </button>
                     `).join('')}
@@ -306,20 +317,34 @@ function showPdfSelector(category, type, pathData) {
 function closePdfSelector() {
     const modal = document.getElementById('pdf-selector-modal');
     if (modal) modal.remove();
+    currentPdfSelectorData = null;
 }
 
-// 選択したPDFファイルを開く
-function openPdfFile(basePath, fileName, displayName) {
-    const fullPath = basePath + encodeURIComponent(fileName);
+// インデックスでPDFファイルを開く
+function openPdfFileByIndex(index) {
+    if (!currentPdfSelectorData || !currentPdfSelectorData.files[index]) {
+        alert('ファイルが見つかりません');
+        return;
+    }
+    
+    const fileInfo = currentPdfSelectorData.files[index];
+    const basePath = currentPdfSelectorData.basePath;
+    
+    // パス全体を正しくエンコード（各セグメントを個別にエンコード）
+    const encodedBasePath = basePath.split('/').map(segment => 
+        segment ? encodeURIComponent(segment) : ''
+    ).join('/');
+    const encodedFileName = encodeURIComponent(fileInfo.file);
+    const fullPath = encodedBasePath + encodedFileName;
     
     // 履歴に追加
-    addToHistory('pdf', fileName, displayName);
+    addToHistory('pdf', fileInfo.file, fileInfo.name);
     
     // 開く
     const newWindow = window.open(fullPath, '_blank');
     
     if (!newWindow) {
-        alert(`PDFを開きます:\n${displayName}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
+        alert(`PDFを開きます:\n${fileInfo.name}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
     }
     
     closePdfSelector();
