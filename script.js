@@ -1022,8 +1022,8 @@ function calculateScore() {
     const answered = parseInt(document.getElementById('record-answered').value) || 0;
     const wrong = parseInt(document.getElementById('record-wrong').value) || 0;
     
-    // 点数計算: 解答数 - (間違い数 × 2)
-    const score = Math.max(0, answered - (wrong * 2));
+    // 点数計算: (解答数 - 間違い数) × 2（1問2点）
+    const score = Math.max(0, (answered - wrong) * 2);
     document.getElementById('record-score').textContent = score;
     return score;
 }
