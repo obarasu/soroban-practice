@@ -183,31 +183,430 @@ const pdfPaths = {
 
 // Audio File Mappings - filename to Google Drive file ID
 // Full mapping is in audio-gdrive-mapping.js (loaded separately)
-// This is a simplified mapping for the main UI buttons
+// Complete mapping for all 295 audio files
 const audioFilenames = {
-    '30sec': {
+    'sorocon_yomiage': {
+        1: 'そろコン読上予選-1.mp3',
+        2: 'そろコン読上予選-2.mp3',
+        3: 'そろコン読上予選-3.mp3',
+        4: 'そろコン読上予選-4.mp3',
+        5: 'そろコン読上予選-5.mp3',
+        6: 'そろコン読上予選-6.mp3',
+        7: 'そろコン読上予選-7.mp3',
+        8: 'そろコン読上予選-8.mp3',
+        9: 'そろコン読上予選-9.mp3',
+        10: 'そろコン読上予選-10.mp3',
+        11: 'そろコン読上予選-11.mp3',
+        12: 'そろコン読上予選-12.mp3',
+        13: 'そろコン読上予選-13.mp3',
+        14: 'そろコン読上予選-14.mp3',
+        15: 'そろコン読上予選-15.mp3',
+        16: 'そろコン読上予選-16.mp3',
+        17: 'そろコン読上予選-17.mp3',
+        18: 'そろコン読上予選-18.mp3',
+        19: 'そろコン読上予選-19.mp3',
+        20: 'そろコン読上予選-20.mp3',
+    },
+    'sorocon_yomian': {
+        1: 'そろコンよみあん予選-1.mp3',
+        2: 'そろコンよみあん予選-2.mp3',
+        3: 'そろコンよみあん予選-3.mp3',
+        4: 'そろコンよみあん予選-4.mp3',
+        5: 'そろコンよみあん予選-5.mp3',
+        6: 'そろコンよみあん予選-6.mp3',
+        7: 'そろコンよみあん予選-7.mp3',
+        8: 'そろコンよみあん予選-8.mp3',
+        9: 'そろコンよみあん予選-9.mp3',
+        10: 'そろコンよみあん予選-10.mp3',
+        11: 'そろコンよみあん予選-11.mp3',
+        12: 'そろコンよみあん予選-12.mp3',
+        13: 'そろコンよみあん予選-13.mp3',
+        14: 'そろコンよみあん予選-14.mp3',
+        15: 'そろコンよみあん予選-15.mp3',
+        16: 'そろコンよみあん予選-16.mp3',
+        17: 'そろコンよみあん予選-17.mp3',
+        18: 'そろコンよみあん予選-18.mp3',
+        19: 'そろコンよみあん予選-19.mp3',
+        20: 'そろコンよみあん予選-20.mp3',
+    },
+    'speed_30sec': {
         1: '【30】読上7-16桁-1.mp3',
         2: '【30】読上7-16桁-2.mp3',
         3: '【30】読上7-16桁-3.mp3',
         4: '【30】読上7-16桁-4.mp3',
         5: '【30】読上7-16桁-5.mp3',
-        6: '【30】読上7-16桁-6.mp3'
+        6: '【30】読上7-16桁-6.mp3',
     },
-    '35sec': {
+    'speed_35sec': {
         1: '【35】読上7-16桁-1.mp3',
         2: '【35】読上7-16桁-2.mp3',
         3: '【35】読上7-16桁-3.mp3',
         4: '【35】読上7-16桁-4.mp3',
-        5: '【35】読上7-16桁-5.mp3'
+        5: '【35】読上7-16桁-5.mp3',
     },
-    '40sec': {
+    'speed_35-40sec': {
+        1: '【35-40】読上7-16桁-1【マイナス】.mp3',
+    },
+    'speed_40sec': {
         1: '【40】読上7-16桁-1.mp3',
-        2: '【40】読上7-16桁-2.mp3'
+        2: '【40】読上7-16桁-2.mp3',
     },
-    '50sec': {
+    'speed_40sec_minus': {
+        1: '【40】読上7-16桁-1【マイナス】.mp3',
+    },
+    'speed_50sec': {
         1: '【50】読上7-16桁-1【マイナス】.mp3',
-        2: '【50】読上7-16桁-2【マイナス】.mp3'
-    }
+        2: '【50】読上7-16桁-2【マイナス】.mp3',
+    },
+    'yomiage_7-16keta': {
+        1: '読上7-16桁-1.mp3',
+        2: '読上7-16桁-2.m4a',
+        3: '読上7-16桁-3.m4a',
+        4: '読上7-16桁-4.mp3',
+    },
+    'yomiage_7-15keta': {
+        1: '読上7-15桁-1.mp3',
+        2: '読上7-15桁-2.mp3',
+        3: '読上7-15桁-3.m4a',
+        4: '読上7-15桁-4.mp3',
+        5: '読上7-15桁-5.mp3',
+        6: '読上7-15桁-6.m4a',
+        7: '読上7-15桁-7.mp3',
+        8: '読上7-15桁-8.mp3',
+        9: '読上7-15桁-9.mp3',
+    },
+    'yomiage_7-14keta': {
+        1: '読上7-14桁-1.mp3',
+        2: '読上7-14桁-2.mp3',
+        3: '読上7-14桁-3.mp3',
+        4: '読上7-14桁-4.m4a',
+        5: '読上7-14桁-5.mp3',
+        6: '読上7-14桁-6.mp3',
+        7: '読上7-14桁-7.m4a',
+        8: '読上7-14桁-8.mp3',
+        9: '読上7-14桁-9.mp3',
+    },
+    'yomiage_7-13keta': {
+        1: '読上7-13桁-1.mp3',
+        2: '読上7-13桁-2.m4a',
+        3: '読上7-13桁-3.mp3',
+        4: '読上7-13桁-4.m4a',
+        5: '読上7-13桁-5.m4a',
+        6: '読上7-13桁-6.mp3',
+        7: '読上7-13桁-7.m4a',
+        8: '読上7-13桁-8.m4a',
+        9: '読上7-13桁-9.mp3',
+    },
+    'yomiage_7-12keta': {
+        1: '読上7-12桁-1.mp3',
+        2: '読上7-12桁-2.m4a',
+        3: '読上7-12桁-3.m4a',
+        4: '読上7-12桁-4.m4a',
+        5: '読上7-12桁-5.m4a',
+        6: '読上7-12桁-6.m4a',
+        7: '読上7-12桁-7.m4a',
+        8: '読上7-12桁-8.mp3',
+        9: '読上7-12桁-9.mp3',
+    },
+    'yomiage_7-11keta': {
+        1: '読上7-11桁-1.m4a',
+        2: '読上7-11桁-2.m4a',
+        3: '読上7-11桁-3.m4a',
+        4: '読上7-11桁-4.mp3',
+        5: '読上7-11桁-5.m4a',
+        6: '読上7-11桁-6.m4a',
+        7: '読上7-11桁-7.m4a',
+        8: '読上7-11桁-8.mp3',
+        9: '読上7-11桁-9.mp3',
+    },
+    'yomiage_5-10keta': {
+        1: '読上5-10桁-1.mp3',
+        2: '読上5-10桁-2.mp3',
+        3: '読上5-10桁-3.mp3',
+        4: '読上5-10桁-4.m4a',
+        5: '読上5-10桁-5.m4a',
+        6: '読上5-10桁-6.mp3',
+        7: '読上5-10桁-7.m4a',
+        8: '読上5-10桁-8.mp3',
+        9: '読上5-10桁-9.mp3',
+    },
+    'yomiage_5-9keta': {
+        1: '読上5-9桁-1.m4a',
+        2: '読上5-9桁-2.m4a',
+        3: '読上5-9桁-3.m4a',
+        4: '読上5-9桁-4.m4a',
+        5: '読上5-9桁-5.m4a',
+        6: '読上5-9桁-6.m4a',
+        7: '読上5-9桁-7.mp3',
+        8: '読上5-9桁-8.mp3',
+        9: '読上5-9桁-9.mp3',
+    },
+    'yomiage_5-8keta': {
+        1: '読上5-8桁-1.m4a',
+        2: '読上5-8桁-2.m4a',
+        3: '読上5-8桁-3.m4a',
+        4: '読上5-8桁-4.m4a',
+        5: '読上5-8桁-5.mp3',
+        6: '読上5-8桁-6.mp3',
+        7: '読上5-8桁-7.mp3',
+    },
+    'yomiage_4-7keta': {
+        1: '読上4-7桁-1.m4a',
+        2: '読上4-7桁-2.m4a',
+        3: '読上4-7桁-3.m4a',
+        4: '読上4-7桁-4.m4a',
+        5: '読上4-7桁-5.mp3',
+        6: '読上4-7桁-6.mp3',
+        7: '読上4-7桁-7.mp3',
+    },
+    'yomiage_3-6keta': {
+        1: '読上3-6桁-1.m4a',
+        2: '読上3-6桁-2.m4a',
+        3: '読上3-6桁-3.m4a',
+        4: '読上3-6桁-4.m4a',
+        5: '読上3-6桁-5.mp3',
+        6: '読上3-6桁-6.mp3',
+        7: '読上3-6桁-7.mp3',
+    },
+    'yomiage_3-5keta': {
+        1: '読上3-5桁-1.m4a',
+        2: '読上3-5桁-2.m4a',
+        3: '読上3-5桁-3.m4a',
+        4: '読上3-5桁-4.m4a',
+        5: '読上3-5桁-5.mp3',
+        6: '読上3-5桁-6.mp3',
+        7: '読上3-5桁-7.mp3',
+    },
+    'yomiage_2-3keta': {
+        1: '読上2-3桁-1.mp3',
+        2: '読上2-3桁-2.m4a',
+        3: '読上2-3桁-3.m4a',
+        4: '読上2-3桁-4.m4a',
+        5: '読上2-3桁-5.mp3',
+        6: '読上2-3桁-6.mp3',
+        7: '読上2-3桁-7.mp3',
+    },
+    'yomian_6-10keta': {
+        1: 'よみあん6-10桁-1.m4a',
+        2: 'よみあん6-10桁-2.m4a',
+        3: 'よみあん6-10桁-3.mp3',
+        4: 'よみあん6-10桁-4.mp3',
+        5: 'よみあん6-10桁-5.m4a',
+        6: 'よみあん6-10桁-6.m4a',
+    },
+    'yomian_5-9keta': {
+        1: 'よみあん5-9桁-1.m4a',
+        2: 'よみあん5-9桁-2.mp3',
+        3: 'よみあん5-9桁-3.m4a',
+        4: 'よみあん5-9桁-4.m4a',
+        5: 'よみあん5-9桁-5.m4a',
+        6: 'よみあん5-9桁-6.mp3',
+        7: 'よみあん5-9桁-7.mp3',
+        8: 'よみあん5-9桁-8.m4a',
+        9: 'よみあん5-9桁-9.m4a',
+        10: 'よみあん5-9桁-10.m4a',
+        11: 'よみあん5-9桁-11.m4a',
+        12: 'よみあん5-9桁-12.m4a',
+    },
+    'yomian_5-8keta': {
+        1: 'よみあん5-8桁-1.m4a',
+        2: 'よみあん5-8桁-2.m4a',
+        3: 'よみあん5-8桁-3.m4a',
+        4: 'よみあん5-8桁-4.m4a',
+        5: 'よみあん5-8桁-5.mp3',
+        6: 'よみあん5-8桁-6.mp3',
+        7: 'よみあん5-8桁-7.m4a',
+        8: 'よみあん5-8桁-8.m4a',
+        9: 'よみあん5-8桁-9.mp3',
+        10: 'よみあん5-8桁-10.m4a',
+        11: 'よみあん5-8桁-11.mp3',
+        12: 'よみあん5-8桁-12.m4a',
+    },
+    'yomian_4-7keta': {
+        1: 'よみあん4-7桁-1.mp3',
+        2: 'よみあん4-7桁-2.m4a',
+        3: 'よみあん4-7桁-3.m4a',
+        4: 'よみあん4-7桁-4.m4a',
+        5: 'よみあん4-7桁-5.m4a',
+        6: 'よみあん4-7桁-6.m4a',
+        7: 'よみあん4-7桁-7.m4a',
+        8: 'よみあん4-7桁-8.m4a',
+        9: 'よみあん4-7桁-9.m4a',
+        10: 'よみあん4-7桁-10.m4a',
+        11: 'よみあん4-7桁-11.m4a',
+        12: 'よみあん4-7桁-12.m4a',
+    },
+    'yomian_4-6keta': {
+        1: 'よみあん4-6桁-1.mp3',
+        2: 'よみあん4-6桁-2.mp3',
+        3: 'よみあん4-6桁-3.mp3',
+        4: 'よみあん4-6桁-4.m4a',
+        5: 'よみあん4-6桁-5.m4a',
+        6: 'よみあん4-6桁-6.m4a',
+        7: 'よみあん4-6桁-7.m4a',
+        8: 'よみあん4-6桁-8.m4a',
+        9: 'よみあん4-6桁-9.m4a',
+        10: 'よみあん4-6桁-10.m4a',
+        11: 'よみあん4-6桁-11.mp3',
+        12: 'よみあん4-6桁-12.mp3',
+    },
+    'yomian_3-5keta': {
+        1: 'よみあん3-5桁-1.mp3',
+        2: 'よみあん3-5桁-2.mp3',
+        3: 'よみあん3-5桁-3.mp3',
+        4: 'よみあん3-5桁-4.m4a',
+        5: 'よみあん3-5桁-5.m4a',
+        6: 'よみあん3-5桁-6.m4a',
+        7: 'よみあん3-5桁-7.m4a',
+        8: 'よみあん3-5桁-8.m4a',
+        9: 'よみあん3-5桁-9.m4a',
+        10: 'よみあん3-5桁-10.m4a',
+        11: 'よみあん3-5桁-11.m4a',
+        12: 'よみあん3-5桁-12.m4a',
+    },
+    'yomian_3-4keta': {
+        1: 'よみあん3-4桁-1.m4a',
+        2: 'よみあん3-4桁-2.m4a',
+        3: 'よみあん3-4桁-3.m4a',
+        4: 'よみあん3-4桁-4.m4a',
+        5: 'よみあん3-4桁-5.m4a',
+        6: 'よみあん3-4桁-6.mp3',
+        7: 'よみあん3-4桁-7.mp3',
+    },
+    'yomian_2-4keta': {
+        1: 'よみあん2-4桁-1.m4a',
+        2: 'よみあん2-4桁-2.m4a',
+        3: 'よみあん2-4桁-3.m4a',
+        4: 'よみあん2-4桁-4.mp3',
+        5: 'よみあん2-4桁-5.m4a',
+        6: 'よみあん2-4桁-6.m4a',
+        7: 'よみあん2-4桁-7.m4a',
+    },
+    'yomian_2-3keta': {
+        1: 'よみあん2-3桁-1.m4a',
+        2: 'よみあん2-3桁-2.m4a',
+        3: 'よみあん2-3桁-3.m4a',
+        4: 'よみあん2-3桁-4.m4a',
+        5: 'よみあん2-3桁-5.m4a',
+        6: 'よみあん2-3桁-6.mp3',
+        7: 'よみあん2-3桁-7.m4a',
+    },
+    'yomian_2keta': {
+        1: 'よみあん2桁-1.m4a',
+        2: 'よみあん2桁-2.m4a',
+        3: 'よみあん2桁-3.m4a',
+        4: 'よみあん2桁-4.m4a',
+        5: 'よみあん2桁-5.m4a',
+        6: 'よみあん2桁-6.m4a',
+        7: 'よみあん2桁-7.m4a',
+    },
+    'yomian_1-2keta': {
+        1: 'よみあん1-2桁-1.m4a',
+        2: 'よみあん1-2桁-2.m4a',
+        3: 'よみあん1-2桁-3.m4a',
+        4: 'よみあん1-2桁-4.m4a',
+        5: 'よみあん1-2桁-5.m4a',
+        6: 'よみあん1-2桁-6.m4a',
+        7: 'よみあん1-2桁-7.m4a',
+    },
+    'yukkuri_sorocon': {
+        1: '【ゆっくり】そろコン読上予選-1.mp3',
+        2: '【ゆっくり】そろコン読上予選-2.mp3',
+        3: '【ゆっくり】そろコン読上予選-3.mp3',
+        4: '【ゆっくり】そろコン読上予選-4.mp3',
+        5: '【ゆっくり】そろコン読上予選-5.mp3',
+        6: '【ゆっくり】そろコン読上予選-6.mp3',
+        7: '【ゆっくり】そろコン読上予選-7.mp3',
+        8: '【ゆっくり】そろコン読上予選-8.mp3',
+        9: '【ゆっくり】そろコン読上予選-9.mp3',
+        10: '【ゆっくり】そろコン読上予選-10.mp3',
+        11: '【ゆっくり】そろコン読上予選-11.mp3',
+        12: '【ゆっくり】そろコン読上予選-12.mp3',
+        13: '【ゆっくり】そろコン読上予選-13.mp3',
+        14: '【ゆっくり】そろコン読上予選-14.mp3',
+        15: '【ゆっくり】そろコン読上予選-15.mp3',
+    },
+    'yukkuri_5-8keta': {
+        1: '【ゆっくり】読上5-8桁-1.m4a',
+        2: '【ゆっくり】読上5-8桁-2.m4a',
+        3: '【ゆっくり】読上5-8桁-3.m4a',
+        4: '【ゆっくり】読上5-8桁-4.mp3',
+    },
+    'yukkuri_4-7keta': {
+        1: '【ゆっくり】読上4-7桁-1.m4a',
+        2: '【ゆっくり】読上4-7桁-2.m4a',
+        3: '【ゆっくり】読上4-7桁-3.m4a',
+        4: '【ゆっくり】読上4-7桁-4.mp3',
+    },
+    'yukkuri_3-6keta': {
+        1: '【ゆっくり】読上3-6桁-1.m4a',
+        2: '【ゆっくり】読上3-6桁-2.m4a',
+        3: '【ゆっくり】読上3-6桁-3.m4a',
+        4: '【ゆっくり】読上3-6桁-4.m4a',
+    },
+    'yukkuri_3-5keta': {
+        1: '【ゆっくり】読上3-5桁-1.m4a',
+        2: '【ゆっくり】読上3-5桁-2.m4a',
+        3: '【ゆっくり】読上3-5桁-3.m4a',
+        4: '【ゆっくり】読上3-5桁-4.m4a',
+    },
+    'yukkuri_2-3keta': {
+        1: '【ゆっくり】読上2-3桁-1.m4a',
+        2: '【ゆっくり】読上2-3桁-2.m4a',
+        3: '【ゆっくり】読上2-3桁-3.mp3',
+        4: '【ゆっくり】読上2-3桁-4.mp3',
+    },
+};
+
+// Audio category labels for UI
+const audioCategoryLabels = {
+    'sorocon_yomiage': 'そろコン読上予選',
+    'sorocon_yomian': 'そろコンよみあん予選',
+    'speed_30sec': '30秒（7-16桁）',
+    'speed_35sec': '35秒（7-16桁）',
+    'speed_35-40sec': '35-40秒【マイナス】',
+    'speed_40sec': '40秒（7-16桁）',
+    'speed_40sec_minus': '40秒【マイナス】',
+    'speed_50sec': '50秒【マイナス】',
+    'yomiage_7-16keta': '読上 7-16桁',
+    'yomiage_7-15keta': '読上 7-15桁',
+    'yomiage_7-14keta': '読上 7-14桁',
+    'yomiage_7-13keta': '読上 7-13桁',
+    'yomiage_7-12keta': '読上 7-12桁',
+    'yomiage_7-11keta': '読上 7-11桁',
+    'yomiage_5-10keta': '読上 5-10桁',
+    'yomiage_5-9keta': '読上 5-9桁',
+    'yomiage_5-8keta': '読上 5-8桁',
+    'yomiage_4-7keta': '読上 4-7桁',
+    'yomiage_3-6keta': '読上 3-6桁',
+    'yomiage_3-5keta': '読上 3-5桁',
+    'yomiage_2-3keta': '読上 2-3桁',
+    'yomian_6-10keta': 'よみあん 6-10桁',
+    'yomian_5-9keta': 'よみあん 5-9桁',
+    'yomian_5-8keta': 'よみあん 5-8桁',
+    'yomian_4-7keta': 'よみあん 4-7桁',
+    'yomian_4-6keta': 'よみあん 4-6桁',
+    'yomian_3-5keta': 'よみあん 3-5桁',
+    'yomian_3-4keta': 'よみあん 3-4桁',
+    'yomian_2-4keta': 'よみあん 2-4桁',
+    'yomian_2-3keta': 'よみあん 2-3桁',
+    'yomian_2keta': 'よみあん 2桁',
+    'yomian_1-2keta': 'よみあん 1-2桁',
+    'yukkuri_sorocon': 'ゆっくり そろコン読上',
+    'yukkuri_5-8keta': 'ゆっくり 5-8桁',
+    'yukkuri_4-7keta': 'ゆっくり 4-7桁',
+    'yukkuri_3-6keta': 'ゆっくり 3-6桁',
+    'yukkuri_3-5keta': 'ゆっくり 3-5桁',
+    'yukkuri_2-3keta': 'ゆっくり 2-3桁',
+};
+
+// Audio category groups for organized display
+const audioCategoryGroups = {
+    'そろコン予選': ['sorocon_yomiage', 'sorocon_yomian'],
+    '速度別読み上げ': ['speed_30sec', 'speed_35sec', 'speed_35-40sec', 'speed_40sec', 'speed_40sec_minus', 'speed_50sec'],
+    '読み上げ算': ['yomiage_7-16keta', 'yomiage_7-15keta', 'yomiage_7-14keta', 'yomiage_7-13keta', 'yomiage_7-12keta', 'yomiage_7-11keta', 'yomiage_5-10keta', 'yomiage_5-9keta', 'yomiage_5-8keta', 'yomiage_4-7keta', 'yomiage_3-6keta', 'yomiage_3-5keta', 'yomiage_2-3keta'],
+    'よみあん': ['yomian_6-10keta', 'yomian_5-9keta', 'yomian_5-8keta', 'yomian_4-7keta', 'yomian_4-6keta', 'yomian_3-5keta', 'yomian_3-4keta', 'yomian_2-4keta', 'yomian_2-3keta', 'yomian_2keta', 'yomian_1-2keta'],
+    'ゆっくり': ['yukkuri_sorocon', 'yukkuri_5-8keta', 'yukkuri_4-7keta', 'yukkuri_3-6keta', 'yukkuri_3-5keta', 'yukkuri_2-3keta'],
 };
 
 // Helper function to get Google Drive direct download URL
@@ -795,6 +1194,120 @@ function closePlayer() {
 
     // Hide player
     player.classList.add('hidden');
+}
+
+// ========================================
+// 音声セレクター機能
+// ========================================
+
+// 音声セレクターモーダルを表示
+function showAudioSelector() {
+    // 既存のモーダルがあれば削除
+    const existing = document.getElementById('audio-selector-modal');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'audio-selector-modal';
+    modal.className = 'modal';
+
+    let content = `
+        <div class="modal-content audio-selector-content">
+            <div class="modal-header">
+                <h3>🎵 音声ファイル選択</h3>
+                <button class="close-btn" onclick="closeAudioSelector()">✕</button>
+            </div>
+            <div class="audio-selector-body">
+    `;
+
+    // カテゴリグループごとに表示
+    for (const [groupName, categories] of Object.entries(audioCategoryGroups)) {
+        content += `<div class="audio-group">`;
+        content += `<h4 class="audio-group-title">${groupName}</h4>`;
+        content += `<div class="audio-category-list">`;
+
+        for (const cat of categories) {
+            const label = audioCategoryLabels[cat] || cat;
+            const count = Object.keys(audioFilenames[cat] || {}).length;
+            content += `
+                <button class="audio-category-btn" onclick="showAudioNumbers('${cat}')">
+                    ${label} <span class="audio-count">(${count})</span>
+                </button>
+            `;
+        }
+
+        content += `</div></div>`;
+    }
+
+    content += `
+            </div>
+        </div>
+    `;
+
+    modal.innerHTML = content;
+    document.body.appendChild(modal);
+    modal.style.display = 'flex';
+}
+
+// 音声番号選択モーダルを表示
+function showAudioNumbers(category) {
+    const existing = document.getElementById('audio-numbers-modal');
+    if (existing) existing.remove();
+
+    const modal = document.createElement('div');
+    modal.id = 'audio-numbers-modal';
+    modal.className = 'modal';
+
+    const label = audioCategoryLabels[category] || category;
+    const files = audioFilenames[category] || {};
+    const numbers = Object.keys(files).map(n => parseInt(n)).sort((a, b) => a - b);
+
+    let content = `
+        <div class="modal-content audio-numbers-content">
+            <div class="modal-header">
+                <h3>🎵 ${label}</h3>
+                <button class="close-btn" onclick="closeAudioNumbers()">✕</button>
+            </div>
+            <div class="audio-numbers-body">
+                <div class="audio-numbers-grid">
+    `;
+
+    for (const num of numbers) {
+        content += `
+            <button class="audio-number-btn" onclick="playAudioAndClose('${category}', ${num})">
+                問題 ${num}
+            </button>
+        `;
+    }
+
+    content += `
+                </div>
+                <button class="back-btn" onclick="closeAudioNumbers()">← カテゴリに戻る</button>
+            </div>
+        </div>
+    `;
+
+    modal.innerHTML = content;
+    document.body.appendChild(modal);
+    modal.style.display = 'flex';
+}
+
+// 音声を再生してモーダルを閉じる
+function playAudioAndClose(category, number) {
+    closeAudioNumbers();
+    closeAudioSelector();
+    playAudio(category, number);
+}
+
+// 音声セレクターを閉じる
+function closeAudioSelector() {
+    const modal = document.getElementById('audio-selector-modal');
+    if (modal) modal.remove();
+}
+
+// 音声番号選択を閉じる
+function closeAudioNumbers() {
+    const modal = document.getElementById('audio-numbers-modal');
+    if (modal) modal.remove();
 }
 
 // ========================================
