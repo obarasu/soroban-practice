@@ -1,3 +1,61 @@
+// === PWA対応 PDF Viewer（印刷・共有ボタン付き） ===
+function openPdfInApp(path, name) {
+    const viewer = document.createElement('div');
+    viewer.id = 'pdf-viewer-overlay';
+    viewer.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:10000;display:flex;flex-direction:column;';
+    
+    const toolbar = document.createElement('div');
+    toolbar.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#1a1a1a;color:white;flex-shrink:0;gap:8px;';
+    
+    const title = document.createElement('span');
+    title.textContent = name || 'PDF';
+    title.style.cssText = 'font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;';
+    
+    const btnContainer = document.createElement('div');
+    btnContainer.style.cssText = 'display:flex;gap:6px;flex-shrink:0;';
+    
+    const mkBtn = (text, bg, fn) => {
+        const b = document.createElement('button');
+        b.textContent = text;
+        b.style.cssText = `padding:6px 12px;border:none;border-radius:6px;background:${bg};color:white;font-size:13px;cursor:pointer;`;
+        b.onclick = fn;
+        return b;
+    };
+    
+    // 印刷ボタン
+    btnContainer.appendChild(mkBtn('🖨️', '#4CAF50', () => {
+        const iframe = document.getElementById('pdf-viewer-iframe');
+        if (iframe) { try { iframe.contentWindow.print(); } catch(e) { window.open(path, '_blank'); } }
+    }));
+    
+    // 共有ボタン（iOSのShare Sheetから印刷も可能）
+    btnContainer.appendChild(mkBtn('📤', '#2196F3', async () => {
+        if (navigator.share) {
+            try { await navigator.share({ title: name || 'PDF', url: new URL(path, window.location.origin).href }); } catch(e) {}
+        } else { window.open(path, '_blank'); }
+    }));
+    
+    // Safariで開くボタン
+    btnContainer.appendChild(mkBtn('🌐', '#FF9800', () => {
+        window.location.href = new URL(path, window.location.origin).href;
+    }));
+    
+    // 閉じるボタン
+    btnContainer.appendChild(mkBtn('✕', '#666', () => viewer.remove()));
+    
+    toolbar.appendChild(title);
+    toolbar.appendChild(btnContainer);
+    
+    const iframe = document.createElement('iframe');
+    iframe.id = 'pdf-viewer-iframe';
+    iframe.src = path;
+    iframe.style.cssText = 'flex:1;border:none;width:100%;background:white;';
+    
+    viewer.appendChild(toolbar);
+    viewer.appendChild(iframe);
+    document.body.appendChild(viewer);
+}
+
 // PDF File Mappings (relative to web server root)
 // フォルダの場合はfiles配列でファイル一覧を定義
 const pdfPaths = {
@@ -651,11 +709,14 @@ function openPDF(category, type, name = '') {
     if (!name) name = `${category} - ${type}`;
     addToHistory(category, type, name);
     
-    // Open PDF in new tab（Vercelでは日本語URLをそのまま使用）
-    const newWindow = window.open(path, '_blank');
-    
-    if (!newWindow) {
-        alert(`PDFを開きます:\n${path}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
+    // PWA対応: アプリ内PDFビューアで開く（印刷・共有ボタン付き）
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+        openPdfInApp(path, name);
+    } else {
+        const newWindow = window.open(path, '_blank');
+        if (!newWindow) {
+            openPdfInApp(path, name);
+        }
     }
 
     // Remove loading state
@@ -1100,9 +1161,13 @@ function getSubfolderFiles(folderPath) {
 // 直接PDFを開く
 function openDirectPdf(path, name) {
     addToHistory('pdf', path, name);
-    const newWindow = window.open(path, '_blank');
-    if (!newWindow) {
-        alert(`PDFを開きます:\n${name}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+        openPdfInApp(path, name);
+    } else {
+        const newWindow = window.open(path, '_blank');
+        if (!newWindow) {
+            openPdfInApp(path, name);
+        }
     }
     closePdfSelector();
 }
@@ -1130,11 +1195,14 @@ function openPdfFileByIndex(index) {
     // 履歴に追加
     addToHistory('pdf', fileInfo.file, fileInfo.name);
     
-    // 開く
-    const newWindow = window.open(fullPath, '_blank');
-    
-    if (!newWindow) {
-        alert(`PDFを開きます:\n${fileInfo.name}\n\nポップアップがブロックされた場合は、ブラウザの設定を確認してください。`);
+    // 開く（PWA対応）
+    if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone) {
+        openPdfInApp(fullPath, fileInfo.name);
+    } else {
+        const newWindow = window.open(fullPath, '_blank');
+        if (!newWindow) {
+            openPdfInApp(fullPath, fileInfo.name);
+        }
     }
     
     closePdfSelector();
