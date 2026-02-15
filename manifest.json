@@ -3,6 +3,7 @@
   "short_name": "そろばん練習",
   "description": "スマホでワンタッチで使えるそろばん練習用Webサービス",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#1a1a2e",
   "theme_color": "#2196F3",
