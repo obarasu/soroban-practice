@@ -1,9 +1,21 @@
-// === PWA対応: ymmtと同じwindow.open方式 ===
-// iOSのPWA (standalone) からwindow.openすると
-// SFSafariViewControllerが開き、共有・印刷ボタンが表示される
-function openPdfInApp(path, name) {
+// === PWA対応: ymmtと同じblob download方式 ===
+// fetch → blob → createObjectURL → <a download> でダウンロードさせる
+// iOSではダウンロードしたPDFを標準ビューア(Quick Look)で開ける → 共有・印刷ボタンあり
+async function openPdfInApp(path, name) {
     const fullUrl = new URL(path, window.location.origin).href;
-    window.open(fullUrl, '_blank');
+    try {
+        const response = await fetch(fullUrl);
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = (name || 'document') + '.pdf';
+        link.click();
+        window.URL.revokeObjectURL(url);
+    } catch (error) {
+        console.error('Failed to download PDF:', error);
+        window.open(fullUrl, '_blank');
+    }
 }
 
 // PDF File Mappings (relative to web server root)
