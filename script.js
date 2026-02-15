@@ -1,16 +1,63 @@
-// === PWA対応: iOSのin-app browser (SFSafariViewController) でPDFを開く ===
-// PWAからscope外のURLを開くとiOSがin-app browserを起動し、
-// 共有・印刷ボタン付きのUIが表示される
+// === PWA対応: iframe + ダウンロードボタン付きPDFビューア ===
+// ymmtアプリと同じ方式: フルスクリーンオーバーレイでiframe表示 + ダウンロードボタン
 function openPdfInApp(path, name) {
     const fullUrl = new URL(path, window.location.origin).href;
-    // <a target="_blank"> でクリックすると、iOSのPWAではin-app browserが起動する
-    const a = document.createElement('a');
-    a.href = fullUrl;
-    a.target = '_blank';
-    a.rel = 'noopener';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    
+    // オーバーレイを作成
+    const overlay = document.createElement('div');
+    overlay.id = 'pdf-viewer-overlay';
+    overlay.style.cssText = 'position:fixed;inset:0;z-index:10000;background:#fff;display:flex;flex-direction:column;';
+    
+    // ヘッダー
+    const header = document.createElement('div');
+    header.style.cssText = 'background:linear-gradient(135deg,#8b4513,#d2691e);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;';
+    
+    const title = document.createElement('div');
+    title.style.cssText = 'font-weight:bold;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;margin-right:8px;';
+    title.textContent = name || 'PDF';
+    
+    const btnGroup = document.createElement('div');
+    btnGroup.style.cssText = 'display:flex;gap:8px;flex-shrink:0;';
+    
+    // ダウンロードボタン
+    const dlBtn = document.createElement('button');
+    dlBtn.textContent = '⬇ ダウンロード';
+    dlBtn.style.cssText = 'background:#fff;color:#8b4513;border:none;border-radius:8px;padding:8px 14px;font-weight:bold;font-size:13px;cursor:pointer;';
+    dlBtn.onclick = async () => {
+        try {
+            const resp = await fetch(fullUrl);
+            const blob = await resp.blob();
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = (name || 'document') + '.pdf';
+            a.click();
+            URL.revokeObjectURL(url);
+        } catch(e) {
+            // フォールバック: 新しいタブで開く
+            window.open(fullUrl, '_blank');
+        }
+    };
+    
+    // 閉じるボタン
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = '✕';
+    closeBtn.style.cssText = 'background:rgba(255,255,255,0.2);color:#fff;border:none;border-radius:8px;padding:8px 12px;font-size:18px;cursor:pointer;';
+    closeBtn.onclick = () => overlay.remove();
+    
+    btnGroup.appendChild(dlBtn);
+    btnGroup.appendChild(closeBtn);
+    header.appendChild(title);
+    header.appendChild(btnGroup);
+    
+    // iframe
+    const iframe = document.createElement('iframe');
+    iframe.src = fullUrl;
+    iframe.style.cssText = 'flex:1;border:none;width:100%;';
+    
+    overlay.appendChild(header);
+    overlay.appendChild(iframe);
+    document.body.appendChild(overlay);
 }
 
 // PDF File Mappings (relative to web server root)
